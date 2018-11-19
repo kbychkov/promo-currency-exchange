@@ -1,0 +1,33 @@
+{
+	"menuItems": [
+		{
+			"name": "Главная",
+			"path": "/"
+		},
+		{
+			"name": "Элемент меню 2",
+			"path": "#"
+		},
+		{
+			"name": "Элемент меню 3",
+			"path": "#"
+		},
+		{
+			"name": "Элемент меню 4",
+			"path": "#"
+		}
+	],
+	"someData": [
+		{
+			"title": "Item 1",
+			"text": "Desc 1"
+		},
+		{
+			"title": "Item 2",
+			"text": "Desc 2"
+		}
+	],
+	"common": {
+		"projectTitle": "BCS"
+	}
+}

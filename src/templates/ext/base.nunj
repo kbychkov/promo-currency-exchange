@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!-- Client-side programming by sborkaproject.com -->
+		<meta charset="utf-8" />
+		<title>{{ pageTitle }} | {{ common.projectTitle }}</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		{% block stylesheets %}
+			<link rel="stylesheet" href="media/css/screen.css" />
+		{% endblock stylesheets %}
+	</head>
+	<body>
+
+		<div class="wrapper">
+
+			{% block content %}
+			{% endblock content %}
+
+			<div class="wrapper__push"></div>
+
+		</div>
+
+		<div class="footer">
+			<div class="skin">
+
+				Footer Content
+
+			</div>
+		</div>
+
+		{% block scripts %}
+			<script src="media/js/bundle.js"></script>
+		{% endblock scripts %}
+
+	</body>
+</html>
