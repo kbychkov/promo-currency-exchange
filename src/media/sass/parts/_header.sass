@@ -1,0 +1,187 @@
+.header
+	$parent-selector: &
+	$trs-time: 0.4s
+	// $menu-paddings-side: percentage(30px / $markup-width--mobile)
+	$menu-paddings-side: 2% // TODO
+	$button-close-top: 3vh
+	$pt: 2.4rem
+	$pt--mobile: 2.6vh
+	padding: $pt--mobile 0
+	transition: transform .6s cubic-bezier(.19,1,.22,1)
+	pointer-events: none
+	margin-bottom: 100px
+	&__logo
+		display: block
+		width: 70px
+		height: 26px
+		transition: transform ($trs-time - 0.1s)
+		-webkit-tap-highlight-color: rgba(0, 0, 0, 0)
+		outline: none
+		color: $c-white
+		will-change: transform
+		pointer-events: auto
+		svg
+			display: block
+			width: 100%
+			height: 100%
+			overflow: visible
+			fill: $c-white
+	&__row
+		display: flex
+		justify-content: space-between
+		.burger
+			margin-top: 0.2em
+	.burger
+		position: absolute
+		z-index: 6
+		right: $site-paddings
+		top: $pt--mobile + 0.5vh
+		pointer-events: auto
+	&__menu-block
+		@extend %full-sized
+		min-height: 100vh
+		z-index: 5
+		// pointer-events: none
+		overflow: hidden
+		transform: translate(100%, 0)
+		will-change: transform
+		pointer-events: auto
+		.button-close
+			top: $button-close-top
+	&__menu-back
+		@extend %overlay-default
+		opacity: 1
+		transition: opacity ($trs-time + 0.2s)
+	&__menu-front
+		@extend %full-sized
+		background-color: $c-dark-main
+		transition: transform $trs-time, opacity $trs-time
+		//pointer-events: auto
+		&:before
+			content: ""
+			position: absolute
+			z-index: 1
+			left: 0
+			top: 0
+			width: 100%
+			width: calc(100% - 50px)
+			height: 17vh
+			background: linear-gradient(to bottom, rgba($c-dark-main, 1) 0, rgba($c-dark-main, 1) 45%, rgba($c-dark-main, 0) 100%)
+			pointer-events: none
+			// NOTE: На айфончиках неправильно распологаются слои, так что приходится костыльничать.
+			._ios &
+				display: none
+	&__menu-container
+		padding: 23.7vh $menu-paddings-side 4vh
+		height: 100%
+		box-sizing: border-box
+		overflow: auto
+		-webkit-overflow-scrolling: touch
+	&__contacts
+		margin-top: 22.5vh
+		padding-right: 5%
+		display: flex
+		justify-content: space-between
+		align-items: flex-start
+		flex-wrap: wrap
+	&._fixed
+		position: fixed
+		left: 0
+		top: 0
+		width: 100%
+		z-index: 5
+		background-color: $c-dark-main
+	&._away
+		transform: translate(0, -110%)
+		pointer-events: none
+
+	/*
+	   Adaptive
+	   ========================================================================== */
+
+	+screen-below-desktop
+		// NOTE: На айфончиках куча багов с расположением слоёв, дёрганием при скролле,
+		// и многое другое. Вот, ставим костыли... =\
+		._ios &
+			&__menu-block,
+			&__menu-front
+				overflow: hidden
+			&__menu-container
+				overflow: hidden
+				padding: 0
+			&__menu-overflow
+				padding: 23.7vh $menu-paddings-side 4vh
+				height: 100%
+				box-sizing: border-box
+				overflow: auto
+				-webkit-overflow-scrolling: touch
+
+	+screen-tablet
+		&__logo
+			width: 97px
+			height: 36px
+
+	+screen-desktop
+		padding: $pt 0
+		background: none
+		.container
+			display: flex
+			justify-content: space-between
+			align-items: flex-start
+		&__logo
+			width: 56px
+			height: 68px
+		.burger
+			display: none
+		&__menu-block
+			position: static
+			pointer-events: unset
+			min-height: unset
+			overflow: unset
+			transform: translate(0, 0)
+			._ie &
+				min-height: 0
+				overflow: visible
+			&._away
+				#{$parent-selector}
+					&__menu-front
+						transform: unset
+						opacity: unset
+						pointer-events: unset
+		&__menu-back
+			display: none
+		&__menu-front
+			position: static
+			background: none
+			&:before
+				display: none
+			.button-close
+				display: none
+		&__menu-container
+			padding: 0
+			display: flex
+			justify-content: flex-end
+			overflow: unset
+			._ie &
+				overflow: visible
+		&__contacts
+			display: none // TEMP
+		&__row
+			max-height: 70px
+			transition: max-height 0.4s
+		.main-menu
+			margin-right: 4.7vw
+		&._fixed
+			background: none
+		&._collapsed
+			// NOTE: Градиент уместнее смотрелся бы для "затемнения" левого меню
+			// на > 1366 экранах, но в остальном, градиент — не очень. Так что оставляем
+			// обычную заливку цветом.
+			background-color: $c-dark-main
+			#{$parent-selector}
+				&__row
+					max-height: 0
+				&__logo
+					transform: translate(0, -36px)
+					._chunk-2
+						opacity: 0

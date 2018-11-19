@@ -43,6 +43,7 @@ export default function server() {
 				  ]
 				: [],
 		},
+		ghostMode: false,
 		injectchanges: true,
 		notify: false,
 		open: false,

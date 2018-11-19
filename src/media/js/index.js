@@ -11,12 +11,42 @@ const App = new function App() { // eslint-disable-line
 	this.dom = require('./utils/DOM');
 	this.utils = require('./utils/Utils');
 
+	// Fix 100vh bug on iPhoneX and other mobile devices
+	{
+		let tolerance = 10;
+		let $check100vhElem = $('<div></div>');
+		$check100vhElem.css({
+			'visibility': 'hidden',
+			'position': 'absolute',
+			'left': '0',
+			'top': '0',
+			'width': '1px',
+			'height': '100vh',
+		});
+		this.dom.$body.append($check100vhElem);
+		let real100vhHeight = $check100vhElem.height();
+		$check100vhElem.remove();
+		let delta = real100vhHeight - window.innerHeight;
+		if (Math.abs(delta) > tolerance) {
+			this.dom.$html.addClass('_fix100vh');
+			typeof document.documentElement.style.setProperty === 'function' && document.documentElement.style.setProperty('--fix100vhValue', `${delta}px`);
+
+			if (localStorage) {
+				localStorage.setItem('fix100vhValue', delta);
+			}
+		}
+	}
+
 	this.classes = {
 		Callback: require('./classes/Callback')
 	};
 
 	this.helpers = {
 		SVGSprites: require('./helpers/SVGSprites')
+	};
+
+	this.modules = {
+		Menu: require('./modules/Menu')
 	};
 
 	// Startup

@@ -1,0 +1,29 @@
+.wrapper
+	min-height: 100vh
+	display: flex
+	flex-direction: column
+	box-sizing: border-box
+	overflow: hidden
+	&__header,
+	&__footer,
+	&__aside
+		display: block
+		flex: none
+	&__content
+		display: block
+		flex: 1 0 auto
+		overflow: hidden
+	// ._menu-opened &
+	// 	height: 100vh
+	// 	overflow: hidden
+	._ios._menu-opened &
+		height: auto
+		overflow: unset
+
+._menu-opened
+	.wrapper__content
+		// pointer-events: none
+		opacity: 0.35
+
+.wrapper__content
+	transition: opacity 0.35s ease-out

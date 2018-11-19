@@ -2,19 +2,11 @@
 	"menuItems": [
 		{
 			"name": "Главная",
-			"path": "/"
+			"path": "./"
 		},
 		{
-			"name": "Элемент меню 2",
-			"path": "#"
-		},
-		{
-			"name": "Элемент меню 3",
-			"path": "#"
-		},
-		{
-			"name": "Элемент меню 4",
-			"path": "#"
+			"name": "Второстепенка",
+			"path": "./how-to-start.html"
 		}
 	],
 	"someData": [
@@ -28,6 +20,6 @@
 		}
 	],
 	"common": {
-		"projectTitle": "BCS"
+		"projectTitle": "БКС брокер"
 	}
 }

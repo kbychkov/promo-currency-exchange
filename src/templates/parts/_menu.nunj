@@ -1,7 +1,21 @@
-{% macro menu(active=false) %}
-	<nav class="menu" style="padding-top:30px;">
-		{% for item in menuItems %}
-			<a href="{{ item.path }}" class="menu__item{% if item.id == activeItem %} _active{% endif %}" style="margin-right: 15px;">{{ item.name }}</a>
-		{% endfor %}
+{% macro menu(activeIndex = false) %}
+	{% set hasActiveItem = false %}
+	{% for item in menuItems %}
+		{% if loop.index0 == activeIndex %}
+			{% set hasActiveItem = true %}
+		{% endif %}
+	{% endfor %}
+
+	<nav class="main-menu {% if hasActiveItem %}_has-active-item{% endif %}">
+		<div class="main-menu__items">
+			{% for item in menuItems %}
+				{% if item.name != "" %}
+					{% set isActive = loop.index0 == activeIndex %}
+					<div class="main-menu__item {% if isActive %}_active{% endif %}">
+						<a {% if not isActive %}href="{{ item.path }}"{% endif %} class="main-menu__link" {% if item.external == true %}target="_blank" rel="nofollow"{% endif %}>{{ item.name }}</a>
+					</div>
+				{% endif %}
+			{% endfor %}
+		</div>
 	</nav>
 {% endmacro %}

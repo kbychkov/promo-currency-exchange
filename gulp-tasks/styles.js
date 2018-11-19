@@ -1,7 +1,8 @@
 import gulp from 'gulp';
 import plumber from 'gulp-plumber';
 import notifier from 'node-notifier';
-import postcss from 'gulp-postcss';
+import postcss from 'postcss';
+import gulpPostcss from 'gulp-postcss';
 import autoprefixer from 'autoprefixer';
 import sprites from 'postcss-sprites';
 import assets from 'postcss-assets';
@@ -14,7 +15,31 @@ import gulpif from 'gulp-if';
 import PATHS from '../paths';
 import { PRODUCTION } from '../config';
 
+// TODO: Протестировать, везде ли работает правильно.
+// Если есть необходимость, то оптимизировать.
+// UPD1. Найден момент, который необходимо поправить:
+//     Было: .advantage:first-child, .advantage._v1:first-child { padding-top: 17.6vh; }
+//     Стало: ._fix100vh .advantage:first-child, .advantage._v1:first-child { padding-top: calc(17.6vh - 17.6 / 100 * var(--fix100vhValue)) }
+//     Должно быть: ._fix100vh .advantage:first-child, ._fix100vh .advantage._v1:first-child { padding-top: calc(17.6vh - 17.6 / 100 * var(--fix100vhValue)) }
+const fixVieportHeight = postcss.plugin('postcss-fix-vh', function() {
+	return function(root) {
+		root.walkRules(function(rule) {
+			rule.walkDecls(function(decl) {
+				let value = decl.value;
+				let hasVhUnits = /vh/.test(value) && !/calc\(.*vh.*\)/.test(value);
+				if (!hasVhUnits) {
+					return;
+				}
+
+				let newValue = value.replace(/([0-9\.\-]+)vh/g, 'calc($1vh - $1 / 100 * var(--fix100vhValue))');
+				rule.parent.insertAfter(rule, `\n._fix100vh ${rule.selector} { ${decl.prop}: ${newValue} }`);
+			});
+		});
+	};
+});
+
 const PROCESSORS = [
+	fixVieportHeight(),
 	autoprefixer({
 		browsers: ['last 4 versions'],
 		cascade: true,
@@ -23,13 +48,16 @@ const PROCESSORS = [
 		loadPaths: [PATHS.src.imagesInline],
 		cache: true,
 	}),
-	sprites({
-		stylesheetPath: './build/media/css/',
-		spritePath: './build/media/img/',
-		retina: true,
-		padding: 4,
-		filterBy: image => (/sprites\/.*\.png$/gi.test(image.url) ? Promise.resolve() : Promise.reject()),
-	}),
+	// TODO: Конфликт версий postcss и postcss-sprites.
+	// Попытаться разобраться с этим делом...
+	// sprites({
+	// 	stylesheetPath: './build/media/css/',
+	// 	spritePath: './build/media/img/sprite.png',
+	// 	retina: true,
+	// 	outputDimensions: true,
+	// 	padding: 4,
+	// 	filterBy: image => /sprites\/.*\.png$/gi.test(image.url),
+	// }),
 ];
 
 export default function styles() {
@@ -54,7 +82,7 @@ export default function styles() {
 				indentedSyntax: true,
 			})
 		)
-		.pipe(postcss(PROCESSORS))
+		.pipe(gulpPostcss(PROCESSORS))
 		.pipe(gulpif(PRODUCTION, cssmin({ processImport: false })))
 		.pipe(gulpif(!PRODUCTION, sourcemaps.write()))
 		.pipe(gulp.dest(PATHS.build.styles));

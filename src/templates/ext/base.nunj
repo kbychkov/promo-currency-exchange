@@ -1,36 +1,98 @@
+{% from "../parts/_menu.nunj" import menu %}
+{% from "../parts/_bcs-logo.nunj" import bcsLogo %}
+
 <!DOCTYPE html>
 <html>
 	<head>
 		<!-- Client-side programming by sborkaproject.com -->
 		<meta charset="utf-8" />
-		<title>{{ pageTitle }} | {{ common.projectTitle }}</title>
+		{% if not pageTitle %}
+			{% set pageTitle = "Home" %}
+		{% endif %}
+		{% if not pageTitlePart2 %}
+			{% set pageTitlePart2 = common.projectTitle %}
+		{% endif %}
+		{% if not pageTitleFull %}
+			{% set pageTitleFull = pageTitle + " | " + pageTitlePart2 %}
+		{% endif %}
+		<title>{{ pageTitleFull }}</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+		<script>
+			if (localStorage && localStorage.getItem('fix100vhValue')) {
+				document.documentElement.classList.add('_fix100vh');
+				typeof document.documentElement.style.setProperty === 'function' && document.documentElement.style.setProperty('--fix100vhValue', `${localStorage.getItem('fix100vhValue')}px`);
+			}
+		</script>
+
 		{% block stylesheets %}
 			<link rel="stylesheet" href="media/css/screen.css?<%= hash %>" />
 		{% endblock stylesheets %}
 	</head>
 	<body>
-
 		<div class="wrapper">
+			<header class="wrapper__header header">
+				<div class="container">
+					<div class="header__row">
+						<a {% if not isMainPage %}href="./"{% endif %} class="header__logo">
+							{{ bcsLogo() }}
+						</a>
+					</div>
 
-			{% block content %}
-			{% endblock content %}
+					<div class="header__menu-block">
+						<div class="header__menu-back"></div>
+						<div class="header__menu-front">
+							<div class="header__menu-container">
+								<div class="header__menu-overflow">
+									{{ menu(menuIndex) }}
 
-			<div class="wrapper__push"></div>
+									<div class="header__contacts">
+										contacts...
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
 
-		</div>
+					<div class="burger" data-menu-toggler><i></i><i></i><i></i><i></i><i></i></div>
+				</div>
+			</header>
 
-		<div class="footer">
-			<div class="skin">
+			<div class="wrapper__content">
+				{% if rawContainer != true %}
+					{% if not containerAdditionalClass %}
+						{% set containerAdditionalClass = "" %}
+					{% endif %}
+				<div class="container {{ containerAdditionalClass }}">
+				{% endif %}
 
-				Footer Content
+					{% block content %}
+					{% endblock content %}
 
+				{% if rawContainer != true %}
+				</div>
+				{% endif %}
 			</div>
+
+			<footer class="wrapper__footer footer {% if footerAdditionalClass %}{{ footerAdditionalClass }}{% endif %}">
+				{% if rawFooterContainer == false %}
+				<div class="container">
+				{% endif %}
+					{% block footer %}
+						<div class="footer__inner">
+							<div class="container">
+								Footer
+							</div>
+						</div>
+					{% endblock footer %}
+				{% if rawFooterContainer == false %}
+				</div>
+				{% endif %}
+			</footer>
 		</div>
 
 		{% block scripts %}
 			<script src="media/js/bundle.js?<%= hash %>"></script>
 		{% endblock scripts %}
-
 	</body>
 </html>

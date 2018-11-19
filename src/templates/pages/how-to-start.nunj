@@ -1,0 +1,7 @@
+{% set pageTitle = "Второстепенка" %}
+{% set menuIndex = 1 %}
+{% extends "../ext/base.nunj" %}
+
+{% block content %}
+	Второстепенка
+{% endblock content %}
