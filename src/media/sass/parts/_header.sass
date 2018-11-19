@@ -1,19 +1,15 @@
 .header
 	$parent-selector: &
 	$trs-time: 0.4s
-	// $menu-paddings-side: percentage(30px / $markup-width--mobile)
-	$menu-paddings-side: 2% // TODO
-	$button-close-top: 3vh
-	$pt: 2.4rem
-	$pt--mobile: 2.6vh
-	padding: $pt--mobile 0
+	// $button-close-top: 3vh
+	$menu-container-paddings: 87px 0 0
 	transition: transform .6s cubic-bezier(.19,1,.22,1)
 	pointer-events: none
 	margin-bottom: 100px
 	&__logo
 		display: block
-		width: 70px
-		height: 26px
+		width: 28px
+		height: 28px
 		transition: transform ($trs-time - 0.1s)
 		-webkit-tap-highlight-color: rgba(0, 0, 0, 0)
 		outline: none
@@ -22,20 +18,25 @@
 		pointer-events: auto
 		svg
 			display: block
-			width: 100%
+			width: 148px
 			height: 100%
 			overflow: visible
-			fill: $c-white
+		.chunk-2
+			display: none
 	&__row
+		position: relative
+		z-index: 6
+		padding: 14px 0
+		box-shadow: $header-box-shadow
+	&__flex
 		display: flex
 		justify-content: space-between
-		.burger
-			margin-top: 0.2em
+		align-items: center
 	.burger
-		position: absolute
-		z-index: 6
-		right: $site-paddings
-		top: $pt--mobile + 0.5vh
+		// position: absolute
+		// z-index: 6
+		// right: $site-paddings
+		// top: $pt--mobile + 7px
 		pointer-events: auto
 	&__menu-block
 		@extend %full-sized
@@ -46,15 +47,15 @@
 		transform: translate(100%, 0)
 		will-change: transform
 		pointer-events: auto
-		.button-close
-			top: $button-close-top
-	&__menu-back
-		@extend %overlay-default
-		opacity: 1
-		transition: opacity ($trs-time + 0.2s)
+		// .button-close
+		// 	top: $button-close-top
+	// &__menu-back
+	// 	@extend %overlay-default
+	// 	opacity: 1
+	// 	transition: opacity ($trs-time + 0.2s)
 	&__menu-front
 		@extend %full-sized
-		background-color: $c-dark-main
+		background-color: $c-white
 		transition: transform $trs-time, opacity $trs-time
 		//pointer-events: auto
 		&:before
@@ -64,33 +65,51 @@
 			left: 0
 			top: 0
 			width: 100%
-			width: calc(100% - 50px)
+			// width: calc(100% - 50px)
 			height: 17vh
-			background: linear-gradient(to bottom, rgba($c-dark-main, 1) 0, rgba($c-dark-main, 1) 45%, rgba($c-dark-main, 0) 100%)
+			background: linear-gradient(to bottom, rgba($c-white, 1) 0, rgba($c-white, 1) 45%, rgba($c-white, 0) 100%)
 			pointer-events: none
 			// NOTE: На айфончиках неправильно распологаются слои, так что приходится костыльничать.
 			._ios &
 				display: none
 	&__menu-container
-		padding: 23.7vh $menu-paddings-side 4vh
+		padding: $menu-container-paddings
 		height: 100%
 		box-sizing: border-box
 		overflow: auto
 		-webkit-overflow-scrolling: touch
-	&__contacts
-		margin-top: 22.5vh
-		padding-right: 5%
+		.container
+			height: 100%
+	&__menu-overflow
+		min-height: 100%
+		box-sizing: border-box
 		display: flex
+		flex-direction: column
 		justify-content: space-between
-		align-items: flex-start
-		flex-wrap: wrap
+	&__contacts
+		margin: 250px 0 $site-paddings
+	&__contacts-row
+		margin-bottom: 25px
+		&:last-child
+			margin-bottom: 0
+		.description
+			letter-spacing: 0.13em
+			font-size: 9px
+			color: $c-gray-dark
+			text-transform: uppercase
+		.phone
+			@extend %link-hover
+			display: inline-block
+			margin-bottom: 7px
+			color: $c-accent-2
+			font-size: 24px
 	&._fixed
 		position: fixed
 		left: 0
 		top: 0
 		width: 100%
 		z-index: 5
-		background-color: $c-dark-main
+		background-color: $c-white
 	&._away
 		transform: translate(0, -110%)
 		pointer-events: none
@@ -100,6 +119,10 @@
 	   ========================================================================== */
 
 	+screen-below-desktop
+		> .container
+			padding: 0
+			margin: 0
+			max-width: none
 		// NOTE: На айфончиках куча багов с расположением слоёв, дёрганием при скролле,
 		// и многое другое. Вот, ставим костыли... =\
 		._ios &
@@ -110,27 +133,40 @@
 				overflow: hidden
 				padding: 0
 			&__menu-overflow
-				padding: 23.7vh $menu-paddings-side 4vh
+				padding: $menu-container-paddings
 				height: 100%
 				box-sizing: border-box
 				overflow: auto
 				-webkit-overflow-scrolling: touch
 
-	+screen-tablet
-		&__logo
-			width: 97px
-			height: 36px
+	// +screen-tablet
+	// 	&__logo
+	// 		width: 97px
+	// 		height: 36px
 
 	+screen-desktop
-		padding: $pt 0
-		background: none
-		.container
+		// background: none
+		padding: 10px 0
+		background: $c-white
+		box-shadow: $header-box-shadow
+		> .container
 			display: flex
 			justify-content: space-between
 			align-items: flex-start
+		&__row
+			padding: 0
+			box-shadow: none
+			.container
+				padding: 0
+				margin: 0
+				max-width: none
 		&__logo
-			width: 56px
-			height: 68px
+			width: 158px
+			height: 30px
+			svg
+				width: 100%
+			.chunk-2
+				display: block
 		.burger
 			display: none
 		&__menu-block
@@ -164,13 +200,25 @@
 			overflow: unset
 			._ie &
 				overflow: visible
+			.container
+				display: block
+				padding: 0
+				margin: 0
+				max-width: none
+		&__menu-overflow
+			flex-direction: row
+			align-items: center
+			pointer-events: auto
 		&__contacts
-			display: none // TEMP
+			// display: none // TEMP
+			margin: 0 0 0 63px
+		&__contacts-row
+			margin: 0
+			&._phone
+				display: none
 		&__row
 			max-height: 70px
 			transition: max-height 0.4s
-		.main-menu
-			margin-right: 4.7vw
 		&._fixed
 			background: none
 		&._collapsed

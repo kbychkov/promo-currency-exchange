@@ -34,27 +34,41 @@
 			<header class="wrapper__header header">
 				<div class="container">
 					<div class="header__row">
-						<a {% if not isMainPage %}href="./"{% endif %} class="header__logo">
-							{{ bcsLogo() }}
-						</a>
+						<div class="container">
+							<div class="header__flex">
+								<a {% if not isMainPage %}href="./"{% endif %} class="header__logo">
+									{{ bcsLogo() }}
+								</a>
+
+								<div class="burger" data-menu-toggler><i></i><i></i><i></i><i></i><i></i></div>
+							</div>
+						</div>
 					</div>
 
+					{# TODO: Не забыть про то, что на планшетах виден одновременно бургер и кнопка "Заказать". #}
 					<div class="header__menu-block">
-						<div class="header__menu-back"></div>
 						<div class="header__menu-front">
 							<div class="header__menu-container">
-								<div class="header__menu-overflow">
-									{{ menu(menuIndex) }}
+								<div class="container">
+									<div class="header__menu-overflow">
+										{{ menu(menuIndex) }}
 
-									<div class="header__contacts">
-										contacts...
+										<div class="header__contacts">
+											<div class="header__contacts-row">
+												<span class="button">Заказать звонок</span>
+											</div>
+											<div class="header__contacts-row _phone">
+												<a href="tel:{{ common.phone }}" class="phone">{{ common.phone }}</a>
+												<div class="description">
+													Бесплатный звонок по России
+												</div>
+											</div>
+										</div>
 									</div>
 								</div>
 							</div>
 						</div>
 					</div>
-
-					<div class="burger" data-menu-toggler><i></i><i></i><i></i><i></i><i></i></div>
 				</div>
 			</header>
 
@@ -75,14 +89,26 @@
 			</div>
 
 			<footer class="wrapper__footer footer {% if footerAdditionalClass %}{{ footerAdditionalClass }}{% endif %}">
-				{% if rawFooterContainer == false %}
+				{% if rawFooterContainer != true %}
 				<div class="container">
 				{% endif %}
 					{% block footer %}
-						<div class="footer__inner">
-							<div class="container">
-								Footer
-							</div>
+						<div class="footer__logo-block">
+							<div class="footer__logo">{{ bcsLogo() }}</div>
+						</div>
+
+						<div class="footer__text-block">
+							<p class="footer__paragraph">
+								© 1995–2018. ООО «Компания БКС»
+								<br/>
+								Данные являются биржевой информацией, обладателем (собственником) которой является ПАО Московская Биржа. Распространение, трансляция или иное предоставление биржевой информации третьим лицам возможно исключительно в порядке и на условиях, предусмотренных порядком использования биржевой информации, предоставляемой ОАО Московская Биржа. ООО «Компания БКС», лицензия № 154-04434-100000 от 10.01.2001 на осуществление брокерской деятельности. Выдана ФСФР. Без ограничения срока действия.
+							</p>
+							<p class="footer__paragraph">
+								Доходность инвестиционных портфелей, «Биржевой Гуру» смоделированная экспертами ООО «Компания БКС» с учетом комиссионных расходов за сделку в размере 0,03% от объема сделки по данным торгов на ОАО Московская биржа, не учитывает расходы на оплату депозитарных услуг, подачи поручений по телефону и иных расходов, подлежащих оплате клиентом. Полный список тарифов ООО «Компания БКС» приведен в приложении № 11 к Регламенту оказания услуг на рынке ценных бумаг ООО «Компания БКС». Результат инвестирования в прошлом не определяет дохода в будущем. ООО «Компания БКС» не несет ответственности за результаты деятельности по данным рекомендациям. Торговые рекомендации «Биржевой Гуру» предоставляются исключительно в информационных целях и не могут рассматриваться как, или быть использованы в качестве, предложения или побуждения сделать заявку на покупку или продажу, или вложение в ценные бумаги, или другие финансовые инструменты. ООО «Компания БКС» может не предпринимать каких-либо шагов к тому, чтобы убедить кого-либо в том, что ценные бумаги, указанные в торговых рекомендациях, являются подходящими для того или иного инвестора.
+							</p>
+							<p class="footer__paragraph">
+								ООО «Компания БКС» номер 1 в рейтинге ПАО Московская Биржа «Ведущие операторы Акции и паи: режим основных торгов Т+, режим переговорных сделок и режим РПС с ЦК по торговому обороту на сентябрь 2018 года
+							</p>
 						</div>
 					{% endblock footer %}
 				{% if rawFooterContainer == false %}

@@ -1,2 +1,11 @@
 .container
-	margin: 0 $site-paddings
+	padding: 0 $site-paddings
+	margin: auto
+	box-sizing: content-box
+	+screen-tablet
+		padding: 0 $site-paddings-large
+		max-width: 768px
+	+screen-desktop
+		max-width: 1024px
+	+screen-desktop-lg
+		max-width: 1200px

@@ -1,5 +1,28 @@
 .main-menu
 	pointer-events: auto
+	font-size: 18px
+	letter-spacing: 0.02em
+	&__item
+		display: block
+		// margin-bottom: 10px
+		// padding-bottom: 10px
+		border-bottom: 1px solid $c-lines
+		&._active
+			color: $c-accent-main
 	&__link
+		display: inline-block
+		padding: 12px 0 17px
 		&:link
 			@extend %link-hover
+	+screen-desktop
+		text-transform: uppercase
+		font-size: 11px
+		letter-spacing: 0.007em
+		&__item
+			display: inline-block
+			border: 0
+			margin-right: 15px
+			&:last-child
+				margin-right: 0
+		&__link
+			padding: 5px

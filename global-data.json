@@ -1,25 +1,20 @@
 {
 	"menuItems": [
 		{
-			"name": "Главная",
-			"path": "./"
+			"name": "Обменять валюту",
+			"path": "./how-to-start.html"
 		},
 		{
-			"name": "Второстепенка",
+			"name": "Торговать валютой",
+			"path": "./how-to-start.html"
+		},
+		{
+			"name": "Контакты",
 			"path": "./how-to-start.html"
 		}
 	],
-	"someData": [
-		{
-			"title": "Item 1",
-			"text": "Desc 1"
-		},
-		{
-			"title": "Item 2",
-			"text": "Desc 2"
-		}
-	],
 	"common": {
-		"projectTitle": "БКС брокер"
+		"projectTitle": "БКС брокер",
+		"phone": "8 800 500 55 45"
 	}
 }
