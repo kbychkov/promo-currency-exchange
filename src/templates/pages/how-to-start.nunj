@@ -80,56 +80,7 @@
 
 	<div class="gradient-block _v2">
 		<div class="container">
-			<form action="#" class="form">
-				<div class="form__heading-part">
-					<h2 class="form__title like-h2">Остались вопросы?</h2>
-					<p class="form__subtitle">
-						Заполните форму,
-						и мы перезвоним вам
-						в ближайшее время
-					</p>
-				</div>
-				<div class="form__sections-part">
-					<div class="form__input-section">
-						<input type="text" class="form__input" placeholder="Имя">
-					</div>
-					<div class="form__input-section">
-						<input type="tel" class="form__input" placeholder="Телефон">
-					</div>
-					<div class="form__input-section">
-						<input type="email" class="form__input" placeholder="E-mail">
-					</div>
-					<p class="form__subtitle _v2">
-						Выберите удобное для вас
-						время звонка
-					</p>
-					<div class="form__multiple-inputs">
-						<div class="form__input-section">
-							<input type="text" class="form__input" placeholder="Дата">
-						</div>
-						<div class="form__input-section">
-							<input type="text" class="form__input" placeholder="Время">
-						</div>
-					</div>
-					<div class="form__input-section _checkbox">
-						<label class="checkbox">
-							<div class="checkbox__flex">
-								<div class="checkbox__col _input">
-									<input type="checkbox">
-									<div class="checkbox__input"></div>
-								</div>
-								<div class="checkbox__col _text">
-									Я согласен на передачу
-									и обработку своих <a href="#" class="checkbox__link">персональных данных</a>
-								</div>
-							</div>
-						</label>
-					</div>
-					<div class="form__input-section _submit">
-						<button type="submit" class="button button--accent">Отправить</button>
-					</div>
-				</div>
-			</form>
+			{{ feedbackForm() }}
 		</div>
 	</div>
 {% endblock content %}

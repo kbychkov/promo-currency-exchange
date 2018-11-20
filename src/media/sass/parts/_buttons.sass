@@ -17,3 +17,26 @@
 		padding: 1.9em 3.9em
 		min-width: 220px
 		background-color: $c-accent-main
+
+.close-button
+	display: block
+	width: 20px
+	height: 20px
+	position: relative
+	cursor: pointer
+	i
+		position: absolute
+		left: 0
+		top: 50%
+		width: 100%
+		height: 2px
+		margin-top: -1px
+		background-color: $c-black
+		transform-origin: center center
+		&:first-child
+			transform: rotate(-45deg)
+		&:last-child
+			transform: rotate(45deg)
+	&:before
+		content: ""
+		+centered(150%)

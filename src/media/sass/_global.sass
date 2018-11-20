@@ -87,6 +87,9 @@
 .relative
 	position: relative
 
+.hidden
+	display: none !important
+
 =full-sized
 	position: absolute
 	left: 0
@@ -110,8 +113,13 @@ svg
 
 html
 	--fix100vhValue: 0px
+	&.is-popup-opened
+		height: 100%
+		overflow: hidden
 
 html, body
+	width: 100%
+	box-sizing: border-box
 	@extend %overflow-y
 
 =img-cover

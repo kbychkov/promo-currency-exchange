@@ -1,33 +1,70 @@
-.popups-wrapper
-	position: fixed
-	top: 0
-	left: 0
-	width: 100%
-	height: 100%
-	text-align: center
-	background: rgba(#000, .6)
-	z-index: 100
-	overflow: auto
-	white-space: nowrap
-	font-size: 0
-	+box
-	&:before
-		display: inline-block
-		position: relative
-		content: ' '
-		width: 0
-		height: 100%
-		vertical-align: middle
-	&__content
-		display: inline-block
-		position: relative
-		padding: 20px 0
-		text-align: left
-		vertical-align: middle
-		white-space: normal
-		font-size: $default-font-size
-
 .popup
-	position: relative
-	padding: 20px
-	background: #F1F1F1
+    $trs-time: 0.3s
+    position: fixed
+    z-index: -1
+    top: 0
+    right: 0
+    bottom: 0
+    left: 0
+    overflow: auto
+    overflow-x: hidden
+    text-align: center
+    padding: 0
+    background: rgba(black, 0.5)
+    will-change: opacity
+    opacity: 0
+    pointer-events: none
+    transition: all $trs-time
+    transition-delay: $trs-time
+    white-space: nowrap
+    font-size: 0
+    user-select: none
+    &.is-opened
+        z-index: 10000
+        opacity: 1
+        pointer-events: auto
+        transition-delay: 0s
+        .popup__content
+            transform: translate(0, 0)
+            transition-delay: $trs-time
+            opacity: 1
+    &:before
+        content: ""
+        display: inline-block
+        height: 100%
+    &:before,
+    &__content
+        vertical-align: middle
+    &__content
+        font-size: 1rem
+        user-select: auto
+        white-space: normal
+        position: relative
+        outline: 0
+        text-size-adjust: 100%
+        box-sizing: border-box
+        margin: 0
+        padding: 2rem 3%
+        transform: translate(0, -100%)
+        will-change: transform
+        opacity: 0
+        transition: all $trs-time
+        color: black
+        background: #fff
+        display: inline-block
+        text-align: left
+        max-width: 640px
+        width: 100%
+    &__close
+        position: absolute
+        right: 18px
+        top: 17px
+        transition: transform $trs-time
+        // &:before
+        //     content: ""
+        //     +centered(140%)
+        &:active
+            transform: translate(0, 0.3em)
+    +screen-tablet
+        &__content
+            margin: 2rem 0

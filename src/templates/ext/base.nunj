@@ -1,5 +1,6 @@
 {% from "../parts/_menu.nunj" import menu %}
 {% from "../parts/_bcs-logo.nunj" import bcsLogo %}
+{% from "../parts/_feedback-form.nunj" import feedbackForm %}
 
 <!DOCTYPE html>
 <html>
@@ -48,7 +49,6 @@
 						</div>
 					</div>
 
-					{# TODO: Не забыть про то, что на планшетах виден одновременно бургер и кнопка "Заказать". #}
 					<div class="header__menu-block">
 						<div class="header__menu-front">
 							<div class="header__menu-container">
@@ -58,7 +58,7 @@
 
 										<div class="header__contacts">
 											<div class="header__contacts-row">
-												<span class="button">Заказать звонок</span>
+												<span class="button js-open-popup" data-popup-selector="#feedback">Заказать звонок</span>
 											</div>
 											<div class="header__contacts-row _phone">
 												<a href="tel:{{ common.phone }}" class="phone">{{ common.phone }}</a>
@@ -71,6 +71,16 @@
 								</div>
 							</div>
 						</div>
+					</div>
+				</div>
+
+				<div class="popup hidden" id="feedback">
+					<div class="popup__content feedback-popup">
+						<a role="button" class="popup__close js-close-popup" title="Закрыть">
+							<span class="close-button"><i></i><i></i></span>
+						</a>
+
+						{{ feedbackForm() }}
 					</div>
 				</div>
 			</header>
