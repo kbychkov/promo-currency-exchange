@@ -1,4 +1,4 @@
-h1, .like-h1
+%h1
 	margin: 0 0 1em
 	font-size: 30px
 	font-weight: 300
@@ -10,6 +10,20 @@ h1, .like-h1
 	+screen-desktop
 		font-size: 48px
 		margin-bottom: 0.95em
+
+h1
+	@extend %h1
+
+.like-h1
+	@extend %h1
+	&__accent
+		margin-top: 0.5em
+		color: $c-accent-main
+		font-weight: 500
+		font-size: 0.668em
+	&._v2
+		font-size: 36px
+		line-height: 1.25
 
 h2, .like-h2
 	margin: 0 0 1em
@@ -30,3 +44,10 @@ p, .like-p
 		margin-bottom: 0
 	+screen-desktop
 		margin-bottom: 2.2em
+
+.pre-title
+	margin-bottom: 28px
+	font-size: 14px
+	letter-spacing: 0.1em
+	text-transform: uppercase
+	color: $c-gray-dark
