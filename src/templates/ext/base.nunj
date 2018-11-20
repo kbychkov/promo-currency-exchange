@@ -31,7 +31,7 @@
 	</head>
 	<body>
 		<div class="wrapper">
-			<header class="wrapper__header header">
+			<header class="wrapper__header header {% if headerNoMargin == true %}_no-margin{% endif %}">
 				<div class="container">
 					<div class="header__row">
 						<div class="container">
@@ -91,7 +91,7 @@
 				{% endif %}
 			</div>
 
-			<footer class="wrapper__footer footer {% if footerAdditionalClass %}{{ footerAdditionalClass }}{% endif %}">
+			<footer class="wrapper__footer footer {% if footerNoMargin == true %}_no-margin{% endif %} {% if footerAdditionalClass %}{{ footerAdditionalClass }}{% endif %}">
 				{% if rawFooterContainer != true %}
 				<div class="container">
 				{% endif %}

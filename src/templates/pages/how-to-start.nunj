@@ -1,7 +1,127 @@
 {% set pageTitle = "Второстепенка" %}
 {% set menuIndex = 1 %}
+{% set rawContainer = true %}
+{% set headerNoMargin = true %}
+{% set footerNoMargin = true %}
 {% extends "../ext/base.nunj" %}
 
 {% block content %}
-	Второстепенка
+	<div class="gradient-block">
+		<div class="container relative">
+			<div class="gradient-block__bg"></div>
+			<div class="relative">
+				<h1 class="like-h1">Как начать торговать валютой?</h1>
+				<p class="like-p">
+					Курс мировых валют устанавливается
+					на торгах Московской Биржи.
+					Банкам выгоднее устанавливать цену
+					покупки валюты ниже
+					курса ЦБ РФ, а цену
+					продажи — выше.
+					Так банки получают прибыль.
+				</p>
+				<p class="like-p">
+					«БКС Брокер» предлагает
+					вам  получить прямой доступ
+					к Московской Бирже
+					и торговать валютой самостоятельно
+					по реальным курсам.
+				</p>
+			</div>
+		</div>
+	</div>
+
+	<div class="steps">
+		<div class="container">
+			<div class="steps__item">
+				<div class="steps__block _num">1</div>
+				<div class="steps__block _title">Откройте брокерский счёт на бирже</div>
+				<div class="steps__block _text">
+					Так вы получите прямой доступ
+					к валютным торгам на бирже.
+					Вы не платите за обслуживание счета,
+					если не совершаете сделок
+				</div>
+			</div>
+
+			<div class="steps__item">
+				<div class="steps__block _num">2</div>
+				<div class="steps__block _title">Установите терминал для торговли</div>
+				<div class="steps__block _text">
+					Вы можете торговать
+					с мобильного приложения «Мой брокер» или с компьютера
+					через терминал QUICK
+				</div>
+			</div>
+
+			<div class="steps__item">
+				<div class="steps__block _num">3</div>
+				<div class="steps__block _title">Покупайте и продавайте валюту</div>
+				<div class="steps__block _text">
+					Покупайте выгодно валюту
+					на бирже и зарабатывайте
+					на разнице курсов
+				</div>
+			</div>
+
+			<div class="steps__item">
+				<div class="steps__block _num">4</div>
+				<div class="steps__block _title">Выводите деньги без комиссии</div>
+				<div class="steps__block _text">
+					Вы можете выводить
+					деньги на карту «БКС Банка» и снимать валюту из банкоматов
+					БКС без комиссии
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="gradient-block _v2">
+		<div class="container">
+			<form action="#" class="form">
+				<h2 class="form__title">Остались вопросы?</h2>
+				<p class="form__subtitle">
+					Заполните форму,
+					и мы перезвоним вам
+					в ближайшее время
+				</p>
+				<div class="form__input-section">
+					<input type="text" class="form__input" placeholder="Имя">
+				</div>
+				<div class="form__input-section">
+					<input type="tel" class="form__input" placeholder="Телефон">
+				</div>
+				<div class="form__input-section">
+					<input type="email" class="form__input" placeholder="E-mail">
+				</div>
+				<p class="form__subtitle _v2">
+					Выберите удобное для вас
+					время звонка
+				</p>
+				<div class="form__input-section">
+					<input type="text" class="form__input" placeholder="Дата">
+				</div>
+				<div class="form__input-section">
+					<input type="text" class="form__input" placeholder="Время">
+				</div>
+				<div class="form__input-section _checkbox">
+					<label class="checkbox">
+						<div class="checkbox__flex">
+							<div class="checkbox__col _input">
+								<input type="checkbox">
+								<div class="checkbox__input"></div>
+							</div>
+							<div class="checkbox__col _text">
+								Я согласен на передачу
+								и обработку своих <a href="#" class="checkbox__link">персональных данных</a>
+							</div>
+						</div>
+					</label>
+				</div>
+				<div class="form__input-section _submit">
+					<button type="submit" class="button _accent">Отправить</button>
+				</div>
+			</form>
+		</div>
+	</div>
 {% endblock content %}

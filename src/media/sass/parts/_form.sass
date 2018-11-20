@@ -1,0 +1,82 @@
+.form
+	padding: 6px 0
+	&__title
+		margin: 0 0 1em
+		color: $c-accent-2
+		font-size: 22px
+		font-weight: 500
+		line-height: 1.5
+		letter-spacing: 0.02em
+		text-transform: uppercase
+	&__subtitle
+		margin: 0 0 34px
+		line-height: $default-line-height
+		&._v2
+			margin: 39px 0 29px
+			font-size: 14px
+	&__input
+		display: block
+		width: 100%
+		padding: 20px
+		background: $c-white
+		border: 1px solid $c-gray-light
+		box-sizing: border-box
+		border-radius: 4px
+		font-size: 14px
+	&__input-section
+		margin-bottom: 22px
+		&:last-child
+			margin-bottom: 0
+		&._checkbox
+			margin-top: 30px
+		&._submit
+			margin-top: 32px
+			text-align: center
+
+.checkbox
+	$parent-selector: &
+	cursor: pointer
+	font-size: 14px
+	line-height: 1.25
+	&__flex
+		display: flex
+		justify-content: space-between
+		align-items: flex-start
+	&__col
+		&._input
+			width: $checkbox-size
+			margin-right: 17px
+		&._text
+			flex: 1
+	&__link
+		@extend %link-hover
+		color: $c-accent-main
+	&__input
+		position: relative
+		width: $checkbox-size
+		height: $checkbox-size
+		background-color: $c-white
+		border: 1px solid $c-lines
+		&:after
+			$size: 6px
+			content: ""
+			position: absolute
+			left: 50%
+			top: 50%
+			width: $size
+			height: $size
+			margin-left: -$size / 2
+			margin-top: -$size / 2
+			pointer-events: none
+			background-color: $c-accent-2
+			transition: transform 0.2s, opacity 0.2s
+			transform: scale(2)
+			opacity: 0
+	input
+		display: none
+		&:checked
+			~ #{$parent-selector}
+				&__input
+					&:after
+						transform: scale(1)
+						opacity: 1
