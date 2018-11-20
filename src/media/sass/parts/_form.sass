@@ -1,18 +1,14 @@
 .form
+	$parent-selector: &
+	$input-border-radius: 4px
 	padding: 6px 0
-	&__title
-		margin: 0 0 1em
-		color: $c-accent-2
-		font-size: 22px
-		font-weight: 500
-		line-height: 1.5
-		letter-spacing: 0.02em
-		text-transform: uppercase
+	&__heading-part
+		margin-bottom: 34px
 	&__subtitle
-		margin: 0 0 34px
+		margin: 0 auto
 		line-height: $default-line-height
 		&._v2
-			margin: 39px 0 29px
+			margin: 39px auto 29px
 			font-size: 14px
 	&__input
 		display: block
@@ -21,7 +17,7 @@
 		background: $c-white
 		border: 1px solid $c-gray-light
 		box-sizing: border-box
-		border-radius: 4px
+		border-radius: $input-border-radius
 		font-size: 14px
 	&__input-section
 		margin-bottom: 22px
@@ -32,6 +28,63 @@
 		&._submit
 			margin-top: 32px
 			text-align: center
+	+screen-tablet
+		max-width: 500px
+		margin: auto
+		&__title
+			text-align: center
+		&__subtitle
+			max-width: 315px
+			text-align: center
+			&._v2
+				margin-bottom: 18px
+		&__multiple-inputs
+			display: flex
+			#{$parent-selector}
+				&__input
+					border-radius: 0
+				&__input-section
+					margin: 0
+					flex: 1 1 auto
+					&:first-child
+						#{$parent-selector}
+							&__input
+								border-radius: $input-border-radius 0 0 $input-border-radius
+					&:last-child
+						#{$parent-selector}
+							&__input
+								border-radius: 0 $input-border-radius $input-border-radius 0
+					&:not(:first-child)
+						#{$parent-selector}
+							&__input
+								border-left: none
+	+screen-desktop
+		display: flex
+		justify-content: space-between
+		align-items: center
+		max-width: none
+		padding: 0
+		&__heading-part
+			flex: 1
+			max-width: 380px
+			margin-bottom: 25px
+		&__title,
+		&__subtitle
+			text-align: left
+			max-width: none
+		&__subtitle
+			&._v2
+				text-align: center
+		&__sections-part
+			width: 512px
+			background-color: #C3C9D2
+			box-sizing: border-box
+			padding: 81px 41px 69px
+	+screen-desktop-lg
+		&__sections-part
+			width: 600px
+			padding-left: 75px
+			padding-right: 75px
 
 .checkbox
 	$parent-selector: &
@@ -40,7 +93,7 @@
 	line-height: 1.25
 	&__flex
 		display: flex
-		justify-content: space-between
+		justify-content: flex-start
 		align-items: flex-start
 	&__col
 		&._input
@@ -80,3 +133,7 @@
 					&:after
 						transform: scale(1)
 						opacity: 1
+	+screen-tablet
+		&__col
+			&._text
+				max-width: 330px

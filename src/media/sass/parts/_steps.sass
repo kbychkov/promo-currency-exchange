@@ -23,3 +23,45 @@
 			color: $c-accent-2
 			font-weight: 500
 			font-size: 20px
+	+screen-tablet
+		&__item
+			padding-bottom: 57px
+			margin-bottom: 54px
+	+screen-tablet-only
+		padding: 53px 0 58px
+		&__item
+			position: relative
+			padding-left: 83px
+		&__block
+			&._num
+				position: absolute
+				left: 0
+				top: -3px
+				font-size: 30px
+			&._title
+				max-width: 266px
+				margin-bottom: 27px
+			&._text
+				max-width: 318px
+	+screen-desktop
+		padding: 94px 0 99px
+		&__item
+			display: flex
+			justify-content: flex-start
+		&__block
+			&._num
+				width: 86px
+				font-size: 30px
+				line-height: 1.2
+			&._title
+				width: 255px
+				margin-right: 63px
+			&._text
+				flex: 1
+				max-width: 295px
+	+screen-desktop-lg
+		&__block
+			&._title
+				margin-right: 83px
+			&._text
+				max-width: 420px

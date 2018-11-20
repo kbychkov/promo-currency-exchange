@@ -1,14 +1,32 @@
-h1, .lik1-h1
+h1, .like-h1
 	margin: 0 0 1em
 	font-size: 30px
 	font-weight: 300
 	line-height: 1.5
 	color: $c-accent-2
-	+screen-desktop
+	+screen-tablet
 		font-size: 44px
+		margin-bottom: 1.3em
+	+screen-desktop
+		font-size: 48px
+		margin-bottom: 0.95em
+
+h2, .like-h2
+	margin: 0 0 1em
+	color: $c-accent-2
+	font-size: 22px
+	font-weight: 500
+	line-height: 1.5
+	letter-spacing: 0.02em
+	text-transform: uppercase
+	+screen-tablet
+		margin-bottom: 0.5em
+		font-size: 30px
 
 p, .like-p
 	margin: 0 0 1.5em
 	line-height: 1.6
 	&:last-child
 		margin-bottom: 0
+	+screen-desktop
+		margin-bottom: 2.2em
