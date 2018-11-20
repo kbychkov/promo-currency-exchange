@@ -40,7 +40,10 @@
 									{{ bcsLogo() }}
 								</a>
 
-								<div class="burger" data-menu-toggler><i></i><i></i><i></i><i></i><i></i></div>
+								<div class="header__flex _v2">
+									<span class="button visible-tablet-only">Заказать звонок</span>
+									<div class="burger" data-menu-toggler><i></i><i></i><i></i><i></i><i></i></div>
+								</div>
 							</div>
 						</div>
 					</div>

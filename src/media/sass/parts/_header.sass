@@ -32,6 +32,11 @@
 		display: flex
 		justify-content: space-between
 		align-items: center
+		&._v2
+			pointer-events: auto
+			.button
+				display: none
+				margin-right: 40px
 	.burger
 		// position: absolute
 		// z-index: 6
@@ -113,11 +118,13 @@
 	&._away
 		transform: translate(0, -110%)
 		pointer-events: none
-
-	/*
-	   Adaptive
-	   ========================================================================== */
-
+	+screen-tablet-only
+		&__row
+			padding: 10px 0
+		&__flex
+			&._v2
+				.button
+					display: inline-block
 	+screen-below-desktop
 		> .container
 			padding: 0
@@ -219,17 +226,5 @@
 		&__row
 			max-height: 70px
 			transition: max-height 0.4s
-		&._fixed
-			background: none
-		&._collapsed
-			// NOTE: Градиент уместнее смотрелся бы для "затемнения" левого меню
-			// на > 1366 экранах, но в остальном, градиент — не очень. Так что оставляем
-			// обычную заливку цветом.
-			background-color: $c-dark-main
-			#{$parent-selector}
-				&__row
-					max-height: 0
-				&__logo
-					transform: translate(0, -36px)
-					._chunk-2
-						opacity: 0
+		// &._fixed
+		// 	background: none

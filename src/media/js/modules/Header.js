@@ -5,6 +5,7 @@ const Callback = require('../classes/Callback');
 
 const FIXED_STATE_CLASS = '_fixed';
 const COLLAPSED_STATE_CLASS = '_collapsed';
+// TODO: Уточнить данный момент. Возможно, что шапка должна быть фикс, но не должна скрываться.
 const AWAY_STATE_CLASS = '_away';
 const DOWN = 'down';
 const UP = 'up';
