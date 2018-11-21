@@ -77,10 +77,4 @@
 			</div>
 		</div>
 	</div>
-
-	<div class="gradient-block _v2">
-		<div class="container">
-			{{ feedbackForm() }}
-		</div>
-	</div>
 {% endblock content %}

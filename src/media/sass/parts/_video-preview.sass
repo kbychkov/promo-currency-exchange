@@ -1,0 +1,14 @@
+.video-preview
+	+aspect-ratio(260, 160)
+	margin-top: 39px
+	background: linear-gradient(296.87deg, #AAB3C0 -0.08%, rgba(255, 255, 255, 0) 99.54%)
+	&__bg-image
+		@extend %full-sized
+		background: transparent url("../img/video-preview--sm.jpeg") center center no-repeat
+		background-size: cover
+		opacity: 0.4
+	.play-button
+		position: absolute
+		left: 50%
+		top: 50%
+		transform: translate(-50%, -50%)

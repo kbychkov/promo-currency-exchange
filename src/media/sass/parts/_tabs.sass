@@ -1,0 +1,33 @@
+$border-radius: $border-radius-default
+.tab-openers
+	display: flex
+	flex-direction: column
+	&__item
+		@extend .animated
+		display: block
+		box-sizing: border-box
+		padding: 22px 30px
+		cursor: pointer
+		text-align: center
+		text-transform: uppercase
+		font-size: 12px
+		letter-spacing: 0.1em
+		background-color: rgba($c-white, 0.5)
+		color: $c-text-default
+		border: 1px solid $c-lines
+		// TODO
+		&._active
+			background-color: $c-accent-main
+			color: $c-white
+			border: none
+		&:first-child
+			border-radius: $border-radius $border-radius 0 0
+		&:last-child
+			border-radius: 0 0 $border-radius $border-radius
+		&:not(:first-child)
+			border-top: none
+// TODO
+.tab
+	display: none
+	&:first-of-type
+		display: block

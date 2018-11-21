@@ -48,6 +48,8 @@ const App = new function App() { // eslint-disable-line
 	this.modules = {
 		Menu: require('./modules/Menu'),
 		Popups: require('./modules/Popups'),
+		Switchers: require('./modules/Switchers'),
+		Calc: require('./modules/Calc'),
 	};
 
 	// Startup

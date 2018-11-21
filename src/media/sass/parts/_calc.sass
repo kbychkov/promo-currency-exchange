@@ -1,0 +1,158 @@
+.calc
+	$parent-selector: &
+	$paddings-x: 20px
+	position: relative
+	padding: 78px $paddings-x 38px
+	box-sizing: border-box
+	border: 1px solid $c-lines
+	border-radius: 0 0 $border-radius-default $border-radius-default
+	border-top: none
+	background-color: $c-white
+	&__steps
+		position: absolute
+		right: $paddings-x
+		top: 25px
+		color: $c-accent-main
+		text-transform: uppercase
+		font-size: 12px
+		letter-spacing: 0.1em
+	&__rates
+		margin-bottom: 42px
+		color: $c-accent-2
+	&__rate-title
+		margin-bottom: 15px
+		font-size: 20px
+	&__rate-item
+		display: inline-block
+		margin-right: 25px
+		margin-bottom: 8px
+		font-weight: 300
+		font-size: 24px
+	&__currency-sign
+		font-weight: normal
+	&__summary
+		margin: 40px 0
+		text-align: center
+	&__summary-title
+		margin-bottom: 13px
+		font-size: 14px
+		font-weight: 500
+	&__summary-text
+		font-size: 20px
+		font-weight: 300
+		text-transform: uppercase
+	&__tip
+		margin-bottom: 20px
+		font-weight: 500
+		font-size: 14px
+	&__input-section
+		margin-bottom: 22px
+	&__options
+		position: absolute
+		z-index: 1
+		left: 0
+		top: 100%
+		width: 100%
+		background-color: $c-form-bg
+		transform: translate(0, -20px)
+		opacity: 0
+		pointer-events: none
+		transition: transform 0.6s, opacity 0.5s
+		#{$parent-selector}
+			&__option
+				padding-top: 12px
+				padding-bottom: 12px
+	&__option
+		position: relative
+		width: 78px
+		box-sizing: border-box
+		padding: 21px 12px 20px 28px
+		font-size: 12px
+		font-weight: bold
+		text-transform: uppercase
+	&__option-flag
+		$flag-size: 10px
+		position: absolute
+		left: 11px
+		top: 50%
+		width: $flag-size
+		height: $flag-size
+		margin-top: -$flag-size / 2
+		border-radius: 100%
+		overflow: hidden
+		background: transparent center center no-repeat
+		background-size: cover
+		&._rub
+			background-image: inline("../img/inline/flag-rub.svg")
+		&._usd
+			background-image: inline("../img/inline/flag-usd.svg")
+		&._gbp
+			background-image: inline("../img/inline/flag-gbp.svg")
+		&._eur
+			background-image: inline("../img/inline/flag-eur.svg")
+	&__selector
+		position: relative
+		border-left: 1px solid $c-lines
+		background-color: $c-form-bg
+		border-radius: 0 $border-radius-default $border-radius-default 0
+		// #{$parent-selector}
+		// 	&__option
+		&._opened
+			border-radius: 0 $border-radius-default 0 0
+			#{$parent-selector}
+				&__selector-arrow
+					transform: scaleY(-1) translate(0, -2px)
+				&__options
+					transform: translate(0, 0)
+					opacity: 1
+					pointer-events: auto
+		&._selectable
+			background-color: $c-accent-3
+			color: $c-white
+			#{$parent-selector}
+				&__options
+					#{$parent-selector}
+						&__option
+							background-color: $c-accent-2
+							&:last-child
+								border-radius: 0 0 $border-radius-default $border-radius-default
+							&:not(:last-child)
+								border-bottom: 1px solid rgba($c-white, 0.05)
+	&__input
+		display: flex
+		justify-content: space-between
+		border-radius: $border-radius-default
+		border: 1px solid $c-lines
+		.form__input
+			flex: 1
+			border-radius: 0
+			border: none
+	&__selector-arrow
+		$arrow-width: 10px
+		$arrow-height: 6px
+		$rotation: 50deg
+		position: absolute
+		z-index: 1
+		right: 8px
+		top: 50%
+		width: $arrow-width
+		height: $arrow-height
+		margin-top: -$arrow-height / 2 - 1px
+		// outline: 1px solid red;
+		transition: transform 0.3s
+		&:before,
+		&:after
+			content: ""
+			position: absolute
+			top: 0
+			width: 78%
+			height: 2px
+			background-color: currentColor
+		&:before
+			left: 0
+			transform: rotate($rotation)
+			transform-origin: left center
+		&:after
+			right: 0
+			transform: rotate(-$rotation)
+			transform-origin: right center

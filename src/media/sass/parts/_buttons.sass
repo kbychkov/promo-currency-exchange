@@ -3,6 +3,7 @@
 	@extend %button-hover
 	display: inline-block
 	padding: 1.1em 3.1em
+	box-sizing: border-box
 	background-color: $c-button-bg
 	border: none
 	outline: none
@@ -40,3 +41,29 @@
 	&:before
 		content: ""
 		+centered(150%)
+
+.play-button
+	$play-button-size: 40px
+	@extend %button-hover
+	display: inline-block
+	width: $play-button-size
+	height: $play-button-size
+	position: relative
+	box-sizing: border-box
+	outline: none
+	border: none
+	border-radius: 100%
+	background-color: $c-accent-main
+	&:before
+		$icon-size: percentage(12 / 40)
+		content: ""
+		position: absolute
+		left: 50%
+		top: 50%
+		width: $icon-size
+		height: $icon-size
+		margin-left: (-$icon-size / 2) * 0.9
+		margin-top: -$icon-size / 2
+		// outline: 1px solid red;
+		background: transparent inline("../img/inline/play-icon.svg") center center no-repeat
+		background-size: contain

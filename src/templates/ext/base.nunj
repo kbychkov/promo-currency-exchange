@@ -1,6 +1,8 @@
 {% from "../parts/_menu.nunj" import menu %}
 {% from "../parts/_bcs-logo.nunj" import bcsLogo %}
 {% from "../parts/_feedback-form.nunj" import feedbackForm %}
+{% from "../parts/_calc-form.nunj" import calcForm %}
+{% from "../parts/_contacts.nunj" import contacts %}
 
 <!DOCTYPE html>
 <html>
@@ -95,6 +97,18 @@
 
 					{% block content %}
 					{% endblock content %}
+
+					{% if feedbackSection != false %}
+						<div class="gradient-block _v2">
+							<div class="container">
+								{{ feedbackForm() }}
+							</div>
+						</div>
+					{% endif %}
+
+					{% if contactsSection == true %}
+						{{ contacts() }}
+					{% endif %}
 
 				{% if rawContainer != true %}
 				</div>
