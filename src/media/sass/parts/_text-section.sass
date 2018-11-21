@@ -1,2 +1,25 @@
 .text-section
 	padding: 52px 0 61px
+	+screen-tablet
+		padding: 90px 0 100px
+		.text-container
+			h2, .like-h2
+				max-width: 395px
+				margin-bottom: 1.2em
+			p, .like-p
+				max-width: none
+	+screen-desktop
+		&__columns
+			display: flex
+			justify-content: space-between
+			align-items: flex-start
+			.text-container
+				max-width: none
+				flex: 1
+			.video-preview
+				width: 513px
+				margin: 10px 0 0 50px
+	+screen-desktop-lg
+		&__columns
+			.video-preview
+				width: 602px

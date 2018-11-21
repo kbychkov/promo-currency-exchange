@@ -156,3 +156,54 @@
 			right: 0
 			transform: rotate(-$rotation)
 			transform-origin: right center
+	+screen-tablet
+		$paddings-x: 40px
+		padding: 35px $paddings-x 59px
+		&__steps
+			right: $paddings-x
+			top: 37px
+			font-size: 14px
+		&__rate-item
+			font-size: 36px
+			margin-right: 61px
+		&__option
+			width: 170px
+			padding: 28px 16px 27px 75px
+			font-size: 18px
+		&__option-flag
+			$flag-size: 26px
+			left: 30px
+			width: $flag-size
+			height: $flag-size
+			margin-top: -$flag-size / 2
+		&__selector-arrow
+			right: 30px
+		&__input-section
+			margin-bottom: 29px
+		&__options
+			#{$parent-selector}
+				&__option
+					padding-top: 15px
+					padding-bottom: 15px
+		&__summary
+			margin: 56px 0 52px
+		&__summary-text
+			font-size: 44px
+	+screen-desktop
+		&__input-sections
+			display: flex
+			justify-content: space-between
+			#{$parent-selector}
+				&__input-section
+					flex: 1 1 auto
+					margin-right: 30px
+					&:last-child
+						margin-right: 0
+		&__bottom-block
+			display: flex
+			justify-content: space-between
+			align-items: flex-start
+			#{$parent-selector}
+				&__summary
+					margin: 10px 0 0
+					text-align: left

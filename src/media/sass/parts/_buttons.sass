@@ -18,6 +18,14 @@
 		padding: 1.9em 3.9em
 		min-width: 220px
 		background-color: $c-accent-main
+	// TODO: Уточнить у дизюг, что за хня? На планшете, в блоке с калькулятором, кнопка большая,
+	// а в блоке с формой обратной связи, кнопка стандартного размера. Баг или фича?
+	+screen-tablet
+		&--accent
+			.calc &
+				min-width: 308px
+				font-size: 12px
+				letter-spacing: 0.1em
 
 .close-button
 	display: block
@@ -67,3 +75,11 @@
 		// outline: 1px solid red;
 		background: transparent inline("../img/inline/play-icon.svg") center center no-repeat
 		background-size: contain
+	+screen-tablet
+		$play-button-size: 70px
+		width: $play-button-size
+		height: $play-button-size
+	+screen-desktop
+		$play-button-size: 56px
+		width: $play-button-size
+		height: $play-button-size

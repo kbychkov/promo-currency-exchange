@@ -45,3 +45,25 @@
 		font-size: 12px
 		letter-spacing: .5px
 		transition: color .24s
+	+screen-tablet
+		margin-top: 145px
+		&__letter,
+		&__item
+			padding-left: 30px
+		&__letter
+			margin-bottom: 18px
+		&__item
+			&:not(:first-child)
+				margin-top: 18px
+		&__first
+			margin-bottom: 14px
+		&__others
+			margin-bottom: 21px
+		&__link
+			letter-spacing: 0.12em
+	// TODO: Утончить, почему на десктопе стало не по сетке... ну и вообще, что за хня?
+	// Количество колонок отличается, например...
+	+screen-desktop
+		margin-top: 176px
+	+screen-desktop-lg
+		margin-top: 226px

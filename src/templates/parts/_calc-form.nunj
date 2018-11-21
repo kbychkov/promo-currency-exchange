@@ -11,21 +11,34 @@
 		</div>
 
 		<div class="calc__tip">Минимальная сумма $100</div>
-		<div class="calc__input-section">
-			<div class="calc__input">
-				<input type="text" class="form__input" placeholder="Введите сумму">
-				<div class="calc__selector _selectable">
-					<span class="calc__selector-arrow"></span>
-					<div class="calc__option">
-						<div class="calc__option-flag _usd"></div>usd
+
+		<div class="calc__input-sections">
+			<div class="calc__input-section">
+				<div class="calc__input">
+					<input type="text" class="form__input" placeholder="Введите сумму">
+					<div class="calc__selector _selectable">
+						<span class="calc__selector-arrow"></span>
+						<div class="calc__option">
+							<div class="calc__option-flag _usd"></div>usd
+						</div>
+						<div class="calc__options">
+							<div class="calc__option">
+								<div class="calc__option-flag _gbp"></div>gbp
+							</div>
+							<div class="calc__option">
+								<div class="calc__option-flag _eur"></div>eur
+							</div>
+							<div class="calc__option">
+								<div class="calc__option-flag _rub"></div>rub
+							</div>
+						</div>
 					</div>
-					<div class="calc__options">
-						<div class="calc__option">
-							<div class="calc__option-flag _gbp"></div>gbp
-						</div>
-						<div class="calc__option">
-							<div class="calc__option-flag _eur"></div>eur
-						</div>
+				</div>
+			</div>
+			<div class="calc__input-section">
+				<div class="calc__input">
+					<input type="text" class="form__input" placeholder="Всего к оплате">
+					<div class="calc__selector">
 						<div class="calc__option">
 							<div class="calc__option-flag _rub"></div>rub
 						</div>
@@ -33,27 +46,19 @@
 				</div>
 			</div>
 		</div>
-		<div class="calc__input-section">
-			<div class="calc__input">
-				<input type="text" class="form__input" placeholder="Всего к оплате">
-				<div class="calc__selector">
-					<div class="calc__option">
-						<div class="calc__option-flag _rub"></div>rub
-					</div>
+
+		<div class="calc__bottom-block">
+			<div class="calc__summary">
+				<div class="calc__summary-title">Итого</div>
+				<div class="calc__summary-text">
+					<span data-summary-value>6 600,00</span>
+					<span data-summary-currency class="calc__currency-sign">rub</span>
 				</div>
 			</div>
-		</div>
 
-		<div class="calc__summary">
-			<div class="calc__summary-title">Итого</div>
-			<div class="calc__summary-text">
-				<span data-summary-value>6 600, 00</span>
-				<span data-summary-currency class="calc__currency-sign">rub</span>
+			<div class="form__input-section _submit">
+				<span class="button button--accent">Обменять валюту</span>
 			</div>
-		</div>
-
-		<div class="form__input-section _submit">
-			<span class="button button--accent">Обменять валюту</span>
 		</div>
 	</form>
 {% endmacro %}
