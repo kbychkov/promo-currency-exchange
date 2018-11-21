@@ -52,7 +52,7 @@ function Popups() {
 		return false;
 	})();
 	// var fixedPageElems = $(".js-page-fixed-elem");
-	var fixedPageElems = $("html, .header");
+	var fixedPageElems = $("html, .header, #video");
 	var hasFixedElems = fixedPageElems.length > 0;
 	var hideDelayDefault = 3500;
 	var dAttrUrl = "data-url";
@@ -486,10 +486,6 @@ function Popups() {
 	popups.on("click", popupClick);
 	$window.on("beforeunload", windowUnload);
 	$window.on("keyup", keyController);
-
-	console.log(popups.length);
-	console.log("openPopupBtns.length: " + openPopupBtns.length);
-	console.log("here");
 }
 
 Popups.prototype = {

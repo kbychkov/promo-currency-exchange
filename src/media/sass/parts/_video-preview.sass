@@ -2,6 +2,7 @@
 	+aspect-ratio(260, 160)
 	margin-top: 39px
 	background: linear-gradient(296.87deg, #AAB3C0 -0.08%, rgba(255, 255, 255, 0) 99.54%)
+	cursor: pointer
 	&__bg-image
 		@extend %full-sized
 		background: transparent url("../img/video-preview--sm.jpeg") center center no-repeat
@@ -12,3 +13,7 @@
 		left: 50%
 		top: 50%
 		transform: translate(-50%, -50%)
+	&:hover
+		.play-button
+			background-color: $c-accent-2
+			transition-duration: 0s

@@ -1,0 +1,26 @@
+.video-popup
+	padding: 0
+	margin: 60px 0
+	max-width: none
+	box-sizing: content-box
+	background: none
+	&__inner
+		background-color: $c-form-bg
+		+aspect-ratio(1000, 560)
+		position: relative
+	iframe
+		@extend %full-sized
+	.popup
+		&__close
+			top: -40px
+			color: $c-white
+	+screen-tablet
+		max-width: 768px
+		padding: 0 $site-paddings-large
+		.popup
+			&__close
+				right: 0
+	+screen-desktop
+		max-width: 800px
+	+screen-desktop-lg
+		max-width: 1000px
