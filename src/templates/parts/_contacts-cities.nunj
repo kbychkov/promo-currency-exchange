@@ -1,0 +1,319 @@
+{# NOTE: Данная разметка взята отсюда: https://broker.ru/contacts #}
+{% macro contactsCities() %}
+	<section class="contacts-cities">
+		<div class="layout__wrapper">
+			<div class="contacts-cities__list">
+				<div class="contacts-cities__first">
+					<div class="contacts-cities__letter">А</div>
+					<div class="contacts-cities__item _agent">
+						<a href="/contacts/armavir" class="contacts-cities__link">Армавир</a>
+					</div>
+				</div>
+				<div class="contacts-cities__others">
+					<div class="contacts-cities__item _agent">
+						<a href="/contacts/arkhangelsk" class="contacts-cities__link">Архангельск</a>
+					</div>
+					<div class="contacts-cities__item _office">
+						<a href="/contacts/astrakhan" class="contacts-cities__link">Астрахань</a>
+					</div>
+				</div>
+				<div class="contacts-cities__first">
+					<div class="contacts-cities__letter">Б</div>
+					<div class="contacts-cities__item _office">
+						<a href="/contacts/barnaul" class="contacts-cities__link">Барнаул</a>
+					</div>
+				</div>
+				<div class="contacts-cities__others">
+					<div class="contacts-cities__item _agent">
+						<a href="/contacts/birobidzhan" class="contacts-cities__link">Биробиджан</a>
+					</div>
+					<div class="contacts-cities__item _agent">
+						<a href="/contacts/bratsk" class="contacts-cities__link">Братск</a>
+					</div>
+					<div class="contacts-cities__item _agent">
+						<a href="/contacts/bryansk" class="contacts-cities__link">Брянск</a>
+					</div>
+				</div>
+				<div class="contacts-cities__first">
+					<div class="contacts-cities__letter">В</div>
+					<div class="contacts-cities__item _agent">
+						<a href="/contacts/veliky-novgorod" class="contacts-cities__link">Великий Новгород</a>
+					</div>
+				</div>
+				<div class="contacts-cities__others">
+					<div class="contacts-cities__item _office">
+						<a href="/contacts/vladivostok" class="contacts-cities__link">Владивосток</a>
+					</div>
+					<div class="contacts-cities__item _agent">
+						<a href="/contacts/vladimir" class="contacts-cities__link">Владимир</a>
+					</div>
+					<div class="contacts-cities__item _office">
+						<a href="/contacts/volgograd" class="contacts-cities__link">Волгоград</a>
+					</div>
+					<div class="contacts-cities__item _agent">
+						<a href="/contacts/vologda" class="contacts-cities__link">Вологда</a>
+					</div>
+					<div class="contacts-cities__item _agent">
+						<a href="/contacts/vorkuta" class="contacts-cities__link">Воркута</a>
+					</div>
+					<div class="contacts-cities__item _office">
+						<a href="/contacts/voronezh" class="contacts-cities__link">Воронеж</a>
+					</div>
+				</div>
+				<div class="contacts-cities__first">
+					<div class="contacts-cities__letter">Е</div>
+					<div class="contacts-cities__item _office">
+						<a href="/contacts/ekaterinburg" class="contacts-cities__link">Екатеринбург</a>
+					</div>
+				</div>
+				<div class="contacts-cities__first">
+					<div class="contacts-cities__letter">И</div>
+					<div class="contacts-cities__item _agent">
+						<a href="/contacts/ivanovo" class="contacts-cities__link">Иваново</a>
+					</div>
+				</div>
+				<div class="contacts-cities__others">
+					<div class="contacts-cities__item _office">
+						<a href="/contacts/izhevsk" class="contacts-cities__link">Ижевск</a>
+					</div>
+					<div class="contacts-cities__item _office">
+						<a href="/contacts/irkutsk" class="contacts-cities__link">Иркутск</a>
+					</div>
+				</div>
+				<div class="contacts-cities__first">
+					<div class="contacts-cities__letter">К</div>
+					<div class="contacts-cities__item _office">
+						<a href="/contacts/kazan" class="contacts-cities__link">Казань</a>
+					</div>
+				</div>
+				<div class="contacts-cities__others">
+					<div class="contacts-cities__item _office">
+						<a href="/contacts/kaliningrad" class="contacts-cities__link">Калининград</a>
+					</div>
+					<div class="contacts-cities__item _agent">
+						<a href="/contacts/kaluga" class="contacts-cities__link">Калуга</a>
+					</div>
+					<div class="contacts-cities__item _office">
+						<a href="/contacts/kemerovo" class="contacts-cities__link">Кемерово</a>
+					</div>
+					<div class="contacts-cities__item _agent">
+						<a href="/contacts/kirov" class="contacts-cities__link">Киров</a>
+					</div>
+					<div class="contacts-cities__item _agent">
+						<a href="/contacts/kostroma" class="contacts-cities__link">Кострома</a>
+					</div>
+					<div class="contacts-cities__item _office">
+						<a href="/contacts/krasnodar" class="contacts-cities__link">Краснодар</a>
+					</div>
+					<div class="contacts-cities__item _office">
+						<a href="/contacts/krasnoyarsk" class="contacts-cities__link">Красноярск</a>
+					</div>
+					<div class="contacts-cities__item _agent">
+						<a href="/contacts/kurgan" class="contacts-cities__link">Курган</a>
+					</div>
+					<div class="contacts-cities__item _agent">
+						<a href="/contacts/kursk" class="contacts-cities__link">Курск</a>
+					</div>
+				</div>
+				<div class="contacts-cities__first">
+					<div class="contacts-cities__letter">Л</div>
+					<div class="contacts-cities__item _office">
+						<a href="/contacts/lipetsk" class="contacts-cities__link">Липецк</a>
+					</div>
+				</div>
+				<div class="contacts-cities__first">
+					<div class="contacts-cities__letter">М</div>
+					<div class="contacts-cities__item _agent">
+						<a href="/contacts/magnitogorsk" class="contacts-cities__link">Магнитогорск</a>
+					</div>
+				</div>
+				<div class="contacts-cities__others">
+					<div class="contacts-cities__item _agent">
+						<a href="/contacts/miass" class="contacts-cities__link">Миасс</a>
+					</div>
+					<div class="contacts-cities__item _office">
+						<a href="/contacts/moscow" class="contacts-cities__link">Москва</a>
+					</div>
+				</div>
+				<div class="contacts-cities__first">
+					<div class="contacts-cities__letter">Н</div>
+					<div class="contacts-cities__item _agent">
+						<a href="/contacts/naberezhnye-chelny" class="contacts-cities__link">Набережные Челны</a>
+					</div>
+				</div>
+				<div class="contacts-cities__others">
+					<div class="contacts-cities__item _agent">
+						<a href="/contacts/nizhnevartovsk" class="contacts-cities__link">Нижневартовск</a>
+					</div>
+					<div class="contacts-cities__item _office">
+						<a href="/contacts/nizhni-novgorod" class="contacts-cities__link">Нижний Новгород</a>
+					</div>
+					<div class="contacts-cities__item _agent">
+						<a href="/contacts/nizhni-tagil" class="contacts-cities__link">Нижний Тагил</a>
+					</div>
+					<div class="contacts-cities__item _office">
+						<a href="/contacts/novokuznetsk" class="contacts-cities__link">Новокузнецк</a>
+					</div>
+					<div class="contacts-cities__item _agent">
+						<a href="/contacts/novorossiysk" class="contacts-cities__link">Новороссийск</a>
+					</div>
+					<div class="contacts-cities__item _office">
+						<a href="/contacts/novosibirsk" class="contacts-cities__link">Новосибирск</a>
+					</div>
+					<div class="contacts-cities__item _agent">
+						<a href="/contacts/novy-urengoy" class="contacts-cities__link">Новый Уренгой</a>
+					</div>
+					<div class="contacts-cities__item _agent">
+						<a href="/contacts/noyabrsk" class="contacts-cities__link">Ноябрьск</a>
+					</div>
+				</div>
+				<div class="contacts-cities__first">
+					<div class="contacts-cities__letter">О</div>
+					<div class="contacts-cities__item _office">
+						<a href="/contacts/omsk" class="contacts-cities__link">Омск</a>
+					</div>
+				</div>
+				<div class="contacts-cities__others">
+					<div class="contacts-cities__item _office">
+						<a href="/contacts/orenburg" class="contacts-cities__link">Оренбург</a>
+					</div>
+					<div class="contacts-cities__item _agent">
+						<a href="/contacts/orsk" class="contacts-cities__link">Орск</a>
+					</div>
+				</div>
+				<div class="contacts-cities__first">
+					<div class="contacts-cities__letter">П</div>
+					<div class="contacts-cities__item _office">
+						<a href="/contacts/penza" class="contacts-cities__link">Пенза</a>
+					</div>
+				</div>
+				<div class="contacts-cities__others">
+					<div class="contacts-cities__item _office">
+						<a href="/contacts/perm" class="contacts-cities__link">Пермь</a>
+					</div>
+					<div class="contacts-cities__item _agent">
+						<a href="/contacts/petrozavodsk" class="contacts-cities__link">Петрозаводск</a>
+					</div>
+					<div class="contacts-cities__item _agent">
+						<a href="/contacts/pskov" class="contacts-cities__link">Псков</a>
+					</div>
+				</div>
+				<div class="contacts-cities__first">
+					<div class="contacts-cities__letter">Р</div>
+					<div class="contacts-cities__item _office">
+						<a href="/contacts/rostov-on-don" class="contacts-cities__link">Ростов-на-Дону</a>
+					</div>
+				</div>
+				<div class="contacts-cities__others">
+					<div class="contacts-cities__item _agent">
+						<a href="/contacts/ryazan" class="contacts-cities__link">Рязань</a>
+					</div>
+				</div>
+				<div class="contacts-cities__first">
+					<div class="contacts-cities__letter">С</div>
+					<div class="contacts-cities__item _office">
+						<a href="/contacts/samara" class="contacts-cities__link">Самара</a>
+					</div>
+				</div>
+				<div class="contacts-cities__others">
+					<div class="contacts-cities__item _office">
+						<a href="/contacts/saint-petersburg" class="contacts-cities__link">Санкт-Петербург</a>
+					</div>
+					<div class="contacts-cities__item _agent">
+						<a href="/contacts/saransk" class="contacts-cities__link">Саранск</a>
+					</div>
+					<div class="contacts-cities__item _agent">
+						<a href="/contacts/sarapul" class="contacts-cities__link">Сарапул</a>
+					</div>
+					<div class="contacts-cities__item _office">
+						<a href="/contacts/saratov" class="contacts-cities__link">Саратов</a>
+					</div>
+					<div class="contacts-cities__item _office">
+						<a href="/contacts/sochi" class="contacts-cities__link">Сочи</a>
+					</div>
+					<div class="contacts-cities__item _office">
+						<a href="/contacts/stavropol" class="contacts-cities__link">Ставрополь</a>
+					</div>
+					<div class="contacts-cities__item _office">
+						<a href="/contacts/surgut" class="contacts-cities__link">Сургут</a>
+					</div>
+				</div>
+				<div class="contacts-cities__first">
+					<div class="contacts-cities__letter">Т</div>
+					<div class="contacts-cities__item _agent">
+						<a href="/contacts/tver" class="contacts-cities__link">Тверь</a>
+					</div>
+				</div>
+				<div class="contacts-cities__others">
+					<div class="contacts-cities__item _office">
+						<a href="/contacts/tolyatti" class="contacts-cities__link">Тольятти</a>
+					</div>
+					<div class="contacts-cities__item _office">
+						<a href="/contacts/tomsk" class="contacts-cities__link">Томск</a>
+					</div>
+					<div class="contacts-cities__item _office">
+						<a href="/contacts/tula" class="contacts-cities__link">Тула</a>
+					</div>
+					<div class="contacts-cities__item _office">
+						<a href="/contacts/tyumen" class="contacts-cities__link">Тюмень</a>
+					</div>
+				</div>
+				<div class="contacts-cities__first">
+					<div class="contacts-cities__letter">У</div>
+					<div class="contacts-cities__item _agent">
+						<a href="/contacts/ulan-ude" class="contacts-cities__link">Улан-Удэ</a>
+					</div>
+				</div>
+				<div class="contacts-cities__others">
+					<div class="contacts-cities__item _agent">
+						<a href="/contacts/ulyanovsk" class="contacts-cities__link">Ульяновск</a>
+					</div>
+					<div class="contacts-cities__item _office">
+						<a href="/contacts/ufa" class="contacts-cities__link">Уфа</a>
+					</div>
+					<div class="contacts-cities__item _agent">
+						<a href="/contacts/ukhta" class="contacts-cities__link">Ухта</a>
+					</div>
+				</div>
+				<div class="contacts-cities__first">
+					<div class="contacts-cities__letter">Х</div>
+					<div class="contacts-cities__item _agent">
+						<a href="/contacts/khimki" class="contacts-cities__link">Химки</a>
+					</div>
+				</div>
+				<div class="contacts-cities__first">
+					<div class="contacts-cities__letter">Ч</div>
+					<div class="contacts-cities__item _agent">
+						<a href="/contacts/cheboksary" class="contacts-cities__link">Чебоксары</a>
+					</div>
+				</div>
+				<div class="contacts-cities__others">
+					<div class="contacts-cities__item _office">
+						<a href="/contacts/chelyabinsk" class="contacts-cities__link">Челябинск</a>
+					</div>
+					<div class="contacts-cities__item _office">
+						<a href="/contacts/cherepovets" class="contacts-cities__link">Череповец</a>
+					</div>
+				</div>
+				<div class="contacts-cities__first">
+					<div class="contacts-cities__letter">Э</div>
+					<div class="contacts-cities__item _agent">
+						<a href="/contacts/engels" class="contacts-cities__link">Энгельс</a>
+					</div>
+				</div>
+				<div class="contacts-cities__first">
+					<div class="contacts-cities__letter">Ю</div>
+					<div class="contacts-cities__item _agent">
+						<a href="/contacts/yuzhno-sakhalinsk" class="contacts-cities__link">Южно-Сахалинск</a>
+					</div>
+				</div>
+				<div class="contacts-cities__first">
+					<div class="contacts-cities__letter">Я</div>
+					<div class="contacts-cities__item _office">
+						<a href="/contacts/yaroslavl" class="contacts-cities__link">Ярославль</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+{% endmacro %}

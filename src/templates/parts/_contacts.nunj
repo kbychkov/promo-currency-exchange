@@ -1,14 +1,21 @@
+{% from "./_contacts-cities.nunj" import contactsCities %}
+
 {% macro contacts() %}
 	<div class="text-section">
 		<div class="container">
 			<div class="contacts">
 				<h2 class="like-h2 contacts__title">Контакты</h2>
+
 				<div class="header__contacts-row _phone">
 					<a href="tel:{{ common.phone }}" class="phone">{{ common.phone }}</a>
 					<div class="description">
 						Бесплатный звонок по России
 					</div>
 				</div>
+
+				<div class="contacts__map"></div>
+
+				{{ contactsCities() }}
 			</div>
 		</div>
 	</div>
