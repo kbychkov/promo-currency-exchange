@@ -31,6 +31,8 @@ FormsValidation.prototype = {
 			pattern = new RegExp('^\\w+([\\.-]?\\w+)*@\\w+([\\.-]?\\w+)*(\\.\\w{2,3})+$', 'i');
 		}
 
+		let minValue = parseFloat($input.attr('min'));
+
 		if (input.inputmask && typeof input.inputmask.isComplete === 'function' && input.inputmask && input.inputmask.isComplete()) {
 			$input.data('completedOnce', 'true');
 		}
@@ -54,6 +56,8 @@ FormsValidation.prototype = {
 			errorType = 'required';
 		} else if (valueExists && pattern !== false && !pattern.test(value)) {
 			errorType = 'pattern';
+		} else if (valueExists && !isNaN(minValue) && parseFloat(value) < minValue) {
+			errorType = 'min';
 		}
 
 		if (errorType !== null) {
@@ -135,15 +139,23 @@ FormsValidation.prototype = {
 
 		// Binds
 		$inputs.on('input', e => this._checkInput(e.currentTarget));
+		$form.on('reset', () => {
+			$form.find(`.${PARENT_CLASS}`).removeClass(SUCCESS_CLASS);
+		});
 
 		return {
-			validate() {
+			validate($inputsToCheck) {
 				let allowSend = true;
 				let highlightDelay = 0;
 				let hiddenInputs = [];
 
 				for (let k = 0; k < totalInputs; k++) {
 					let $input = $inputs.eq(k);
+					if ($inputsToCheck && $inputsToCheck.length) {
+						if ($inputsToCheck.index($input) < 0) {
+							continue;
+						}
+					}
 					let highlight = false;
 					let $target = $input.closest('.' + PARENT_CLASS);
 					if (!$input.is(':visible') && !!$input.attr('required')) {

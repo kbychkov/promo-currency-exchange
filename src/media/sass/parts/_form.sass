@@ -127,6 +127,15 @@
 		pointer-events: none
 		color: $c-error-text
 		font-size: 10px
+	&__response
+		line-height: 1.5
+	&__response-title
+		font-size: 30px
+		font-weight: 500
+		color: $c-accent-2
+		margin: 0 0 0.5em
+	&__response-text
+		font-size: 20px
 	+screen-tablet
 		max-width: 500px
 		margin: auto
@@ -157,6 +166,15 @@
 						#{$parent-selector}
 							&__input
 								border-left: none
+		&__response-title
+			margin-bottom: 0.2em
+			font-size: 36px
+		&__response-text
+			max-width: 462px
+			font-size: 24px
+	+screen-desktop
+		&__response-text
+			max-width: 640px
 	// +screen-desktop
 	// 	display: flex
 	// 	justify-content: space-between

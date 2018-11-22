@@ -2,12 +2,14 @@
 	$parent-selector: &
 	$paddings-x: 20px
 	position: relative
-	padding: 78px $paddings-x 38px
 	box-sizing: border-box
 	border: 1px solid $c-lines
 	border-radius: 0 0 $border-radius-default $border-radius-default
 	border-top: none
 	background-color: $c-white
+	overflow: hidden
+	&__paddings
+		padding: 78px $paddings-x 38px
 	&__steps
 		position: absolute
 		right: $paddings-x
@@ -125,11 +127,15 @@
 		justify-content: space-between
 		border-radius: $border-radius-default
 		border: 1px solid $c-lines
+		.form__input
+			background: none
 		.form__input,
 		.form__input-block
 			flex: 1
 			border-radius: 0
 			border: none
+		.form__input-block._error
+			margin-bottom: 0
 		.form__input-block .form__label,
 		.form__input-block .form__input
 			height: 100%
@@ -164,9 +170,39 @@
 			right: 0
 			transform: rotate(-$rotation)
 			transform-origin: right center
+	&__slide
+		@extend %full-sized
+		visibility: hidden
+		&._relative
+			position: relative
+			visibility: visible
+	&__inner-centered
+		position: absolute
+		left: 0
+		top: 50%
+		width: 100%
+		transform: translate(0, -50%)
+		.form
+			max-width: none
+			&__title
+				text-align: left
+	&__next-prev
+		.button
+			margin-bottom: 20px
+			&:last-child
+				margin-bottom: 0
+		&._abs
+			position: absolute
+			left: 0
+			bottom: 0
+			width: 100%
+			box-sizing: border-box
+			padding: 39px $paddings-x
+			margin: 0
 	+screen-tablet
 		$paddings-x: 40px
-		padding: 35px $paddings-x 59px
+		&__paddings
+			padding: 35px $paddings-x 59px
 		&__steps
 			right: $paddings-x
 			top: 37px
@@ -197,6 +233,20 @@
 			margin: 56px 0 52px
 		&__summary-text
 			font-size: 44px
+		&__next-prev
+			margin-top: 54px
+			display: flex
+			flex-direction: row-reverse
+			align-items: flex-start
+			.button
+				margin-bottom: 0
+				margin-right: 20px
+				&:first-child
+					margin-right: 0
+			&._abs
+				display: block
+				padding: 59px $paddings-x
+				text-align: center
 	+screen-desktop
 		&__input-sections
 			display: flex
@@ -215,3 +265,20 @@
 				&__summary
 					margin: 10px 0 0
 					text-align: left
+		.form
+			&__heading-part
+				h3, .like-h3
+					max-width: 500px
+			&__sections-part
+				display: flex
+				justify-content: space-between
+				.form
+					&__input-section
+						flex: 1 1 auto
+						margin-bottom: 0
+						margin-right: 30px
+						&:last-child
+							margin-right: 0
+		&__next-prev
+			&._abs
+				display: flex
