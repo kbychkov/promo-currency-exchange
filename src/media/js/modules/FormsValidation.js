@@ -115,23 +115,23 @@ FormsValidation.prototype = {
 		});
 
 		// Numbers value limit
-		let $numInputs = $inputs.filter('[type="number"]:not([data-use-mask="false"])');
-		$numInputs.attr('type', 'text');
-		$numInputs.each((index, elem) => {
-			let count = (elem.getAttribute('max') || '').length || 5;
-			let mask = `n{1}9{0,${count - 1}}`;
-			Inputmask({
-				mask: mask,
-				greedy: false,
-				placeholder: '',
-				definitions: {
-					// NOTE: To make first digit > 0
-					n: {
-						validator: '[1-9]',
-					},
-				},
-			}).mask(elem);
-		});
+		// let $numInputs = $inputs.filter('[type="number"]:not([data-use-mask="false"])');
+		// $numInputs.attr('type', 'text');
+		// $numInputs.each((index, elem) => {
+		// 	let count = (elem.getAttribute('max') || '').length || 5;
+		// 	let mask = `n{1}9{0,${count - 1}}`;
+		// 	Inputmask({
+		// 		mask: mask,
+		// 		greedy: false,
+		// 		placeholder: '',
+		// 		definitions: {
+		// 			// NOTE: To make first digit > 0
+		// 			n: {
+		// 				validator: '[1-9]',
+		// 			},
+		// 		},
+		// 	}).mask(elem);
+		// });
 
 		// Binds
 		$inputs.on('input', e => this._checkInput(e.currentTarget));

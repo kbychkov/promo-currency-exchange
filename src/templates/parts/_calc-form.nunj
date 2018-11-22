@@ -1,3 +1,5 @@
+{% from "./_forms-inputs.nunj" import inputBlock %}
+
 {% macro calcForm() %}
 	<form action="#" class="calc">
 		<div class="calc__steps">
@@ -5,9 +7,9 @@
 		</div>
 		<div class="calc__rate-title">Курс валют</div>
 		<div class="calc__rates">
-			<div class="calc__rate-item"><span class="calc__currency-sign">$</span> 67,83</div>
-			<div class="calc__rate-item"><span class="calc__currency-sign">€</span> 78,51</div>
-			<div class="calc__rate-item"><span class="calc__currency-sign">£</span> 87,13</div>
+			<div class="calc__rate-item"><span class="calc__currency-sign">$</span> <span data-rate="usd">67,83</span></div>
+			<div class="calc__rate-item"><span class="calc__currency-sign">€</span> <span data-rate="eur">78,51</span></div>
+			<div class="calc__rate-item"><span class="calc__currency-sign">£</span> <span data-rate="gbp">87,13</span></div>
 		</div>
 
 		<div class="calc__tip">Минимальная сумма $100</div>
@@ -15,29 +17,31 @@
 		<div class="calc__input-sections">
 			<div class="calc__input-section">
 				<div class="calc__input">
-					<input type="text" class="form__input" placeholder="Введите сумму">
+					{{ inputBlock("text", "num-input", "Введите сумму", required = false, disabled = false) }}
 					<div class="calc__selector _selectable">
 						<span class="calc__selector-arrow"></span>
-						<div class="calc__option">
+						<div class="calc__option" data-rate="usd">
 							<div class="calc__option-flag _usd"></div>usd
 						</div>
 						<div class="calc__options">
-							<div class="calc__option">
+							<div class="calc__option" data-rate="gbp">
 								<div class="calc__option-flag _gbp"></div>gbp
 							</div>
-							<div class="calc__option">
+							<div class="calc__option" data-rate="eur">
 								<div class="calc__option-flag _eur"></div>eur
 							</div>
-							<div class="calc__option">
+							{#
+							<div class="calc__option" data-rate="rub">
 								<div class="calc__option-flag _rub"></div>rub
 							</div>
+							#}
 						</div>
 					</div>
 				</div>
 			</div>
 			<div class="calc__input-section">
 				<div class="calc__input">
-					<input type="text" class="form__input" placeholder="Всего к оплате">
+					{{ inputBlock("text", "num-output", "Всего к оплате", required = false, disabled = true) }}
 					<div class="calc__selector">
 						<div class="calc__option">
 							<div class="calc__option-flag _rub"></div>rub
@@ -51,7 +55,7 @@
 			<div class="calc__summary">
 				<div class="calc__summary-title">Итого</div>
 				<div class="calc__summary-text">
-					<span data-summary-value>6 600,00</span>
+					<span data-summary-value>0</span>
 					<span data-summary-currency class="calc__currency-sign">rub</span>
 				</div>
 			</div>

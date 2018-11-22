@@ -118,15 +118,23 @@
 								border-radius: 0 0 $border-radius-default $border-radius-default
 							&:not(:last-child)
 								border-bottom: 1px solid rgba($c-white, 0.05)
+				&__option
+					@extend %button-hover
 	&__input
 		display: flex
 		justify-content: space-between
 		border-radius: $border-radius-default
 		border: 1px solid $c-lines
-		.form__input
+		.form__input,
+		.form__input-block
 			flex: 1
 			border-radius: 0
 			border: none
+		.form__input-block .form__label,
+		.form__input-block .form__input
+			height: 100%
+		.form__label-text
+			opacity: 1 !important
 	&__selector-arrow
 		$arrow-width: 10px
 		$arrow-height: 6px

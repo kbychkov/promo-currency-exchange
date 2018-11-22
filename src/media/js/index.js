@@ -72,7 +72,7 @@ const App = new function App() { // eslint-disable-line
 		});
 
 		// TODO: Подумать, стоит ли это вынести в отдельный модуль.
-		this.$forms = this.dom.$body.find('form');
+		this.$forms = this.dom.$body.find('form:not(.calc)');
 		this.$forms.each((index, elem) => {
 			let $form = $(elem);
 			let formsValidation = this.modules.FormsValidation.init($form);

@@ -1,4 +1,4 @@
-{% macro inputBlock(type = "text", name = "", placeholder = "", required = false, additionalAttributes = "") %}
+{% macro inputBlock(type = "text", name = "", placeholder = "", required = false, additionalAttributes = "", disabled = false) %}
 	{# Значения по-умолчанию для типовых полей #}
 	{% if (name == "name" or placeholder == "Имя") and additionalAttributes == "" %}
 		{% set additionalAttributes = 'pattern="^[\\sа-яА-ЯёЁa-zA-Z0-9-—]+$" data-error-message-pattern="Латиница, кириллица, тире, цифры"' %}
@@ -14,7 +14,7 @@
 
 	{% if (type == "number" or name == "count_people") and additionalAttributes == "" %}
 		{# NOTE: Если необходимо отключить маску, можно указать атрибут data-use-mask="false" #}
-		{% set additionalAttributes = 'step="1" max="99999" pattern="^[0-9]{1,5}$" data-error-message-pattern="Цифры (не более 5 знаков)"' %}
+		{#% set additionalAttributes = 'step="1" max="99999" pattern="^[0-9]{1,5}$" data-error-message-pattern="Цифры (не более 5 знаков)"' %#}
 	{% endif %}
 
 	{% if type == "email" and additionalAttributes == "" %}
@@ -41,7 +41,7 @@
 			</label>
 		{% else %}
 			<label class="form__label">
-				<input type="{{ type }}" placeholder="{{ placeholder }}" class="form__input" name="{{ name }}" {{ additionalAttributes }} {% if required %}required{% endif %} />
+				<input type="{{ type }}" {% if disabled == true %}disabled{% endif %} placeholder="{{ placeholder }}" class="form__input" name="{{ name }}" {{ additionalAttributes }} {% if required %}required{% endif %} />
 				<span class="form__label-text">{{ placeholder }}</span>
 			</label>
 		{% endif %}

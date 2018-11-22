@@ -24,6 +24,11 @@
 		font-size: 14px
 		&:focus
 			box-shadow: 0 0 20px rgba($c-accent-main, 0.25)
+		&:disabled
+			cursor: default
+			~ #{$parent-selector}
+				&__label-text
+					cursor: initial
 	&__input-section
 		margin-bottom: 22px
 		&:last-child
@@ -81,7 +86,9 @@
 	&__label-text
 		position: absolute
 		left: $input-padding-x
-		top: $input-padding-x + 2px
+		// top: $input-padding-x + 2px
+		top: 50%
+		margin-top: -0.5em
 		// width: 100%
 		// height: 100%
 		transition: opacity 0.3s, transform 0.3s
@@ -92,7 +99,8 @@
 			color: inherit
 		._ie &
 			display: none
-	&__label input:focus
+	&__label input:focus,
+	&__input._filled
 		padding: 26px $input-padding-x 14px
 	&__label input:focus,
 	&__label input:not(:placeholder-shown),
