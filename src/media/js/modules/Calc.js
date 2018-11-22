@@ -40,6 +40,8 @@ Calc.prototype = {
 		let $slides = $parent.find('.calc__slide');
 		let currentSlideIndex = 0;
 		let currentRateName;
+		let calcType = $parent.attr('data-type');
+		console.log("calcType: " + calcType);
 
 		$parent.find('.calc__selector._selectable').find('.calc__option').eq(0).addClass(ACTIVE_CLASS);
 
@@ -58,6 +60,9 @@ Calc.prototype = {
 			let rateName = $activeOption.attr('data-rate');
 			currentRateName = rateName;
 			console.log("rateName: " + rateName);
+			if (calcType === 'sell') {
+				$parent.find('[data-summary-currency]').text(rateName);
+			}
 		};
 		updateCurrentRateName();
 
@@ -92,7 +97,12 @@ Calc.prototype = {
 			inputValue = parseFloat(inputValue);
 			console.log("inputValueRaw: " + inputValueRaw);
 			console.log("inputValue: " + inputValue);
-			let outputValue = inputValue * rates[currentRateName];
+			let outputValue;
+			if (calcType === 'buy') {
+				outputValue = inputValue * rates[currentRateName];
+			} else {
+				outputValue = inputValue / rates[currentRateName];
+			}
 			outputValue = parseFloat(outputValue.toFixed(2));
 			console.log("outputValue: " + outputValue);
 			let outputValueFormatted = formatMoney(outputValue);

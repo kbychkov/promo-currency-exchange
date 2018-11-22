@@ -1,7 +1,7 @@
 {% from "./_forms-inputs.nunj" import inputBlock %}
 
 {% macro calcForm(type = "buy") %}
-	<form action="#" class="calc" data-error-message-required="Обязательное поле">
+	<form action="#" class="calc" data-type="{{ type }}" data-error-message-required="Обязательное поле">
 		<div class="calc__steps">
 			Шаг <span data-step-number>1</span> из <span data-steps-count>3</span>
 		</div>
@@ -17,42 +17,77 @@
 
 				<div class="calc__tip">Минимальная сумма $100</div>
 
-				<div class="calc__input-sections">
-					<div class="calc__input-section">
-						<div class="calc__input">
-							{{ inputBlock("text", "num-input", "Введите сумму", required = true, disabled = false, additionalAttributes = 'min="100" data-error-message-min="Минимум 100"') }}
-							<div class="calc__selector _selectable">
-								<span class="calc__selector-arrow"></span>
-								<div class="calc__option" data-rate="usd">
-									<div class="calc__option-flag _usd"></div>usd
+				{% if type == "buy" %}
+					<div class="calc__input-sections">
+						<div class="calc__input-section">
+							<div class="calc__input">
+								{{ inputBlock("text", "num-input", "Введите сумму", required = true, disabled = false, additionalAttributes = 'min="100" data-error-message-min="Минимум 100"') }}
+								<div class="calc__selector _selectable">
+									<span class="calc__selector-arrow"></span>
+									<div class="calc__option" data-rate="usd">
+										<div class="calc__option-flag _usd"></div>usd
+									</div>
+									<div class="calc__options">
+										<div class="calc__option" data-rate="gbp">
+											<div class="calc__option-flag _gbp"></div>gbp
+										</div>
+										<div class="calc__option" data-rate="eur">
+											<div class="calc__option-flag _eur"></div>eur
+										</div>
+										{#
+										<div class="calc__option" data-rate="rub">
+											<div class="calc__option-flag _rub"></div>rub
+										</div>
+										#}
+									</div>
 								</div>
-								<div class="calc__options">
-									<div class="calc__option" data-rate="gbp">
-										<div class="calc__option-flag _gbp"></div>gbp
-									</div>
-									<div class="calc__option" data-rate="eur">
-										<div class="calc__option-flag _eur"></div>eur
-									</div>
-									{#
-									<div class="calc__option" data-rate="rub">
+							</div>
+						</div>
+						<div class="calc__input-section">
+							<div class="calc__input">
+								{{ inputBlock("text", "num-output", "Всего к оплате", required = false, disabled = true) }}
+								<div class="calc__selector">
+									<div class="calc__option">
 										<div class="calc__option-flag _rub"></div>rub
 									</div>
-									#}
 								</div>
 							</div>
 						</div>
 					</div>
-					<div class="calc__input-section">
-						<div class="calc__input">
-							{{ inputBlock("text", "num-output", "Всего к оплате", required = false, disabled = true) }}
-							<div class="calc__selector">
-								<div class="calc__option">
-									<div class="calc__option-flag _rub"></div>rub
+
+				{% else %}
+					<div class="calc__input-sections">
+						<div class="calc__input-section">
+							<div class="calc__input">
+								{{ inputBlock("text", "num-input", "Введите сумму", required = true, disabled = false, additionalAttributes = 'min="6783" data-error-message-min="Минимум 6783"') }}
+								<div class="calc__selector">
+									<div class="calc__option">
+										<div class="calc__option-flag _rub"></div>rub
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="calc__input-section">
+							<div class="calc__input">
+								{{ inputBlock("text", "num-output", "Всего к оплате", required = false, disabled = true) }}
+								<div class="calc__selector _selectable">
+									<span class="calc__selector-arrow"></span>
+									<div class="calc__option" data-rate="usd">
+										<div class="calc__option-flag _usd"></div>usd
+									</div>
+									<div class="calc__options">
+										<div class="calc__option" data-rate="gbp">
+											<div class="calc__option-flag _gbp"></div>gbp
+										</div>
+										<div class="calc__option" data-rate="eur">
+											<div class="calc__option-flag _eur"></div>eur
+										</div>
+									</div>
 								</div>
 							</div>
 						</div>
 					</div>
-				</div>
+				{% endif %}
 
 				<div class="calc__bottom-block">
 					<div class="calc__summary">
