@@ -1,6 +1,7 @@
 .form
 	$parent-selector: &
 	$input-border-radius: $border-radius-default
+	$input-padding-x: 20px
 	padding: 6px 0
 	&__heading-part
 		margin-bottom: 34px
@@ -13,12 +14,16 @@
 	&__input
 		display: block
 		width: 100%
-		padding: 20px
+		padding: $input-padding-x
 		background: $c-white
 		border: 1px solid $c-gray-light
 		box-sizing: border-box
 		border-radius: $input-border-radius
+		outline: none
+		font: inherit
 		font-size: 14px
+		&:focus
+			box-shadow: 0 0 20px rgba($c-accent-main, 0.25)
 	&__input-section
 		margin-bottom: 22px
 		&:last-child
@@ -28,6 +33,92 @@
 		&._submit
 			margin-top: 32px
 			text-align: center
+	&__input-block
+		position: relative
+		transition: margin 1s
+		margin-bottom: 0
+		&._error
+			margin-bottom: 45px
+			#{$parent-selector}
+				&__error-message
+					display: block
+				&__input
+					border-color: $c-error-border
+					&:focus
+						box-shadow: 0 0 20px rgba($c-error-border, 0.25)
+			.checkbox
+				&__input
+					border-color: $c-error-border
+		&._success
+			&:after
+				content: ""
+				position: absolute
+				right: $input-padding-x
+				top: 50%
+				width: 22px
+				height: 18px
+				margin-top: -9px
+				background: transparent inline("../img/inline/check.svg") center center no-repeat
+				background-size: contain
+			#{$parent-selector}__input-section._checkbox &:after
+				display: none
+			#{$parent-selector}
+				&__input
+					border-color: $c-success-border
+					&:focus
+						box-shadow: 0 0 20px rgba($c-success-border, 0.25)
+	&__label
+		display: block
+		position: relative
+		cursor: pointer
+		input
+			cursor: pointer
+			transition: padding 0.3s
+		input::placeholder
+			color: transparent
+			._ie &
+				color: $c-placeholder
+	&__label-text
+		position: absolute
+		left: $input-padding-x
+		top: $input-padding-x + 2px
+		// width: 100%
+		// height: 100%
+		transition: opacity 0.3s, transform 0.3s
+		font-size: 14px
+		color: $c-placeholder
+		transform-origin: left center
+		._error &
+			color: inherit
+		._ie &
+			display: none
+	&__label input:focus
+		padding: 26px $input-padding-x 14px
+	&__label input:focus,
+	&__label input:not(:placeholder-shown),
+	&__label input._filled,
+	.input-select__value._filled
+		~ #{$parent-selector}__label-text
+			transform: translate(0, -17px) scale(0.72)
+	&__label input:not(:placeholder-shown),
+	.input-select__value
+		~ #{$parent-selector}__label-text
+			opacity: 0
+			pointer-events: none
+	&__label input:not(:placeholder-shown):focus,
+	.input-select._opened .input-select__value._filled
+		~ #{$parent-selector}__label-text
+			opacity: 0.8
+	&__error-message
+		display: none
+		position: absolute
+		left: 0
+		top: 100%
+		padding-top: 5px
+		width: 100%
+		pointer-events: none
+		color: $c-error-text
+		font-size: 10px
 	+screen-tablet
 		max-width: 500px
 		margin: auto

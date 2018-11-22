@@ -1,0 +1,49 @@
+{% macro inputBlock(type = "text", name = "", placeholder = "", required = false, additionalAttributes = "") %}
+	{# Значения по-умолчанию для типовых полей #}
+	{% if (name == "name" or placeholder == "Имя") and additionalAttributes == "" %}
+		{% set additionalAttributes = 'pattern="^[\\sа-яА-ЯёЁa-zA-Z0-9-—]+$" data-error-message-pattern="Латиница, кириллица, тире, цифры"' %}
+	{% endif %}
+
+	{% if (name == "company" or placeholder == "Компания") and additionalAttributes == "" %}
+		{% set additionalAttributes = 'pattern="^[\\sа-яА-ЯёЁa-zA-Z0-9-—!&quot;@№#%$,&amp;*;_=\\+]+$" data-error-message-pattern="Латиница, кириллица, тире, цифры, символы !&quot;@№#%$,&amp;*;_=+"' %}
+	{% endif %}
+
+	{% if (name == "agreement" or placeholder == "Согласие на обработку данных") and additionalAttributes == "" %}
+		{% set additionalAttributes = 'data-error-message-checkbox="Необходимо согласие"' %}
+	{% endif %}
+
+	{% if (type == "number" or name == "count_people") and additionalAttributes == "" %}
+		{# NOTE: Если необходимо отключить маску, можно указать атрибут data-use-mask="false" #}
+		{% set additionalAttributes = 'step="1" max="99999" pattern="^[0-9]{1,5}$" data-error-message-pattern="Цифры (не более 5 знаков)"' %}
+	{% endif %}
+
+	{% if type == "email" and additionalAttributes == "" %}
+		{% set additionalAttributes = 'data-error-message-email="Неверный формат"' %}
+	{% endif %}
+
+	<div class="form__input-block" data-stagger>
+		{% if type == "checkbox" %}
+			<label class="checkbox">
+				<div class="checkbox__flex">
+					<div class="checkbox__col _input">
+						<input type="checkbox" name="{{ name }}" {{ additionalAttributes }} {% if required %}required{% endif %}>
+						<div class="checkbox__input"></div>
+					</div>
+					<div class="checkbox__col _text">
+						{% if name == "agreement" %}
+							Я согласен на передачу
+							и обработку своих <a href="https://broker.ru/agreement" target="_blank" class="checkbox__link">персональных данных</a>
+						{% else %}
+							{{ placeholder }}
+						{% endif %}
+					</div>
+				</div>
+			</label>
+		{% else %}
+			<label class="form__label">
+				<input type="{{ type }}" placeholder="{{ placeholder }}" class="form__input" name="{{ name }}" {{ additionalAttributes }} {% if required %}required{% endif %} />
+				<span class="form__label-text">{{ placeholder }}</span>
+			</label>
+		{% endif %}
+	</div>
+{% endmacro %}
