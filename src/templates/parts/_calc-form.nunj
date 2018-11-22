@@ -72,7 +72,7 @@
 
 		<div class="calc__slide">
 			<div class="calc__inner-centered">
-				<div class="calc__paddings">
+				<div class="calc__paddings _v2">
 					<div class="form">
 						<div class="form__heading-part">
 							<h3 class="like-h3">Для получения валюты оставьте ваши контактные данные:</h2>

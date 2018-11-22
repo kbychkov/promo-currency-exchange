@@ -10,6 +10,10 @@
 	overflow: hidden
 	&__paddings
 		padding: 78px $paddings-x 38px
+		&._v2
+			padding-bottom: 20px
+			.form
+				padding-bottom: 0
 	&__steps
 		position: absolute
 		right: $paddings-x
@@ -176,17 +180,26 @@
 		&._relative
 			position: relative
 			visibility: visible
+			#{$parent-selector}
+				&__inner-centered
+					position: static
+					// transform: translate(0, 0)
 	&__inner-centered
 		position: absolute
 		left: 0
-		top: 50%
+		// top: 40.5%
+		top: 0
 		width: 100%
-		transform: translate(0, -50%)
+		// transform: translate(0, -50%)
+		// transition: transform 0.2s
 		.form
 			max-width: none
 			&__title
 				text-align: left
+			&__response
+				margin-top: 108px
 	&__next-prev
+		margin-top: 20px
 		.button
 			margin-bottom: 20px
 			&:last-child
@@ -203,6 +216,12 @@
 		$paddings-x: 40px
 		&__paddings
 			padding: 35px $paddings-x 59px
+			&._v2
+				padding-top: 88px
+				padding-bottom: 49px
+				.form
+					&__heading-part
+						max-width: 530px
 		&__steps
 			right: $paddings-x
 			top: 37px
@@ -247,7 +266,14 @@
 				display: block
 				padding: 59px $paddings-x
 				text-align: center
+		&__inner-centered
+			.form
+				&__response
+					margin-top: 178px
 	+screen-desktop
+		&__paddings
+			&._v2
+				padding-top: 101px
 		&__input-sections
 			display: flex
 			justify-content: space-between
@@ -282,3 +308,7 @@
 		&__next-prev
 			&._abs
 				display: flex
+		&__inner-centered
+			.form
+				&__response
+					margin-top: 78px

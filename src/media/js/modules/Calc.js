@@ -147,13 +147,16 @@ function Calc() {
 		let slideHeight = this.$slides.eq(slideIndex).find('.calc__paddings').outerHeight();
 
 		// TODO: Доделать изменение высоты блока.
-		TweenMax.to(this.$parent, 1, {
-			height: slideHeight,
-			ease: Back.easeInOut.config(1),
-			// onComplete: () => {
-			// 	this.$slides.eq(slideIndex).addClass('_relative');
-			// },
-		})
+		if (slideIndex !== slidesCount - 1) {
+			TweenMax.to(this.$parent, 1, {
+				height: slideHeight,
+				ease: Back.easeInOut.config(1),
+				onComplete: () => {
+					this.$slides.removeClass('_relative').eq(slideIndex).addClass('_relative');
+					this.$parent.css('height', '');
+				},
+			})
+		}
 		console.log("slideHeight: " + slideHeight);
 	};
 
