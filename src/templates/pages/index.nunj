@@ -27,9 +27,11 @@
 
 				<div class="tabs">
 					<div class="tabs__item tab _active" data-switcher-tab="1">
-						{{ calcForm() }}
+						{{ calcForm("buy") }}
 					</div>
-					<div class="tabs__item tab" data-switcher-tab="2">Здесь пока ничего нет, но скоро будет</div>
+					<div class="tabs__item tab" data-switcher-tab="2">
+						{{ calcForm("sell") }}
+					</div>
 				</div>
 			</div>
 		</div>

@@ -1,6 +1,6 @@
 {% from "./_forms-inputs.nunj" import inputBlock %}
 
-{% macro calcForm() %}
+{% macro calcForm(type = "buy") %}
 	<form action="#" class="calc" data-error-message-required="Обязательное поле">
 		<div class="calc__steps">
 			Шаг <span data-step-number>1</span> из <span data-steps-count>3</span>
