@@ -5,8 +5,30 @@
 			<div class="contacts-cities__list">
 				<div class="contacts-cities__first">
 					<div class="contacts-cities__letter">А</div>
-					<div class="contacts-cities__item _agent">
+					<div class="contacts-cities__item _agent" data-widget-caption="Ваш офис Армавир" data-widget-map-coordinates="40.155410, 44.038730" data-widget-map-zoom="10">
 						<a href="/contacts/armavir" class="contacts-cities__link">Армавир</a>
+
+						{# TODO: Это для примера. На бэке будут заполнены реальные данные. #}
+						<div class="hidden" data-widget-markup>
+							<div class="contacts-widget__title">Офис Армавир</div>
+							<div class="contacts-widget__address">
+								129110, Армавир, Проспект Мира,
+								69, стр. 1, 3 подъезд
+							</div>
+							<div class="contacts-widget__times">
+								пн-пт: с 9:30 до 19:00
+							</div>
+							<div class="contacts-widget__phones">
+								<div class="contacts-widget__phone-item">
+									<div class="contacts-widget__phone-title">Стать клиентом</div>
+									<span class="phone">8 800 500-55-45</span>
+								</div>
+								<div class="contacts-widget__phone-item">
+									<div class="contacts-widget__phone-title">Для трейдеров</div>
+									<span class="phone">8 800 100-55-02</span>
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
 				<div class="contacts-cities__others">

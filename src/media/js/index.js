@@ -51,6 +51,7 @@ const App = new function App() { // eslint-disable-line
 		Switchers: require('./modules/Switchers'),
 		Calc: require('./modules/Calc'),
 		FormsValidation: require('./modules/FormsValidation'),
+		Contacts: require('./modules/Contacts'),
 	};
 
 	// Startup
