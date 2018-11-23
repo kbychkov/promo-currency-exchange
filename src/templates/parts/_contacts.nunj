@@ -23,6 +23,7 @@
 					<div class="contacts-widget__caption" data-caption-element>
 						Ваш город Москва
 					</div>
+
 					<div class="contacts-widget__flex">
 						<div class="contacts-widget__col _text" data-info-container>
 							<div class="contacts-widget__title">Офис Москва</div>
@@ -36,16 +37,18 @@
 							<div class="contacts-widget__phones">
 								<div class="contacts-widget__phone-item">
 									<div class="contacts-widget__phone-title">Стать клиентом</div>
-									<span class="phone">8 800 500-55-45</span>
+									<a href="tel:8 800 500-55-45" class="phone">8 800 500-55-45</a>
 								</div>
 								<div class="contacts-widget__phone-item">
 									<div class="contacts-widget__phone-title">Для трейдеров</div>
-									<span class="phone">8 800 100-55-02</span>
+									<a href="tel:8 800 100-55-02" class="phone">8 800 100-55-02</a>
 								</div>
 							</div>
 						</div>
 						<div class="contacts-widget__col _map">
-							<div class="contacts-widget__map-container" id="widget-map"></div>
+							<div class="contacts-widget__map-container">
+								<div class="contacts-widget__map" data-widget-map></div>
+							</div>
 							<div class="contacts-widget__footnote">
 								Дата раскрытия информации: 25.09.2018. Период актуальности: с 25.09.2018 по настоящее время.
 							</div>
