@@ -55,7 +55,9 @@
 						</div>
 					</div>
 
+					{#
 					<script src="https://api-maps.yandex.ru/2.1/?apikey=a2619744-4796-4321-85a9-b2a69e1cdc81&lang=ru_RU" type="text/javascript"></script>
+					#}
 				</div>
 
 				{{ contactsCities() }}

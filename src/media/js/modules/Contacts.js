@@ -6,6 +6,10 @@ const Utils = require('../utils/Utils');
 
 function Contacts() {
 	this.$parent = dom.$body.find('.contacts-cities');
+	if (!this.$parent.length) {
+		return;
+	}
+
 	this.$widget = dom.$body.find('.contacts-widget');
 	this.$captionElement = this.$widget.find('[data-caption-element]');
 	// this.$infoContainer = this.$widget.find('[data-info-container]');
@@ -14,16 +18,23 @@ function Contacts() {
 
 	this.$parent.on('click', '.contacts-cities__link', e => this._linksClickHandler(e));
 
+	let init = () => {
+		ymaps.ready(() => {
+			this.mapsReady = true;
+			this._createMap(this.$widget);
+		});
+	};
+
 	// Функция ymaps.ready() будет вызвана, когда
 	// загрузятся все компоненты API, а также когда будет готово DOM-дерево.
-	if (!ymaps) {
-		return;
+	if (typeof ymaps !== 'undefined') {
+		init();
+		// return;
+	} else {
+		$.getScript('//api-maps.yandex.ru/2.1/?apikey=a2619744-4796-4321-85a9-b2a69e1cdc81&lang=ru_RU', () => {
+			init();
+		});
 	}
-
-	ymaps.ready(() => {
-		this.mapsReady = true;
-		this._createMap(this.$widget);
-	});
 
 	dom.$window.on('resize', Utils.debounce(() => {
 		this.maps.forEach(m => m.container.fitToViewport());
@@ -33,7 +44,7 @@ function Contacts() {
 
 Contacts.prototype = {
 	_createMap($container, coordinates = [62.617921, 92.946696], zoom = 2) {
-		if (!ymaps) {
+		if (typeof ymaps === 'undefined' || typeof ymaps.Map === 'undefined') {
 			return;
 		}
 
@@ -73,7 +84,7 @@ Contacts.prototype = {
 
 		let $widgetBlocks = this.$widget.find('.contacts-widget__flex');
 
-		if ($widgetMarkupContainer.length == 0) {
+		if ($widgetMarkupContainer.length == 0 || typeof ymaps === 'undefined' || typeof ymaps.Map === 'undefined') {
 			this._setWidgetInfo();
 
 		} else {

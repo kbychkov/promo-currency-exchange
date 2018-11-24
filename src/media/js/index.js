@@ -52,6 +52,7 @@ const App = new function App() { // eslint-disable-line
 		Calc: require('./modules/Calc'),
 		FormsValidation: require('./modules/FormsValidation'),
 		Contacts: require('./modules/Contacts'),
+		DateTime: require('./modules/DateTime'),
 	};
 
 	// Startup
