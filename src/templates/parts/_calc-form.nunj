@@ -25,7 +25,7 @@
 					<div class="calc__input-sections">
 						<div class="calc__input-section">
 							<div class="calc__input">
-								{{ inputBlock("text", "num-input", "Введите сумму", required = true, disabled = false, additionalAttributes = 'min="1" data-error-message-min="Больше нуля, пожалуйста" data-disable-status') }}
+								{{ inputBlock("number", "num-input", "Введите сумму", required = true, disabled = false, additionalAttributes = 'min="1" data-error-message-min="Больше нуля, пожалуйста" data-disable-status') }}
 								<div class="calc__selector _selectable">
 									<span class="calc__selector-arrow"></span>
 									<div class="calc__option" data-rate="usd">
@@ -49,7 +49,7 @@
 						</div>
 						<div class="calc__input-section">
 							<div class="calc__input">
-								{{ inputBlock("text", "num-output", "Всего к оплате", required = false, disabled = true) }}
+								{{ inputBlock("number", "num-output", "Всего к оплате", required = false, disabled = true) }}
 								<div class="calc__selector _unselectable">
 									<div class="calc__option">
 										<div class="calc__option-flag _rub"></div>rub
@@ -63,7 +63,7 @@
 					<div class="calc__input-sections">
 						<div class="calc__input-section">
 							<div class="calc__input">
-								{{ inputBlock("text", "num-input", "Введите сумму", required = true, disabled = false, additionalAttributes = 'min="1" data-error-message-min="Больше нуля, пожалуйста" data-disable-status') }}
+								{{ inputBlock("number", "num-input", "Введите сумму", required = true, disabled = false, additionalAttributes = 'min="1" data-error-message-min="Больше нуля, пожалуйста" data-disable-status') }}
 								<div class="calc__selector _unselectable">
 									<div class="calc__option">
 										<div class="calc__option-flag _rub"></div>rub
@@ -73,7 +73,7 @@
 						</div>
 						<div class="calc__input-section">
 							<div class="calc__input">
-								{{ inputBlock("text", "num-output", "Всего к оплате", required = false, disabled = true) }}
+								{{ inputBlock("number", "num-output", "Всего к оплате", required = false, disabled = true) }}
 								<div class="calc__selector _selectable">
 									<span class="calc__selector-arrow"></span>
 									<div class="calc__option" data-rate="usd">
