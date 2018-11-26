@@ -28,10 +28,10 @@
 					</p>
 					<div class="form__multiple-inputs">
 						<div class="form__input-section">
-							{{ inputBlock("text", "date", "Дата", required = false) }}
+							{{ inputBlock("text", "date", "Дата", required = false, additionalClass = "_icon _date") }}
 						</div>
 						<div class="form__input-section">
-							{{ inputBlock("text", "time", "Время", required = false) }}
+							{{ inputBlock("text", "time", "Время", required = false, additionalClass = "_icon _time") }}
 						</div>
 					</div>
 					<div class="form__input-section _checkbox">

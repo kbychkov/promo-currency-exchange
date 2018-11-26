@@ -69,12 +69,15 @@
 			&__option
 				padding-top: 12px
 				padding-bottom: 12px
+				height: auto
 	&__option
 		position: relative
 		width: 78px
+		height: $inputs-height
 		box-sizing: border-box
-		padding: 21px 12px 20px 28px
+		padding: 25px 12px 18px 28px
 		font-size: 12px
+		line-height: 1
 		font-weight: bold
 		text-transform: uppercase
 		+unselectable
@@ -148,6 +151,8 @@
 		justify-content: space-between
 		border-radius: $border-radius-default
 		border: 1px solid $c-lines
+		height: $inputs-height
+		box-sizing: border-box
 		.form__input
 			background: none
 		.form__input,
@@ -172,7 +177,7 @@
 		top: 50%
 		width: $arrow-width
 		height: $arrow-height
-		margin-top: -$arrow-height / 2 - 1px
+		margin-top: -$arrow-height / 2
 		// outline: 1px solid red;
 		transition: transform 0.3s
 		&:before,
@@ -236,6 +241,7 @@
 			$paddings-koef: 0.3
 			&__input
 				padding: $paddings
+				height: $inputs-height-large
 				&:focus
 					padding-left: $paddings
 					padding-right: $paddings
@@ -263,7 +269,8 @@
 			margin-right: 61px
 		&__option
 			width: 170px
-			padding: 28px 16px 27px 75px
+			height: $inputs-height-large
+			padding: 31px 16px 25px 75px
 			font-size: 18px
 		&__option-flag
 			$flag-size: 26px
@@ -273,6 +280,8 @@
 			margin-top: -$flag-size / 2
 		&__selector-arrow
 			right: 30px
+		&__input
+			height: $inputs-height-large
 		&__input-section
 			margin-bottom: 29px
 		&__options

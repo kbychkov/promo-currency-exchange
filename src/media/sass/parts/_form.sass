@@ -15,7 +15,7 @@
 	&__input
 		display: block
 		width: 100%
-		padding: $input-padding-x
+		padding: ($input-padding-x + 1px) $input-padding-x
 		background: $c-white
 		border: 1px solid $c-gray-light
 		box-sizing: border-box
@@ -23,6 +23,11 @@
 		outline: none
 		font: inherit
 		font-size: 14px
+		letter-spacing: 0.04em
+		line-height: 1
+		// NOTE: Фиксируем высоту,
+		// чтобы не прыгали мелкие иконки (баг).
+		height: $inputs-height
 		&:focus
 			box-shadow: 0 0 20px rgba($c-accent-main, 0.25)
 		&:disabled
@@ -43,6 +48,36 @@
 		position: relative
 		transition: margin 1s
 		margin-bottom: 0
+		&._icon
+			#{$parent-selector}
+				$icon-size: 16px
+				$input-padding-x--shift: $input-padding-x + $icon-size + 10px
+				&__label
+					&:before
+						content: ""
+						position: absolute
+						left: $input-padding-x
+						top: 50%
+						width: $icon-size
+						height: $icon-size
+						margin-top: -$icon-size / 2
+						background: transparent center center no-repeat
+						background-size: contain
+						pointer-events: none
+				&__input
+					padding-left: $input-padding-x--shift
+				&__label-text
+					left: $input-padding-x--shift
+		&._date
+			#{$parent-selector}
+				&__label
+					&:before
+						background-image: inline("../img/inline/calendar.svg")
+		&._time
+			#{$parent-selector}
+				&__label
+					&:before
+						background-image: inline("../img/inline/clock.svg")
 		&._error
 			margin-bottom: 45px
 			#{$parent-selector}
@@ -107,7 +142,7 @@
 			display: none
 	&__label input:focus,
 	&__input._filled
-		padding: 26px $input-padding-x 14px
+		padding: 27px $input-padding-x 15px
 	&__label input:focus,
 	&__label input:not(:placeholder-shown),
 	&__label input._filled,

@@ -1,4 +1,4 @@
-{% macro inputBlock(type = "text", name = "", placeholder = "", required = false, additionalAttributes = "", disabled = false) %}
+{% macro inputBlock(type = "text", name = "", placeholder = "", required = false, additionalAttributes = "", disabled = false, additionalClass = "") %}
 	{# Значения по-умолчанию для типовых полей #}
 	{% if (name == "name" or placeholder == "Имя") and additionalAttributes == "" %}
 		{% set additionalAttributes = 'pattern="^[\\sа-яА-ЯёЁa-zA-Z0-9-—]+$" data-error-message-pattern="Латиница, кириллица, тире, цифры"' %}
@@ -21,7 +21,7 @@
 		{% set additionalAttributes = 'data-error-message-email="Неверный формат"' %}
 	{% endif %}
 
-	<div class="form__input-block" data-stagger>
+	<div class="form__input-block {{ additionalClass }}" data-stagger>
 		{% if type == "checkbox" %}
 			<label class="checkbox">
 				<div class="checkbox__flex">
