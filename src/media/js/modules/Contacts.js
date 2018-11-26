@@ -15,6 +15,8 @@ function Contacts() {
 	// this.$infoContainer = this.$widget.find('[data-info-container]');
 	this.maps = [];
 	this.$widgetBlockExample = this.$widget.find('.contacts-widget__flex').clone(false);
+	this.$mapFootnoteExample = this.$widget.find('.contacts-widget__footnote').clone(false);
+	this.$widgetBlockExample.find('.contacts-widget__footnote').remove();
 
 	this.$parent.on('click', '.contacts-cities__link', e => this._linksClickHandler(e));
 
@@ -117,6 +119,7 @@ Contacts.prototype = {
 					console.log(this.$widget.find('.contacts-widget__flex').last().get(0));
 					this._createMap($clone);
 				}
+
 				let coordinates = $markupContainer.attr('data-widget-map-coordinates');
 				if (coordinates) {
 					coordinates = coordinates.split(',').map(el => parseFloat(el));
@@ -136,6 +139,9 @@ Contacts.prototype = {
 				this._setMap(coordinates, zoom, index);
 				this._setWidgetInfo(widgetMarkup, index);
 			});
+
+			this.$widget.find('.contacts-widget__footnote').remove();
+			this.$widget.find('.contacts-widget__flex').last().find('.contacts-widget__col._map').append(this.$mapFootnoteExample.clone());
 		}
 	},
 	_setMap(coordinates, zoom = 10, mapIndex = 0) {
