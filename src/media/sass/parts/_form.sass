@@ -208,6 +208,8 @@
 		font-weight: 500
 		color: $c-accent-2
 		margin: 0 0 0.5em
+		&._v2
+			font-weight: 300
 	&__response-text
 		font-size: 20px
 	&__multiple-inputs
@@ -251,6 +253,16 @@
 	+screen-desktop
 		&__response-text
 			max-width: 640px
+			&._v2
+				max-width: 680px
+				margin: auto
+				font-size: 31px
+				line-height: 1.5
+		&__response-title
+			&._v2
+				margin-bottom: 0.4em
+				font-size: 49px
+				line-height: 1.1
 	// +screen-desktop
 	// 	display: flex
 	// 	justify-content: space-between

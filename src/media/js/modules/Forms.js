@@ -60,6 +60,14 @@ function Forms() {
 						scrollTop: scrollTop,
 					});
 				}
+
+				let successName = data.name;
+				let successDate = data.date;
+				let successTime = data['datetime-select'];
+				let successTimeArr = successTime.split('-');
+				console.log(successName, successDate, successTime);
+				$form.find('[data-success-name]').text(`, ${successName}`);
+				$form.find('[data-success-datetime]').html(`${successDate}<br> с ${successTimeArr[0]} до ${successTimeArr[1]}`);
 			};
 
 			// TEMP: Чтобы хотя бы можно было посмотреть состояние отправки.

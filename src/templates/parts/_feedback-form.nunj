@@ -46,12 +46,12 @@
 			{# TODO: Прислали ответ на заявку.... Там нужно будет подставить данные из полей ввода. #}
 			<div class="form__state _state2">
 				<div class="form__response-message">
-					<div class="form__response-text">
-						<div data-stagger class="form__response-title">Спасибо!</div>
+					<div class="form__response-text _v2">
+						<div data-stagger class="form__response-title _v2">Спасибо<span data-success-name></span>!</div>
 
 						<div data-stagger>
-							Ваше сообщение принято.<br/>
-							Мы обязательно с Вами свяжемся, чтобы обсудить все детали.
+							Мы перезвоним вам
+							<span data-success-datetime></span>
 						</div>
 					</div>
 				</div>
