@@ -180,9 +180,12 @@ html, body
 	+desktop
 		cursor: pointer
 		transition: color $default-transition-duration, opacity $default-transition-duration
+		outline: none
 		&:hover
 			color: $c-accent-main
 			transition-duration: 0s
+		&:focus
+			color: $c-accent-2
 
 =button-hover
 	+desktop

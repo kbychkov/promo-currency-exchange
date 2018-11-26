@@ -78,6 +78,8 @@
 		font-weight: bold
 		text-transform: uppercase
 		+unselectable
+		&._active
+			background-color: $c-accent-2
 	&__option-flag
 		$flag-size: 10px
 		position: absolute
@@ -114,6 +116,10 @@
 					transform: translate(0, 0)
 					opacity: 1
 					pointer-events: auto
+				&__option
+					&._active
+						cursor: default
+						pointer-events: none
 		&._selectable
 			background-color: $c-accent-3
 			color: $c-white
@@ -121,13 +127,16 @@
 				&__options
 					#{$parent-selector}
 						&__option
-							background-color: $c-accent-2
+							background-color: $c-accent-3
 							&:last-child
 								border-radius: 0 0 $border-radius-default $border-radius-default
 							&:not(:last-child)
 								border-bottom: 1px solid rgba($c-white, 0.05)
 				&__option
 					@extend %button-hover
+					&:hover
+						+desktop
+							background-color: $c-accent-2
 		&._unselectable
 			#{$parent-selector}
 				&__option
