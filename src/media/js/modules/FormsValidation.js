@@ -51,7 +51,6 @@ FormsValidation.prototype = {
 				}
 		}
 
-
 		if (required && !valueExists) {
 			errorType = 'required';
 		} else if (valueExists && pattern !== false && !pattern.test(value)) {
@@ -138,6 +137,16 @@ FormsValidation.prototype = {
 		// });
 
 		// Binds
+		$inputs.each((index, elem) => {
+			let $input = $(elem);
+			let $parent = $input.closest(`.${PARENT_CLASS}`);
+			if (!$input.is('[required]')) {
+				$parent.addClass('_no-required');
+			}
+			if ($input.is('[data-disable-status]')) {
+				$parent.addClass('_no-status');
+			}
+		});
 		$inputs.on('input', e => this._checkInput(e.currentTarget));
 		$form.on('reset', () => {
 			$form.find(`.${PARENT_CLASS}`).removeClass(SUCCESS_CLASS);
@@ -145,6 +154,10 @@ FormsValidation.prototype = {
 
 		return {
 			validate($inputsToCheck) {
+				if ($inputsToCheck && $inputsToCheck.length === 0) {
+					return true;
+				}
+
 				let allowSend = true;
 				let highlightDelay = 0;
 				let hiddenInputs = [];

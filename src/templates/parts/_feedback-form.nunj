@@ -27,10 +27,10 @@
 			<div class="form__multiple-inputs">
 				{# TODO: Остаётся прикрутить плагин для выбора даты и времени. #}
 				<div class="form__input-section">
-					{{ inputBlock("text", "date", "Дата", required = true) }}
+					{{ inputBlock("text", "date", "Дата", required = false) }}
 				</div>
 				<div class="form__input-section">
-					{{ inputBlock("text", "time", "Время", required = true) }}
+					{{ inputBlock("text", "time", "Время", required = false) }}
 				</div>
 			</div>
 			<div class="form__input-section _checkbox">

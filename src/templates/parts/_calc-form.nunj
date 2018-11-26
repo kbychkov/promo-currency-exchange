@@ -15,13 +15,15 @@
 					<div class="calc__rate-item"><span class="calc__currency-sign">£</span> <span data-rate="gbp">87,13</span></div>
 				</div>
 
+				{#
 				<div class="calc__tip">Минимальная сумма $100</div>
+				#}
 
 				{% if type == "buy" %}
 					<div class="calc__input-sections">
 						<div class="calc__input-section">
 							<div class="calc__input">
-								{{ inputBlock("text", "num-input", "Введите сумму", required = true, disabled = false, additionalAttributes = 'min="100" data-error-message-min="Минимум 100"') }}
+								{{ inputBlock("text", "num-input", "Введите сумму", required = true, disabled = false, additionalAttributes = 'min="1" data-error-message-min="Больше нуля, пожалуйста" data-disable-status') }}
 								<div class="calc__selector _selectable">
 									<span class="calc__selector-arrow"></span>
 									<div class="calc__option" data-rate="usd">
@@ -59,7 +61,7 @@
 					<div class="calc__input-sections">
 						<div class="calc__input-section">
 							<div class="calc__input">
-								{{ inputBlock("text", "num-input", "Введите сумму", required = true, disabled = false, additionalAttributes = 'min="6783" data-error-message-min="Минимум 6783"') }}
+								{{ inputBlock("text", "num-input", "Введите сумму", required = true, disabled = false, additionalAttributes = 'min="1" data-error-message-min="Больше нуля, пожалуйста" data-disable-status') }}
 								<div class="calc__selector _unselectable">
 									<div class="calc__option">
 										<div class="calc__option-flag _rub"></div>rub

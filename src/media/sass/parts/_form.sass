@@ -65,6 +65,10 @@
 				margin-top: -9px
 				background: transparent inline("../img/inline/check.svg") center center no-repeat
 				background-size: contain
+			&._no-required,
+			&._no-status
+				&:after
+					display: none
 			#{$parent-selector}__input-section._checkbox &:after
 				display: none
 			#{$parent-selector}

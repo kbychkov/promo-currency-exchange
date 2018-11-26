@@ -90,13 +90,38 @@ Calc.prototype = {
 		let updateValues = () => {
 			let inputValueRaw = $numInput.val();
 			let inputValueFormatted = inputValueRaw.replace(',', '.');
+
 			inputValueFormatted = parseFloat(inputValueFormatted);
+
+			// NOTE: Ограничиваем ввод суммой 1000000 (для любой валюты).
+			inputValueFormatted = Math.min(1000000, inputValueFormatted);
+
 			inputValueFormatted = formatMoney(inputValueFormatted);
 			console.log("inputValueFormatted: " + inputValueFormatted);
 			let inputValue = inputValueRaw.replace(',', '.');
 			inputValue = parseFloat(inputValue);
 			console.log("inputValueRaw: " + inputValueRaw);
 			console.log("inputValue: " + inputValue);
+			// inputValue = Math.min(1000000, inputValue);
+			// console.log("inputValue: " + inputValue);
+
+			// NOTE: Ограничиваем ввод суммой 1000000 (для любой валюты).
+			inputValue = Math.min(1000000, inputValue);
+
+			let inputValueToShow = inputValue;
+			if (isNaN(inputValue)) {
+				inputValueToShow = '';
+			} else if (inputValueRaw) {
+				if (inputValueRaw == inputValueRaw.charAt(inputValueRaw.length - 1) == '.' || (inputValueRaw.charAt(inputValueRaw.length - 2) == '.' && inputValueRaw.charAt(inputValueRaw.length - 1) == '0')) {
+					console.log("raw");
+					inputValueToShow = inputValueRaw;
+				} else {
+					console.log("no raw");
+					console.log("inputValue: " + inputValue);
+					inputValueToShow = inputValue;
+				}
+			}
+
 			let outputValue;
 			if (calcType === 'buy') {
 				outputValue = inputValue * rates[currentRateName];
@@ -108,12 +133,6 @@ Calc.prototype = {
 			let outputValueFormatted = formatMoney(outputValue);
 			console.log("outputValueFormatted: " + outputValueFormatted);
 
-			let inputValueToShow = inputValue;
-			if (isNaN(inputValue)) {
-				inputValueToShow = '';
-			} else if (inputValueRaw) {
-				inputValueToShow = inputValueRaw == inputValue + '.' || inputValueRaw.charAt(inputValueRaw.length - 1) == '0' ? inputValueRaw : inputValue;
-			}
 			$numInput.val(inputValueToShow);
 			// $numInput.val(inputValue.toFixed(4));
 			// $numInput.val(inputValueFormatted);
@@ -203,7 +222,8 @@ Calc.prototype = {
 		$form.on('submit', e => {
 			e.preventDefault();
 			if (currentSlideIndex === 0) {
-				if (formsValidation.validate($slides.eq(0).find('.form__input[required]'))) {
+				let $requiredFields = $slides.eq(0).find('.form__input[required]');
+				if ($requiredFields.length === 0 || formsValidation.validate($requiredFields)) {
 					switchSlide(currentSlideIndex + 1);
 				}
 				return;
