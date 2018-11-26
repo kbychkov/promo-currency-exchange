@@ -51,6 +51,13 @@
 		-moz-user-select: none;
 		-ms-user-select: none;
 		user-select: none;
+	&-innerContainer
+		display: block;
+		display: -ms-flexbox;
+		display: flex;
+		margin-top: 10px;
+		box-sizing: border-box;
+		overflow: hidden;
 	&-rContainer
 		display: inline-block;
 		padding: 0;
@@ -185,7 +192,7 @@
 		background: #fff
 		box-shadow: 0 0 10px rgba(0,0,0,.25)
 		&._opened
-			display: table
+			display: block
 			opacity: 1
 			visibility: visible
 			overflow: visible
@@ -216,6 +223,8 @@
 					padding: 0;
 					border-radius: 0;
 					box-shadow: none;
+			&-innerContainer
+				margin-top: 0;
 			&-month
 				height: 30px;
 				background: #b7bfc9;
@@ -266,13 +275,12 @@
 					height: 30px;
 					width: 45px;
 	&__dropdown-col
-		display: table-cell;
+		display: block
+		width: 100%
 		padding: 5px;
-		vertical-align: top;
+		box-sizing: border-box
 	&__schedule
-		display: -ms-flexbox;
-		display: flex;
-		-ms-flex-wrap: wrap;
+		display: none
 		flex-wrap: wrap;
 		width: 308px;
 		border: solid rgba(183,191,201,.4);
@@ -297,4 +305,27 @@
 		&._selected:hover
 			background-color: #005bbe;
 	&__mobile-schedule
-		display: none
+		select
+			width: 100%;
+			height: 40px;
+			padding: 10px 5px;
+			border: 1px solid #e1e1e1;
+			background: #fff;
+			font-family: inherit;
+			font-size: inherit;
+			line-height: inherit;
+			color: inherit;
+			font: inherit;
+			margin: 0;
+			font-size: 14px
+	+screen-desktop
+		&__dropdown
+			&._opened
+				display: table
+		&__dropdown-col
+			display: table-cell;
+			vertical-align: top;
+		&__schedule
+			display: flex;
+		&__mobile-schedule
+			display: none
