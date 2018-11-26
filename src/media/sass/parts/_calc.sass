@@ -220,6 +220,21 @@
 			padding: 39px $paddings-x
 			margin: 0
 	+screen-tablet
+		// NOTE: В калькуляторе все поля должны быть большими.
+		.form
+			$paddings: 30px
+			$paddings-koef: 0.3
+			&__input
+				padding: $paddings
+				&:focus
+					padding-left: $paddings
+					padding-right: $paddings
+				&:focus,
+				&._filled
+					padding-top: $paddings * (1 + $paddings-koef)
+					padding-bottom: $paddings * (1 - $paddings-koef)
+			&__label-text
+				left: $paddings
 		$paddings-x: 40px
 		&__paddings
 			padding: 35px $paddings-x 59px

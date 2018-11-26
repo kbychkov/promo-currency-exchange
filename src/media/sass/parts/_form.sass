@@ -227,6 +227,10 @@
 	&__link
 		@extend %link-hover
 		color: $c-accent-main
+		&:hover
+			+desktop
+				color: $c-accent-2
+				text-decoration: underline
 	&__input
 		position: relative
 		width: $checkbox-size

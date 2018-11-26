@@ -69,8 +69,8 @@ FormsValidation.prototype = {
 			let attrPre = 'data-error-message-';
 			let errorMessageText =
 				$input.attr(attrPre + errorType) ||
-				$input.attr(attrPre + inputType) ||
 				$form.attr(attrPre + errorType) ||
+				$input.attr(attrPre + inputType) ||
 				$form.attr(attrPre + inputType) ||
 				'';
 			$errorMessage.text(errorMessageText);
