@@ -2,14 +2,10 @@
 	"menuItems": [
 		{
 			"name": "Обменять валюту",
-			"path": "./how-to-start.html"
+			"path": "./"
 		},
 		{
 			"name": "Торговать валютой",
-			"path": "./how-to-start.html"
-		},
-		{
-			"name": "Контакты",
 			"path": "./how-to-start.html"
 		}
 	],

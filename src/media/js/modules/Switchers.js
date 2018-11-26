@@ -78,6 +78,81 @@ Switchers.prototype = {
 					.addClass(OPENED);
 				$opener.addClass(ACTIVE);
 			}
+		} else if (mode == 'hide') {
+			if (openerIsActive) {
+				$allTabs
+					.hide()
+					.removeClass(OPENED);
+				$allOpeners.removeClass(ACTIVE);
+			} else {
+				$closeTabs
+					.hide()
+					.removeClass(OPENED);
+				$allOpeners.removeClass(ACTIVE);
+
+				$openTab
+					.show()
+					.addClass(OPENED);
+				$opener.addClass(ACTIVE);
+			}
+		} else if (mode == 'away-x') {
+			if (openerIsActive) {
+				TweenMax.killTweensOf($allTabs);
+				TweenMax.to($allTabs, 0.4, {
+					x: '-100%',
+					autoAlpha: 0,
+				});
+				$allOpeners.removeClass(ACTIVE);
+			} else {
+				TweenMax.killTweensOf($closeTabs);
+				TweenMax.to($closeTabs, 0.4, {
+					x: '-100%',
+					autoAlpha: 0,
+					onComplete: () => {
+						$closeTabs.hide();
+
+						TweenMax.killTweensOf($openTab);
+						TweenMax.fromTo($openTab.show(), 0.4, {
+							x: '100%',
+							autoAlpha: 0,
+						}, {
+							x: '0%',
+							autoAlpha: 1,
+						});
+					},
+				});
+				$allOpeners.removeClass(ACTIVE);
+				$opener.addClass(ACTIVE);
+			}
+		} else if (mode == 'away-y') {
+			if (openerIsActive) {
+				TweenMax.killTweensOf($allTabs);
+				TweenMax.to($allTabs, 0.4, {
+					y: '20px',
+					autoAlpha: 0.25,
+				});
+				$allOpeners.removeClass(ACTIVE);
+			} else {
+				TweenMax.killTweensOf($closeTabs);
+				TweenMax.to($closeTabs, 0.4, {
+					y: '20px',
+					autoAlpha: 0.25,
+					onComplete: () => {
+						$closeTabs.hide();
+
+						TweenMax.killTweensOf($openTab);
+						TweenMax.fromTo($openTab.show(), 0.4, {
+							y: '20px',
+							autoAlpha: 0.25,
+						}, {
+							y: '0px',
+							autoAlpha: 1,
+						});
+					},
+				});
+				$allOpeners.removeClass(ACTIVE);
+				$opener.addClass(ACTIVE);
+			}
 		}
 	},
 };

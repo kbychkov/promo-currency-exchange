@@ -1,5 +1,6 @@
 {% set pageTitle = "Главная" %}
 {% set isMainPage = true %}
+{% set menuIndex = 0 %}
 {% set rawContainer = true %}
 {% set headerNoMargin = true %}
 {% set footerNoMargin = true %}
@@ -19,7 +20,7 @@
 				</h1>
 			</div>
 
-			<div class="calc-section" data-switcher data-switcher-mode="fade">
+			<div class="calc-section" data-switcher data-switcher-mode="away-y">
 				<div class="tab-openers">
 					<span class="tab-openers__item _active" data-switcher-tab-opener="1">Купить</span>
 					<span class="tab-openers__item" data-switcher-tab-opener="2">Продать</span>

@@ -14,6 +14,7 @@
 	text-transform: uppercase
 	text-align: center
 	letter-spacing: 0.12em
+	+unselectable
 	&--accent
 		padding: 1.9em 3.9em
 		min-width: 220px
@@ -45,6 +46,7 @@
 	height: 20px
 	position: relative
 	cursor: pointer
+	+unselectable
 	i
 		position: absolute
 		left: 0
@@ -74,6 +76,7 @@
 	border: none
 	border-radius: 100%
 	background-color: $c-accent-main
+	+unselectable
 	&:before
 		$icon-size: percentage(12 / 40)
 		content: ""
