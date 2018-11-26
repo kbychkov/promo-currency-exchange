@@ -43,8 +43,8 @@ DateTime.prototype = {
 		}
 
 		// $dateTime.html('' +
-		// 	'<div class="form__input _date"><input type="text" placeholder="Выберете дату" class="js-call-date" data-input></div>' +
-		// 	'<div class="form__input _time js-call-time"></div>' +
+		// 	'<div class="form__input _date-input"><input type="text" placeholder="Выберете дату" class="js-call-date" data-input></div>' +
+		// 	'<div class="form__input _time-input js-call-time"></div>' +
 		// 	'<input type="hidden" name="schedule-start"><input type="hidden" name="schedule-end">' +
 		// 	'<input type="hidden" name="schedule-timezone-offset">' +
 		// 	'<div class="datetime__dropdown">' +
@@ -55,8 +55,8 @@ DateTime.prototype = {
 		// 	'<select name="datetime-select"></select>' +
 		// 	'</div></div></div>');
 
-		$dateTime.find('[name="date"]').addClass('_date js-call-date').attr('data-input', '');
-		$dateTime.find('[name="time"]').addClass('_time js-call-time');
+		$dateTime.find('[name="date"]').addClass('_date-input js-call-date').attr('data-input', '');
+		$dateTime.find('[name="time"]').addClass('_time-input js-call-time');
 
 		let $newMarkupElem = $('<div></div>');
 		$newMarkupElem.html(`
@@ -78,7 +78,7 @@ DateTime.prototype = {
 		var $dateTimeInput = $dateTime.find('.form__input');
 		var $dropdown = $dateTime.find('.datetime__dropdown');
 		var $schedule = $dateTime.find('.datetime__schedule');
-		var $scheduleIntervalInput = $dateTime.find('._time');
+		var $scheduleIntervalInput = $dateTime.find('._time-input');
 		var $scheduleIntervalStart = $dateTime.find('[name="schedule-start"]');
 		var $scheduleIntervalEnd = $dateTime.find('[name="schedule-end"]');
 		var $timeZoneOffset = $dateTime.find('[name="schedule-timezone-offset"]');
