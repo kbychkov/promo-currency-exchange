@@ -42,7 +42,8 @@ const App = new function App() { // eslint-disable-line
 	};
 
 	this.helpers = {
-		SVGSprites: require('./helpers/SVGSprites')
+		SVGSprites: require('./helpers/SVGSprites'),
+		Connector: require('./helpers/Connector'),
 	};
 
 	this.modules = {
@@ -53,6 +54,7 @@ const App = new function App() { // eslint-disable-line
 		FormsValidation: require('./modules/FormsValidation'),
 		Contacts: require('./modules/Contacts'),
 		DateTime: require('./modules/DateTime'),
+		Forms: require('./modules/Forms'),
 	};
 
 	// Startup
@@ -71,54 +73,6 @@ const App = new function App() { // eslint-disable-line
 			let $iframe = $videoPopup.find('iframe');
 			$iframe.attr('data-src', $iframe.attr('src'));
 			$iframe.removeAttr('src');
-		});
-
-		// TODO: Подумать, стоит ли это вынести в отдельный модуль.
-		this.$forms = this.dom.$body.find('form:not(.calc)');
-		this.$forms.each((index, elem) => {
-			let $form = $(elem);
-			let formsValidation = this.modules.FormsValidation.init($form);
-			$form.on('submit', e => {
-				e.preventDefault();
-
-				if (!formsValidation.validate()) {
-					return;
-				}
-
-				let formData = $form.serializeArray();
-				let data = {};
-				$(formData).each(function(index, obj) {
-					let value = obj.value;
-					if (obj.name === 'agreement') {
-						value = value === 'on' ? 1 : 0;
-					}
-					data[obj.name] = value;
-				});
-
-				console.log(data);
-
-				// let timeout = setTimeout(() => {
-				// 	this.$form.addClass(SENDING_CLASS);
-				// }, 200);
-
-				// let done = () => {
-				// 	clearTimeout(timeout);
-				// 	this.$form.removeClass(SENDING_CLASS).addClass(STATE_CLASS);
-				// 	TweenMax.staggerFromTo(this.$form.find('.form__state._state2 [data-stagger]'), 1.4, {
-				// 		alpha: 0,
-				// 		y: 20,
-				// 	}, {
-				// 		alpha: 1,
-				// 		y: 0,
-				// 	}, 0.6);
-				// 	this.$form.closest('.ps').scrollTop(0);
-				// };
-
-				// Connector.send('send_feedback', data, response => {
-				// 	console.log(response);
-				// 	done();
-				// });
-			});
 		});
 	});
 }();

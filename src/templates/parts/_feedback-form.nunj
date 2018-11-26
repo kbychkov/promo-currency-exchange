@@ -1,43 +1,60 @@
 {% from "./_forms-inputs.nunj" import inputBlock %}
 
 {% macro feedbackForm() %}
-	<form action="#" class="form" data-error-message-required="Обязательное поле">
-		<div class="form__heading-part">
-			<h2 class="form__title like-h2">Остались вопросы?</h2>
-			<p class="form__subtitle">
-				Заполните форму,
-				и мы перезвоним вам
-				в ближайшее время
-			</p>
-		</div>
-		<div class="form__sections-part">
-			<div class="form__input-section">
-				{{ inputBlock("text", "name", "Имя", required = true) }}
-			</div>
-			<div class="form__input-section">
-				{{ inputBlock("tel", "phone", "Телефон", required = true) }}
-			</div>
-			<div class="form__input-section">
-				{{ inputBlock("email", "email", "E-mail", required = true) }}
-			</div>
-			<p class="form__subtitle _v2">
-				Выберите удобное для вас
-				время звонка
-			</p>
-			<div class="form__multiple-inputs">
-				{# TODO: Остаётся прикрутить плагин для выбора даты и времени. #}
-				<div class="form__input-section">
-					{{ inputBlock("text", "date", "Дата", required = false) }}
+	<form action="./send" class="form" data-error-message-required="Обязательное поле">
+		<div class="form__states">
+			<div class="form__state _state1">
+				<div class="form__heading-part">
+					<h2 class="form__title like-h2">Остались вопросы?</h2>
+					<p class="form__subtitle">
+						Заполните форму,
+						и мы перезвоним вам
+						в ближайшее время
+					</p>
 				</div>
-				<div class="form__input-section">
-					{{ inputBlock("text", "time", "Время", required = false) }}
+				<div class="form__sections-part">
+					<div class="form__input-section">
+						{{ inputBlock("text", "name", "Имя", required = true) }}
+					</div>
+					<div class="form__input-section">
+						{{ inputBlock("tel", "phone", "Телефон", required = true) }}
+					</div>
+					<div class="form__input-section">
+						{{ inputBlock("email", "email", "E-mail", required = true) }}
+					</div>
+					<p class="form__subtitle _v2">
+						Выберите удобное для вас
+						время звонка
+					</p>
+					<div class="form__multiple-inputs">
+						<div class="form__input-section">
+							{{ inputBlock("text", "date", "Дата", required = false) }}
+						</div>
+						<div class="form__input-section">
+							{{ inputBlock("text", "time", "Время", required = false) }}
+						</div>
+					</div>
+					<div class="form__input-section _checkbox">
+						{{ inputBlock("checkbox", "agreement", "", required = true) }}
+					</div>
+					<div class="form__input-section _submit">
+						<button type="submit" class="button button--accent">Отправить</button>
+					</div>
 				</div>
 			</div>
-			<div class="form__input-section _checkbox">
-				{{ inputBlock("checkbox", "agreement", "", required = true) }}
-			</div>
-			<div class="form__input-section _submit">
-				<button type="submit" class="button button--accent">Отправить</button>
+
+			{# TODO: Прислали ответ на заявку.... Там нужно будет подставить данные из полей ввода. #}
+			<div class="form__state _state2">
+				<div class="form__response-message">
+					<div class="form__response-text">
+						<div data-stagger class="form__response-title">Спасибо!</div>
+
+						<div data-stagger>
+							Ваше сообщение принято.<br/>
+							Мы обязательно с Вами свяжемся, чтобы обсудить все детали.
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 	</form>

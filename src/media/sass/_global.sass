@@ -62,12 +62,22 @@
 		transform: rotate(360deg)
 
 // Linear png spinner
-%spinner
-	width: 20px
-	height: 20px
+=spinner($size: 20px, $centered: true)
+	width: $size
+	height: $size
 	background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUBAMAAAB/pwA+AAAALVBMVEUAAABra2toaGhsbGxra2tsbGxra2tsbGxsbGxsbGxra2tsbGxra2tra2tsbGzKmJSYAAAAD3RSTlMAQw0aW4c2vq2YechqK+kA+co8AAAAd0lEQVQI12NgYGDyKGeAAr8pggwMCiAWZxOQgLA9GGCAsQhCMzEwaCdAxQwYXGHSRgwTYUxlhk0wJhvDBgSzAG4UQxOCGQZjmjHIwJjJDJoGUKYAA2MAVOkFBgYviLAgiBsMYrFcAJGpzgwMhmchzpMKXXUQ6HIArngPcG/qBmMAAAAASUVORK5CYII=')
+	background-size: 100% 100%
 	opacity: 1
 	animation: rotating 0.65s linear infinite
+	@if centered
+		position: absolute
+		left: 50%
+		top: 50%
+		margin-left: -$size / 2
+		margin-top: -$size / 2
+
+%spinner
+	+spinner()
 
 .animated
 	@extend .transition-active

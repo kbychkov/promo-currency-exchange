@@ -2,6 +2,7 @@
 	$parent-selector: &
 	$input-border-radius: $border-radius-default
 	$input-padding-x: 20px
+	position: relative
 	padding: 6px 0
 	&__heading-part
 		margin-bottom: 34px
@@ -131,6 +132,39 @@
 		pointer-events: none
 		color: $c-error-text
 		font-size: 10px
+	&__states
+		position: relative
+	&__state
+		&._state2
+			display: none
+	&__response-message
+		@extend %full-sized
+		box-sizing: border-box
+		padding: 100px 0
+		text-align: center
+		#{$parent-selector}
+			&__response-text
+				max-width: none
+	// &__response-title
+	// 	+font-size(26px)
+	// 	margin-bottom: rel-size(40px)
+	// &__response-text
+	// 	max-width: rel-size(400px)
+	// 	margin: auto
+	&._state2
+		#{$parent-selector}
+			&__state
+				&._state1
+					visibility: hidden
+				&._state2
+					display: block
+	&._sending
+		> *
+			opacity: 0.85
+			pointer-events: none
+		&:after
+			@extend %spinner
+			content: ""
 	&__response
 		line-height: 1.5
 	&__response-title

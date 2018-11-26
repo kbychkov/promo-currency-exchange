@@ -2,6 +2,8 @@
 
 {% macro calcForm(type = "buy") %}
 	<form action="#" class="calc" data-type="{{ type }}" data-error-message-required="Обязательное поле">
+		<input type="hidden" name="form-type" value="{{ type }}">
+
 		<div class="calc__steps">
 			Шаг <span data-step-number>1</span> из <span data-steps-count>3</span>
 		</div>
@@ -139,15 +141,15 @@
 			<div class="calc__inner-centered">
 				<div class="calc__paddings">
 					<div class="form__response">
-						<div class="form__response-title">Готово!</div>
-						<div class="form__response-text">
+						<div class="form__response-title" data-stagger>Готово!</div>
+						<div class="form__response-text" data-stagger>
 							Финансовый советник перезвонит
 							вам и расскажет, как получить валюту.
 						</div>
 					</div>
 				</div>
 			</div>
-			<div class="calc__next-prev _abs">
+			<div class="calc__next-prev _abs" data-stagger>
 				<span class="button button--accent" data-reset>Обновить</span>
 			</div>
 		</div>

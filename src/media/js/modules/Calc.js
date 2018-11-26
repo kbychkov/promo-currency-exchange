@@ -1,10 +1,13 @@
 const dom = require('../utils/DOM');
 const env = require('../utils/ENV');
+const Connector = require('../helpers/Connector');
 const FormsValidation = require('./FormsValidation');
 
 const OPENED_CLASS = '_opened';
 const ACTIVE_CLASS = '_active';
 const FILLED_CLASS = '_filled';
+const SENDING_CLASS = '_sending';
+const STATE_CLASS = '_state2';
 
 // Stealed from:
 // https://stackoverflow.com/questions/149055/how-can-i-format-numbers-as-dollars-currency-string-in-javascript
@@ -227,47 +230,74 @@ Calc.prototype = {
 					switchSlide(currentSlideIndex + 1);
 				}
 				return;
+			} else if (currentSlideIndex === 1) {
+				let $requiredFields = $slides.eq(0).find('.form__input[required]');
+				if ($requiredFields.length > 0 && !formsValidation.validate($requiredFields)) {
+					switchSlide(0);
+					return;
+				}
 			}
 
 			if (!formsValidation.validate()) {
 				return;
 			}
 
+			let formAction = $form.attr('action');
 			let formData = $form.serializeArray();
 			let data = {};
 			$(formData).each(function(index, obj) {
 				let value = obj.value;
-				if (obj.name === 'agreement') {
-					value = value === 'on' ? 1 : 0;
-				}
+				// if (obj.name === 'agreement') {
+				// 	value = value === 'on' ? 1 : 0;
+				// }
 				data[obj.name] = value;
 			});
 
 			console.log(data);
 
-			switchSlide(slidesCount - 1);
+			let timeout = setTimeout(() => {
+				$form.find('.form').addClass(SENDING_CLASS);
+				$form.find('[type="submit"]').attr('disabled', 'disabled');
+			}, 200);
 
-			// let timeout = setTimeout(() => {
-			// 	$form.addClass(SENDING_CLASS);
-			// }, 200);
+			let done = () => {
+				clearTimeout(timeout);
+				$form.find('.form').removeClass(SENDING_CLASS).addClass(STATE_CLASS);
+				$form.find('[type="submit"]').removeAttr('disabled');
+				// TweenMax.staggerFromTo($form.find('[data-stagger]'), 1.4, {
+				// 	alpha: 0,
+				// 	y: 20,
+				// }, {
+				// 	alpha: 1,
+				// 	y: 0,
+				// }, 0.6);
 
-			// let done = () => {
-			// 	clearTimeout(timeout);
-			// 	$form.removeClass(SENDING_CLASS).addClass(STATE_CLASS);
-			// 	TweenMax.staggerFromTo($form.find('.form__state._state2 [data-stagger]'), 1.4, {
-			// 		alpha: 0,
-			// 		y: 20,
-			// 	}, {
-			// 		alpha: 1,
-			// 		y: 0,
-			// 	}, 0.6);
-			// 	$form.closest('.ps').scrollTop(0);
-			// };
+				// let $closestPopup = $form.closest('.popup');
+				// if ($closestPopup.length) {
+				// 	$closestPopup.animate({
+				// 		scrollTop: 0,
+				// 	});
+				// } else {
+				// 	let scrollTop = $form.offset().top - dom.$body.find('.header._fixed').outerHeight();
+				// 	dom.$document2.animate({
+				// 		scrollTop: scrollTop,
+				// 	});
+				// }
 
-			// Connector.send('send_feedback', data, response => {
-			// 	console.log(response);
-			// 	done();
-			// });
+				switchSlide(slidesCount - 1);
+			};
+
+			Connector.send(
+				formAction,
+				data,
+				response => {
+					console.log(response);
+					done();
+				},
+				err => {
+					console.error(err);
+				},
+			);
 		});
 	},
 };

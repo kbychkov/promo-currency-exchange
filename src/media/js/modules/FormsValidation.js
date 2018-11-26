@@ -44,7 +44,8 @@ FormsValidation.prototype = {
 
 			case 'text':
 			default:
-				if (($input.data('validatedOnce') === 'true' || $input.data('completedOnce') === 'true') && input.inputmask && typeof input.inputmask.isComplete === 'function') {
+				// if (($input.data('validatedOnce') === 'true' || $input.data('completedOnce') === 'true') && input.inputmask && typeof input.inputmask.isComplete === 'function') {
+				if (input.inputmask && typeof input.inputmask.isComplete === 'function') {
 					valueExists = input.inputmask.isComplete();
 				} else {
 					valueExists = !!value;
