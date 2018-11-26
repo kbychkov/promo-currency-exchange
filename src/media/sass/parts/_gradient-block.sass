@@ -1,6 +1,10 @@
 .gradient-block
+	$padding-top: 45px
 	background: linear-gradient(277.09deg, #AAB3C0 -0.36%, rgba(255, 255, 255, 0) 99.55%)
-	padding: 45px 0 217px
+	padding: $padding-top 0 217px
+	$padding-top: 45px
+	._header-fixed &._v1
+		padding-top: $padding-top + $header-height
 	&__bg
 		+aspect-ratio(790, 595)
 		position: absolute
@@ -16,7 +20,10 @@
 	&._v3
 		padding-bottom: 50px
 	+screen-tablet
-		padding: 64px 0 100px
+		$padding-top: 64px
+		padding: $padding-top 0 100px
+		._header-fixed &._v1
+			padding-top: $padding-top + $header-height
 		&__bg
 			right: -74px
 			bottom: -62px
@@ -28,7 +35,10 @@
 			padding-top: 80px
 			padding-bottom: 100px
 	+screen-desktop
-		padding: 110px 0 100px
+		$padding-top: 110px
+		padding: $padding-top 0 100px
+		._header-fixed &._v1
+			padding-top: $padding-top + $header-height
 		&__bg
 			right: -94px
 			bottom: -52px

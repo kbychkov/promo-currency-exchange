@@ -4,12 +4,14 @@ const Utils = require('../utils/Utils');
 const Callback = require('../classes/Callback');
 
 const FIXED_STATE_CLASS = '_fixed';
-const COLLAPSED_STATE_CLASS = '_collapsed';
+const STATE_2_CLASS = '_state2';
 // TODO: Уточнить данный момент. Возможно, что шапка должна быть фикс, но не должна скрываться.
 const AWAY_STATE_CLASS = '_away';
 const DOWN = 'down';
 const UP = 'up';
 const CURRENT = 'current';
+const SET_AWAY_STATE = false;
+const SET_PADDINGS = !dom.$html.hasClass('_header-fixed');
 
 function Header() {
 	this.$header = dom.$body.find('.header');
@@ -48,7 +50,7 @@ function Header() {
 		dom.$window.off('scroll', d);
 		dom.$window.off('resize', r);
 		this.unsetFixedState();
-		this.unsetCollapsedState();
+		this.unsetState2();
 	};
 
 	// TODO: Отрефакторить.
@@ -81,9 +83,9 @@ Header.prototype = {
 		this.currentY = y;
 
 		if (y > this.headerHeight) {
-			this.setCollapsedState();
+			this.setState2();
 		} else {
-			this.unsetCollapsedState();
+			this.unsetState2();
 		}
 	},
 	_directionController() {
@@ -118,6 +120,9 @@ Header.prototype = {
 		this._updatePaddings();
 	},
 	_updatePaddings() {
+		if (!SET_PADDINGS) {
+			return;
+		}
 		this.headerHeight = Math.round(this.$header.outerHeight() + (parseInt(this.$header.css('margin-bottom'), 10) || 0));
 		this.$wrapper.css('padding-top', `${this.headerHeight}px`);
 	},
@@ -130,16 +135,22 @@ Header.prototype = {
 		this.$header.removeClass(FIXED_STATE_CLASS);
 		this.$wrapper.css('padding-top', '');
 	},
-	setCollapsedState() {
-		this.$header.addClass(COLLAPSED_STATE_CLASS);
+	setState2() {
+		this.$header.addClass(STATE_2_CLASS);
 	},
-	unsetCollapsedState() {
-		this.$header.removeClass(COLLAPSED_STATE_CLASS);
+	unsetState2() {
+		this.$header.removeClass(STATE_2_CLASS);
 	},
 	setAwayState() {
+		if (!SET_AWAY_STATE) {
+			return;
+		}
 		this.$header.addClass(AWAY_STATE_CLASS);
 	},
 	unsetAwayState() {
+		if (!SET_AWAY_STATE) {
+			return;
+		}
 		this.$header.removeClass(AWAY_STATE_CLASS);
 	},
 
@@ -149,7 +160,7 @@ Header.prototype = {
 		let scrollTop = dom.$window.scrollTop();
 		if (state === true && scrollTop === 0) {
 			this.unsetAwayState();
-			this.unsetCollapsedState();
+			this.unsetState2();
 		}
 	},
 };

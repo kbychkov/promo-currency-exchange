@@ -3,9 +3,12 @@
 {% from "../parts/_feedback-form.nunj" import feedbackForm %}
 {% from "../parts/_calc-form.nunj" import calcForm %}
 {% from "../parts/_contacts.nunj" import contacts %}
+{% if not headerAlwaysFixed %}
+	{% set headerAlwaysFixed = true %}
+{% endif %}
 
 <!DOCTYPE html>
-<html>
+<html class="{% if headerAlwaysFixed == true %}_header-fixed{% endif %}">
 	<head>
 		<!-- Client-side programming by sborkaproject.com -->
 		<meta charset="utf-8" />
@@ -37,7 +40,7 @@
 	</head>
 	<body>
 		<div class="wrapper">
-			<header class="wrapper__header header {% if headerNoMargin == true %}_no-margin{% endif %}">
+			<header class="wrapper__header header {% if headerAlwaysFixed == true %}_fixed{% endif %} {% if headerNoMargin == true %}_no-margin{% endif %}">
 				<div class="container">
 					<div class="header__row">
 						<div class="container">

@@ -6,7 +6,7 @@
 {% extends "../ext/base.nunj" %}
 
 {% block content %}
-	<div class="gradient-block">
+	<div class="gradient-block _v1">
 		<div class="container relative">
 			<div class="gradient-block__bg"></div>
 			<div class="relative">
