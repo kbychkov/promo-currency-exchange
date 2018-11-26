@@ -46,7 +46,7 @@
 						<div class="calc__input-section">
 							<div class="calc__input">
 								{{ inputBlock("text", "num-output", "Всего к оплате", required = false, disabled = true) }}
-								<div class="calc__selector">
+								<div class="calc__selector _unselectable">
 									<div class="calc__option">
 										<div class="calc__option-flag _rub"></div>rub
 									</div>
@@ -60,7 +60,7 @@
 						<div class="calc__input-section">
 							<div class="calc__input">
 								{{ inputBlock("text", "num-input", "Введите сумму", required = true, disabled = false, additionalAttributes = 'min="6783" data-error-message-min="Минимум 6783"') }}
-								<div class="calc__selector">
+								<div class="calc__selector _unselectable">
 									<div class="calc__option">
 										<div class="calc__option-flag _rub"></div>rub
 									</div>

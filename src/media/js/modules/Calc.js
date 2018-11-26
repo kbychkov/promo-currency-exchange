@@ -74,7 +74,7 @@ Calc.prototype = {
 		$parent.on('click', '.calc__option', e => {
 			let $elem = $(e.currentTarget);
 			let $parent = $elem.closest('.calc__selector');
-			if (!$parent.hasClass(OPENED_CLASS)) {
+			if (!$parent.hasClass(OPENED_CLASS) || $elem.hasClass(ACTIVE_CLASS)) {
 				return;
 			}
 			e.stopPropagation();

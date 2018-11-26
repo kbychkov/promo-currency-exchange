@@ -126,6 +126,12 @@
 								border-bottom: 1px solid rgba($c-white, 0.05)
 				&__option
 					@extend %button-hover
+		&._unselectable
+			#{$parent-selector}
+				&__option
+					padding-left: 35px
+				&__option-flag
+					left: 18px
 	&__input
 		display: flex
 		justify-content: space-between
@@ -248,6 +254,13 @@
 				&__option
 					padding-top: 15px
 					padding-bottom: 15px
+		&__selector
+			&._unselectable
+				#{$parent-selector}
+					&__option
+						padding-left: 89px
+					&__option-flag
+						left: 44px
 		&__summary
 			margin: 56px 0 52px
 		&__summary-text

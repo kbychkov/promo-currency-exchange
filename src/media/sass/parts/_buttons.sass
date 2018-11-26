@@ -25,17 +25,14 @@
 		color: $c-accent-2
 	+screen-phone
 		display: block
-	// TODO: Уточнить у дизюг, что за хня? На планшете, в блоке с калькулятором, кнопка большая,
-	// а в блоке с формой обратной связи, кнопка стандартного размера. Баг или фича?
+		width: 100%
 	+screen-tablet
 		&--accent
-			.calc &
-				min-width: 308px
-				font-size: 12px
-				letter-spacing: 0.1em
+			min-width: 308px
+			font-size: 12px
+			letter-spacing: 0.1em
 		&--border
-			.calc &
-				min-width: 174px
+			min-width: 174px
 
 .close-button
 	display: block

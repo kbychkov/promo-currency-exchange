@@ -170,17 +170,17 @@ html, body
 		cursor: pointer
 		transition: color $default-transition-duration, opacity $default-transition-duration
 		&:hover
-			// TODO: Уточнить реакцию на наведение для ссылок в тексте.
-			color: $c-accent-2
-			// opacity: 0.5
+			color: $c-accent-main
 			transition-duration: 0s
 
 =button-hover
-	cursor: pointer
-	transition: background-color $default-transition-duration
-	&:hover
-		background-color: $c-accent-2
-		transition-duration: 0s
+	+desktop
+		cursor: pointer
+		transition: background-color $default-transition-duration, color $default-transition-duration
+		&:hover
+			background-color: $c-accent-2
+			color: $c-white
+			transition-duration: 0s
 
 %link-hover
 	+link-hover
