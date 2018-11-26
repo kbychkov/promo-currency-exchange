@@ -3,7 +3,7 @@
 .contacts-cities
 	// margin-top: 81px
 	&__list
-		columns: 185px 6
+		display: block
 	&__first,
 	&__others
 		display: inline-block
@@ -61,6 +61,11 @@
 			margin-bottom: 21px
 		&__link
 			letter-spacing: 0.12em
+		// NOTE: Очень странный баг на iOS — пропадает текст.
+		// Вроде как помогает отмена columns
+		// (в данном случае — перенос на +screen-tablet).
+		&__list
+			columns: 185px 6
 	// TODO: Утончить, почему на десктопе стало не по сетке... ну и вообще, что за хня?
 	// Количество колонок отличается, например...
 	// +screen-desktop
