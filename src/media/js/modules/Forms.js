@@ -5,6 +5,7 @@ const FormsValidation = require('./FormsValidation');
 
 const SENDING_CLASS = '_sending';
 const STATE_CLASS = '_state2';
+const IS_LOCAL = window.location.hostname && (window.location.hostname.indexOf('sborka') >= 0 || window.location.hostname.indexOf('localhost') >= 0 || window.location.hostname.indexOf('192.168.') >= 0);
 
 function Forms() {
 	this.$forms = dom.$body.find('form:not(.calc)');
@@ -61,17 +62,22 @@ function Forms() {
 				}
 			};
 
-			Connector.send(
-				formAction,
-				data,
-				response => {
-					console.log(response);
-					done();
-				},
-				err => {
-					console.error(err);
-				},
-			);
+			// TEMP: Чтобы хотя бы можно было посмотреть состояние отправки.
+			if (IS_LOCAL) {
+				setTimeout(done, 2000);
+			} else {
+				Connector.send(
+					formAction,
+					data,
+					response => {
+						console.log(response);
+						done();
+					},
+					err => {
+						console.error(err);
+					},
+				);
+			}
 		});
 	});
 }

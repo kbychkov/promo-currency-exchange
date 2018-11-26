@@ -8,6 +8,7 @@ const ACTIVE_CLASS = '_active';
 const FILLED_CLASS = '_filled';
 const SENDING_CLASS = '_sending';
 const STATE_CLASS = '_state2';
+const IS_LOCAL = window.location.hostname && (window.location.hostname.indexOf('sborka') >= 0 || window.location.hostname.indexOf('localhost') >= 0 || window.location.hostname.indexOf('192.168.') >= 0);
 
 // Stealed from:
 // https://stackoverflow.com/questions/149055/how-can-i-format-numbers-as-dollars-currency-string-in-javascript
@@ -287,17 +288,22 @@ Calc.prototype = {
 				switchSlide(slidesCount - 1);
 			};
 
-			Connector.send(
-				formAction,
-				data,
-				response => {
-					console.log(response);
-					done();
-				},
-				err => {
-					console.error(err);
-				},
-			);
+			// TEMP: Чтобы хотя бы можно было посмотреть состояние отправки.
+			if (IS_LOCAL) {
+				setTimeout(done, 2000);
+			} else {
+				Connector.send(
+					formAction,
+					data,
+					response => {
+						console.log(response);
+						done();
+					},
+					err => {
+						console.error(err);
+					},
+				);
+			}
 		});
 	},
 };
