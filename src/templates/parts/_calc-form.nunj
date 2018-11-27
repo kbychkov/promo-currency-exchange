@@ -6,7 +6,7 @@
 		<input type="hidden" name="form-type" value="{{ type }}">
 
 		<div class="calc__steps">
-			Шаг <span data-step-number>1</span> из <span data-steps-count>3</span>
+			Шаг <span data-step-number>1</span> из&nbsp;<span data-steps-count>3</span>
 		</div>
 
 		<div class="calc__slide _relative">
@@ -136,7 +136,7 @@
 						<div class="form__response-title" data-stagger>Готово!</div>
 						<div class="form__response-text" data-stagger>
 							Финансовый советник перезвонит
-							вам и расскажет, как получить валюту.
+							вам и&nbsp;расскажет, как получить валюту.
 						</div>
 					</div>
 				</div>

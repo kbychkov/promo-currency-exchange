@@ -10,7 +10,7 @@
 					<div class="header__contacts-row _phone">
 						<a href="tel:{{ common.phone }}" class="phone">{{ common.phone }}</a>
 						<div class="description">
-							Бесплатный звонок по России
+							Бесплатный звонок по&nbsp;России
 						</div>
 					</div>
 

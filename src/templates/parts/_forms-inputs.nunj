@@ -26,7 +26,7 @@
 					</div>
 					<div class="checkbox__col _text">
 						{% if name == "agreement" %}
-							Я согласен на передачу
+							Я согласен на&nbsp;передачу
 							и обработку своих <a href="//broker.ru/agreement" target="_blank" class="checkbox__link">персональных данных</a>
 						{% else %}
 							{{ placeholder }}
