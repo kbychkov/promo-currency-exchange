@@ -35,7 +35,7 @@
 		margin: 0 (-$site-paddings)
 	&__map
 		@extend %full-sized
-		ymaps
+		> ymaps
 			max-width: 100%
 			max-height: 100%
 	&__title
@@ -64,14 +64,14 @@
 		font-weight: 500
 		font-size: 11px
 		letter-spacing: 0.02em
-	&__footnote
-		position: absolute
-		left: 0
-		top: 100%
-		width: 100%
-		margin-top: 13px
-		font-size: 12px
-		color: #A9A9A9
+	// &__footnote
+	// 	position: absolute
+	// 	left: 0
+	// 	top: 100%
+	// 	width: 100%
+	// 	margin-top: 13px
+	// 	font-size: 12px
+	// 	color: #A9A9A9
 	+screen-tablet
 		&__caption
 			display: block
@@ -81,9 +81,9 @@
 		&__map-container
 			// +aspect-ratio(768, 400)
 			margin: 0
-	+screen-tablet-only
-		&__footnote
-			text-align: center
+	// +screen-tablet-only
+	// 	&__footnote
+	// 		text-align: center
 	+screen-desktop
 		&__flex
 			display: flex

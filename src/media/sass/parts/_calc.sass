@@ -47,6 +47,7 @@
 		font-size: 20px
 		font-weight: 300
 		text-transform: uppercase
+		color: $c-accent-2
 	// TEMP: Убрали эту надпись.
 	// &__tip
 	// 	margin-bottom: 20px
@@ -81,8 +82,13 @@
 		font-weight: bold
 		text-transform: uppercase
 		+unselectable
-		&._active
+		&._active,
+		#{$parent-selector}__selector._selectable > &
 			background-color: $c-accent-2
+			height: 100%
+			border-radius: 0 $border-radius-default $border-radius-default 0
+		#{$parent-selector}__selector._selectable._opened > &
+			border-radius: 0 $border-radius-default 0 0
 	&__option-flag
 		$flag-size: 10px
 		position: absolute
@@ -105,9 +111,11 @@
 			background-image: inline("../img/inline/flag-eur.svg")
 	&__selector
 		position: relative
-		border-left: 1px solid $c-lines
+		// border-left: 1px solid $c-lines
+		border: 1px solid $c-lines
+		// border-left: none
 		background-color: $c-form-bg
-		border-radius: 0 $border-radius-default $border-radius-default 0
+		// border-radius: 0 $border-radius-default $border-radius-default 0
 		// #{$parent-selector}
 		// 	&__option
 		&._opened
@@ -149,24 +157,34 @@
 	&__input
 		display: flex
 		justify-content: space-between
-		border-radius: $border-radius-default
-		border: 1px solid $c-lines
+		// border-radius: $border-radius-default
+		// border: 1px solid $c-lines
 		height: $inputs-height
 		box-sizing: border-box
 		.form__input
 			background: none
+			border-radius: $border-radius-default 0 0 $border-radius-default
 		.form__input,
 		.form__input-block
 			flex: 1
-			border-radius: 0
-			border: none
+			// border-radius: 0
+			// border: none
 		.form__input-block._error
 			margin-bottom: 0
+			&._no-status
+				.form__input
+					border-color: $c-error-border
+					&:focus
+						box-shadow: 0 0 20px rgba($c-error-border, 0.25)
 		.form__input-block .form__label,
 		.form__input-block .form__input
 			height: 100%
 		.form__label-text
 			opacity: 1 !important
+		#{$parent-selector}
+			&__selector
+				border-left: none
+				border-radius: 0 $border-radius-default $border-radius-default 0
 	&__selector-arrow
 		$arrow-width: 10px
 		$arrow-height: 6px
@@ -251,6 +269,17 @@
 					padding-bottom: $paddings * (1 - $paddings-koef)
 			&__label-text
 				left: $paddings
+		&__input
+			.form
+				&__input
+					font-size: 26px
+					letter-spacing: 0
+				&__label input:focus,
+				&__label input:not(:placeholder-shown),
+				&__label input._filled,
+				.input-select__value._filled
+					~ .form__label-text
+						transform: translate(0, -21px) scale(0.86)
 		$paddings-x: 40px
 		&__paddings
 			padding: 35px $paddings-x 59px

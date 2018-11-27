@@ -49,9 +49,11 @@
 							<div class="contacts-widget__map-container">
 								<div class="contacts-widget__map" data-widget-map></div>
 							</div>
+							{#
 							<div class="contacts-widget__footnote">
 								Дата раскрытия информации: 25.09.2018. Период актуальности: с 25.09.2018 по настоящее время.
 							</div>
+							#}
 						</div>
 					</div>
 

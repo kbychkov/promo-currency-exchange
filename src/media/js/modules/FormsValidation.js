@@ -1,9 +1,11 @@
 const Inputmask = require('inputmask');
+const dom = require('../utils/DOM');
 
 const ERROR_CLASS = '_error';
 const SUCCESS_CLASS = '_success';
 const PARENT_CLASS = 'form__input-block';
 const ERROR_MESSAGE_CLASS = 'form__error-message';
+const USE_ERROR_ANIMATION = false;
 
 function FormsValidation() {
 }
@@ -183,7 +185,7 @@ FormsValidation.prototype = {
 
 					$input.data('validatedOnce', 'true');
 
-					if (highlight) {
+					if (highlight && USE_ERROR_ANIMATION) {
 						let startDelay = highlightDelay / 10;
 						TweenMax.to($target, 0.075, {x: -5, delay: startDelay})
 						TweenMax.to($target, 0.15, {x: 5, delay: startDelay + 0.075, overwrite: false})
@@ -193,6 +195,27 @@ FormsValidation.prototype = {
 
 						highlightDelay++;
 					}
+				}
+
+				if (!allowSend) {
+					let $firstErrorBlock = $inputs.closest(`.${PARENT_CLASS}.${ERROR_CLASS}`).first();
+					let $closestPopup = $firstErrorBlock.closest('.popup');
+					let scrollTop;
+					let $elemToScroll;
+					if ($closestPopup.length) {
+						// TODO: Тут не совсем верно считается...
+						// scrollTop = $firstErrorBlock.get(0).clientTop + window.innerHeight / 2;
+						// $elemToScroll = $closestPopup;
+						scrollTop = 0;
+						$elemToScroll = false;
+					} else {
+						scrollTop = $firstErrorBlock.offset().top - window.innerHeight / 2;
+						$elemToScroll = dom.$document2;
+					}
+
+					$elemToScroll && $elemToScroll.animate({
+						scrollTop: scrollTop,
+					});
 				}
 
 				if (allowSend && hiddenInputs.length) {

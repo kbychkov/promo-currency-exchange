@@ -5,7 +5,7 @@ const FormsValidation = require('./FormsValidation');
 
 const SENDING_CLASS = '_sending';
 const STATE_CLASS = '_state2';
-const IS_LOCAL = window.location.hostname && (window.location.hostname.indexOf('sborka') >= 0 || window.location.hostname.indexOf('localhost') >= 0 || window.location.hostname.indexOf('192.168.') >= 0);
+const IS_LOCAL = window.location.hostname && (window.location.hostname.indexOf('localhost') >= 0 || window.location.hostname.indexOf('192.168.') >= 0);
 
 function Forms() {
 	this.$forms = dom.$body.find('form:not(.calc)');

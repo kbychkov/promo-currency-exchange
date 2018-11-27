@@ -29,7 +29,12 @@
 		// чтобы не прыгали мелкие иконки (баг).
 		height: $inputs-height
 		&:focus
+			// NOTE: На сером фоне попросили заменить на обводку
+			// border-color: $c-accent-main
 			box-shadow: 0 0 20px rgba($c-accent-main, 0.25)
+			// #{$parent-selector}._feedback &
+			// 	box-shadow: none
+			// 	border-color: $c-accent-main
 		&:disabled
 			cursor: default
 			~ #{$parent-selector}
@@ -87,6 +92,9 @@
 					border-color: $c-error-border
 					&:focus
 						box-shadow: 0 0 20px rgba($c-error-border, 0.25)
+						// NOTE: На сером фоне, сказали, тень плохо смотрится, оставить только обводку.
+						// #{$parent-selector}._feedback &
+						// 	box-shadow: none
 			.checkbox
 				&__input
 					border-color: $c-error-border
@@ -101,10 +109,6 @@
 				margin-top: -9px
 				background: transparent inline("../img/inline/check.svg") center center no-repeat
 				background-size: contain
-			&._no-required,
-			&._no-status
-				&:after
-					display: none
 			#{$parent-selector}__input-section._checkbox &:after
 				display: none
 			#{$parent-selector}
@@ -112,6 +116,39 @@
 					border-color: $c-success-border
 					&:focus
 						box-shadow: 0 0 20px rgba($c-success-border, 0.25)
+		&._no-required,
+		&._no-status
+			&:after
+				display: none
+			#{$parent-selector}
+				&__input
+					border-color: $c-lines
+					&:focus
+						// border-color: $c-accent-main
+						box-shadow: 0 0 20px rgba($c-accent-main, 0.25)
+			// &,
+			// &._success,
+			// &._error
+			// 	#{$parent-selector}
+			// 		&__input
+			// 			&:focus
+			// 				// NOTE: На сером фоне, сказали, тень плохо смотрится, оставить только обводку.
+			// 				#{$parent-selector}._feedback &
+			// 					box-shadow: none
+	&._feedback
+		#{$parent-selector}
+			&__input-block
+				&:not(._success):not(._error)
+					#{$parent-selector}
+						&__input
+							&:focus
+								border-color: $c-accent-main
+			&__input
+				&,
+				&:focus
+					box-shadow: none
+				// &:focus
+				// 	border-color: $c-accent-main
 	&__label
 		display: block
 		position: relative
@@ -236,7 +273,8 @@
 						#{$parent-selector}
 							&__input
 								border-radius: $input-border-radius 0 0 $input-border-radius
-					&:last-child
+					&:last-child,
+					&._last
 						#{$parent-selector}
 							&__input
 								border-radius: 0 $input-border-radius $input-border-radius 0

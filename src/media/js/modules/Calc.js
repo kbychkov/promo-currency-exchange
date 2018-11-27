@@ -8,7 +8,7 @@ const ACTIVE_CLASS = '_active';
 const FILLED_CLASS = '_filled';
 const SENDING_CLASS = '_sending';
 const STATE_CLASS = '_state2';
-const IS_LOCAL = window.location.hostname && (window.location.hostname.indexOf('sborka') >= 0 || window.location.hostname.indexOf('localhost') >= 0 || window.location.hostname.indexOf('192.168.') >= 0);
+const IS_LOCAL = window.location.hostname && (window.location.hostname.indexOf('localhost') >= 0 || window.location.hostname.indexOf('192.168.') >= 0);
 
 // Stealed from:
 // https://stackoverflow.com/questions/149055/how-can-i-format-numbers-as-dollars-currency-string-in-javascript
@@ -73,12 +73,32 @@ Calc.prototype = {
 		console.log("rates: ", rates);
 
 		// TEMP: Позже написать правильный код. Пока что это только для демо: открыть/закрыть селектор.
-		$parent.on('click', '.calc__selector', e => $(e.currentTarget).addClass(OPENED_CLASS));
-		dom.$body.on('click', e => $(e.target).closest('.calc__selector').length == 0 && $('.calc__selector').removeClass(OPENED_CLASS));
+		$parent.on('click', '.calc__selector', e => {
+			let $elem = $(e.currentTarget);
+			let $target = $(e.target);
+			console.log($target.get(0));
+			let $parent = $elem.closest('.calc__selector');
+			if (!$parent.hasClass('_selectable')) {
+				return;
+			}
+
+			// if ($parent.hasClass(OPENED_CLASS)) {
+			// }
+			// $elem.addClass(OPENED_CLASS);
+			$elem.toggleClass(OPENED_CLASS);
+			e.stopPropagation();
+		});
+		dom.$body.on('click', e => {
+			let $target = $(e.target);
+			let $closestSelector = $target.closest('.calc__selector');
+			if ($closestSelector.length == 0) {
+				$('.calc__selector').removeClass(OPENED_CLASS);
+			}
+		});
 		$parent.on('click', '.calc__option', e => {
 			let $elem = $(e.currentTarget);
 			let $parent = $elem.closest('.calc__selector');
-			if (!$parent.hasClass(OPENED_CLASS) || $elem.hasClass(ACTIVE_CLASS)) {
+			if (!$parent.hasClass('_selectable') || !$parent.hasClass(OPENED_CLASS) || $elem.hasClass(ACTIVE_CLASS)) {
 				return;
 			}
 			e.stopPropagation();

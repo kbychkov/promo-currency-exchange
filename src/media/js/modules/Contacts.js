@@ -15,8 +15,8 @@ function Contacts() {
 	// this.$infoContainer = this.$widget.find('[data-info-container]');
 	this.maps = [];
 	this.$widgetBlockExample = this.$widget.find('.contacts-widget__flex').clone(false);
-	this.$mapFootnoteExample = this.$widget.find('.contacts-widget__footnote').clone(false);
-	this.$widgetBlockExample.find('.contacts-widget__footnote').remove();
+	// this.$mapFootnoteExample = this.$widget.find('.contacts-widget__footnote').clone(false);
+	// this.$widgetBlockExample.find('.contacts-widget__footnote').remove();
 
 	this.$parent.on('click', '.contacts-cities__link', e => this._linksClickHandler(e));
 
@@ -140,8 +140,8 @@ Contacts.prototype = {
 				this._setWidgetInfo(widgetMarkup, index);
 			});
 
-			this.$widget.find('.contacts-widget__footnote').remove();
-			this.$widget.find('.contacts-widget__flex').last().find('.contacts-widget__col._map').append(this.$mapFootnoteExample.clone());
+			// this.$widget.find('.contacts-widget__footnote').remove();
+			// this.$widget.find('.contacts-widget__flex').last().find('.contacts-widget__col._map').append(this.$mapFootnoteExample.clone());
 		}
 	},
 	_setMap(coordinates, zoom = 10, mapIndex = 0) {
@@ -158,6 +158,14 @@ Contacts.prototype = {
 
 		map.setCenter(coordinates, zoom).then(() => {
 			map.container.fitToViewport();
+
+			// Метка на карте.
+			let placemark = new ymaps.Placemark(coordinates, {
+			} , {
+				preset: 'islands#icon',
+				iconColor: '#0073F1',
+			});
+			map.geoObjects.add(placemark);
 		});
 	},
 	_setWidgetInfo(markup, mapIndex = 0) {
