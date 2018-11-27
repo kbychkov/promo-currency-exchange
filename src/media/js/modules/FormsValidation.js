@@ -7,8 +7,7 @@ const PARENT_CLASS = 'form__input-block';
 const ERROR_MESSAGE_CLASS = 'form__error-message';
 const USE_ERROR_ANIMATION = false;
 
-function FormsValidation() {
-}
+function FormsValidation() {}
 FormsValidation.prototype = {
 	_checkInput(input) {
 		let $input;
@@ -35,7 +34,12 @@ FormsValidation.prototype = {
 
 		let minValue = parseFloat($input.attr('min'));
 
-		if (input.inputmask && typeof input.inputmask.isComplete === 'function' && input.inputmask && input.inputmask.isComplete()) {
+		if (
+			input.inputmask &&
+			typeof input.inputmask.isComplete === 'function' &&
+			input.inputmask &&
+			input.inputmask.isComplete()
+		) {
 			$input.data('completedOnce', 'true');
 		}
 
@@ -46,7 +50,6 @@ FormsValidation.prototype = {
 
 			case 'text':
 			default:
-				// if (($input.data('validatedOnce') === 'true' || $input.data('completedOnce') === 'true') && input.inputmask && typeof input.inputmask.isComplete === 'function') {
 				if (input.inputmask && typeof input.inputmask.isComplete === 'function') {
 					valueExists = input.inputmask.isComplete();
 				} else {
@@ -120,25 +123,6 @@ FormsValidation.prototype = {
 			}).mask(elem);
 		});
 
-		// Numbers value limit
-		// let $numInputs = $inputs.filter('[type="number"]:not([data-use-mask="false"])');
-		// $numInputs.attr('type', 'text');
-		// $numInputs.each((index, elem) => {
-		// 	let count = (elem.getAttribute('max') || '').length || 5;
-		// 	let mask = `n{1}9{0,${count - 1}}`;
-		// 	Inputmask({
-		// 		mask: mask,
-		// 		greedy: false,
-		// 		placeholder: '',
-		// 		definitions: {
-		// 			// NOTE: To make first digit > 0
-		// 			n: {
-		// 				validator: '[1-9]',
-		// 			},
-		// 		},
-		// 	}).mask(elem);
-		// });
-
 		// Binds
 		$inputs.each((index, elem) => {
 			let $input = $(elem);
@@ -187,11 +171,16 @@ FormsValidation.prototype = {
 
 					if (highlight && USE_ERROR_ANIMATION) {
 						let startDelay = highlightDelay / 10;
-						TweenMax.to($target, 0.075, {x: -5, delay: startDelay})
-						TweenMax.to($target, 0.15, {x: 5, delay: startDelay + 0.075, overwrite: false})
-						TweenMax.to($target, 0.15, {x: -3, delay: startDelay + 0.075 + 0.15, overwrite: false})
-						TweenMax.to($target, 0.15, {x: 3, delay: startDelay + 0.075 + 0.15 + 0.15, overwrite: false})
-						TweenMax.to($target, 0.15, {x: 0, delay: startDelay + 0.075 + 0.15 + 0.15 + 0.15, overwrite: false, ease: Back.easeOut})
+						TweenMax.to($target, 0.075, { x: -5, delay: startDelay });
+						TweenMax.to($target, 0.15, { x: 5, delay: startDelay + 0.075, overwrite: false });
+						TweenMax.to($target, 0.15, { x: -3, delay: startDelay + 0.075 + 0.15, overwrite: false });
+						TweenMax.to($target, 0.15, { x: 3, delay: startDelay + 0.075 + 0.15 + 0.15, overwrite: false });
+						TweenMax.to($target, 0.15, {
+							x: 0,
+							delay: startDelay + 0.075 + 0.15 + 0.15 + 0.15,
+							overwrite: false,
+							ease: Back.easeOut,
+						});
 
 						highlightDelay++;
 					}
@@ -203,9 +192,6 @@ FormsValidation.prototype = {
 					let scrollTop;
 					let $elemToScroll;
 					if ($closestPopup.length) {
-						// TODO: Тут не совсем верно считается...
-						// scrollTop = $firstErrorBlock.get(0).clientTop + window.innerHeight / 2;
-						// $elemToScroll = $closestPopup;
 						scrollTop = 0;
 						$elemToScroll = false;
 					} else {
@@ -213,16 +199,21 @@ FormsValidation.prototype = {
 						$elemToScroll = dom.$document2;
 					}
 
-					$elemToScroll && $elemToScroll.animate({
-						scrollTop: scrollTop,
-					});
+					$elemToScroll &&
+						$elemToScroll.animate({
+							scrollTop: scrollTop,
+						});
 				}
 
 				if (allowSend && hiddenInputs.length) {
 					for (let i = 0; i < hiddenInputs.length; i++) {
 						let $input = hiddenInputs[i];
 						let $parent = $input.closest('.' + PARENT_CLASS);
-						let message = $parent.find('.form__label-text, .input-checkbox__label + span').first().text().trim();
+						let message = $parent
+							.find('.form__label-text, .input-checkbox__label + span')
+							.first()
+							.text()
+							.trim();
 
 						if ($input.attr('type') === 'checkbox' && !$input.get(0).checked) {
 							if (confirm(message)) {

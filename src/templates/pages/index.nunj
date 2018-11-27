@@ -20,7 +20,7 @@
 				</h1>
 			</div>
 
-			<div class="calc-section" data-switcher data-switcher-mode="away-y">
+			<div class="calc-section" data-switcher data-switcher-mode="fade--soft">
 				<div class="tab-openers">
 					<span class="tab-openers__item _active" data-switcher-tab-opener="1">Купить</span>
 					<span class="tab-openers__item" data-switcher-tab-opener="2">Продать</span>

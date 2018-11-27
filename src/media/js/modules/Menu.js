@@ -33,7 +33,7 @@ function Menu() {
 				this.close();
 			}
 		})
-		.on('resize', e => {
+		.on('resize', () => {
 			let newState = window.innerWidth >= 1000 ? 1 : 0;
 			if (appliedState != newState) {
 				appliedState = newState;
@@ -72,11 +72,8 @@ Menu.prototype = {
 		this.opened = true;
 
 		let scrTop = dom.$window.scrollTop();
-		// this.$container.removeClass(AWAY_CLASS);
 		Header.setModuleActiveState(false);
 		this.savedScrollTop = scrTop;
-
-		//let wrapperY = this.$wrapper[0].getBoundingClientRect().top
 
 		if (!this.testedScrollbarWidth && env.isDesktop) {
 			this.testedScrollbarWidth = true;
@@ -89,8 +86,6 @@ Menu.prototype = {
 			this.$wrapper.css({
 				'padding-right': this.scrollBarWidth + 'px',
 			});
-
-			// console.log(this.scrollBarWidth)
 		} else {
 			dom.$html.addClass(OPENED_CLASS);
 
@@ -104,12 +99,11 @@ Menu.prototype = {
 		dom.$wrapper.scrollTop(scrTop);
 
 		let newWrapperY = this.$wrapper[0].getBoundingClientRect().top;
-		//alert(wrapperY + ' / ' + newWrapperY + ' / ' + scrTop)
 		dom.$wrapper.scrollTop(scrTop + newWrapperY);
 
 		this.$container.find('.header__menu-container').scrollTop(0);
 		TweenMax.fromTo(
-			this.$container /*.nope(false)*/,
+			this.$container,
 			0.65,
 			{ x: '100%' },
 			{
@@ -148,7 +142,6 @@ Menu.prototype = {
 		}
 		this.opened = false;
 
-		// this.$container.addClass(AWAY_CLASS);
 		dom.$html.removeClass(OPENED_CLASS).scrollTop(this.savedScrollTop);
 		Header.setModuleActiveState(true);
 
@@ -158,7 +151,7 @@ Menu.prototype = {
 			});
 		}
 		this.animating = true;
-		TweenMax.to(this.$container /*.nope()*/, immediate ? 0 : 0.5, {
+		TweenMax.to(this.$container, immediate ? 0 : 0.5, {
 			x: '100%',
 			onComplete: () => {
 				this.animating = false;
@@ -182,8 +175,6 @@ Menu.prototype = {
 		} else {
 			this.open();
 		}
-
-		// console.log('toggle')
 	},
 };
 

@@ -55,25 +55,13 @@ const App = new function App() { // eslint-disable-line
 		Contacts: require('./modules/Contacts'),
 		DateTime: require('./modules/DateTime'),
 		Forms: require('./modules/Forms'),
+		VideoPopup: require('./modules/VideoPopup'),
 	};
 
 	// Startup
 	$(() => {
 		// Remove _loading modificator
 		this.dom.$html.removeClass('_loading');
-
-		// TODO: Подумать, стоит ли это вынести в отдельный модуль.
-		let $videoPopup = $('#video');
-		$videoPopup.on('popups:open', () => {
-			let $iframe = $videoPopup.find('iframe');
-			$iframe.attr('src', $iframe.attr('data-src'));
-			$iframe.removeAttr('data-src');
-		});
-		$videoPopup.on('popups:close', () => {
-			let $iframe = $videoPopup.find('iframe');
-			$iframe.attr('data-src', $iframe.attr('src'));
-			$iframe.removeAttr('src');
-		});
 	});
 }();
 

@@ -31,8 +31,6 @@ SwipeCatchHelper.prototype = {
 		var moveEvents = 'touchmove' + (useMouse ? ' mousemove' : '');
 		var releaseEvents = 'touchend blur resize' + (useMouse ? ' mouseup' : '');
 
-		// console.log('>>  ' + useMouse)
-
 		$element.on(startEvents, function(e) {
 			preventDefaults && e.preventDefault();
 			preventDefaults && e.stopPropagation();
@@ -74,7 +72,6 @@ SwipeCatchHelper.prototype = {
 						y = e.clientY;
 					}
 
-					//var touch = e.touches[0];
 					var dx = x - startX;
 					var dy = y - startY;
 
@@ -144,7 +141,7 @@ SwipeCatchHelper.prototype = {
 					}
 				}
 			})
-			.on(releaseEvents, function(e) {
+			.on(releaseEvents, function() {
 				touching = false;
 				directionX = 0;
 				directionY = 0;
@@ -152,11 +149,6 @@ SwipeCatchHelper.prototype = {
 				prevDy = 0;
 			});
 	},
-
-	/*watchStop: function($element) {
-		$element.off('touchstart');
-		dom.$window.off('touchmove');
-	}*/
 };
 
 var instance = new SwipeCatchHelper();

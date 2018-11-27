@@ -17,31 +17,23 @@
 					<div class="contacts__map"></div>
 				</div>
 
-				{#
-				#}
+				{# NOTE: Виджет изначально скрыт, и данные в него подгружаются из JS. #}
 				<div class="contacts-widget">
-					<div class="contacts-widget__caption" data-caption-element>
-						Ваш город Москва
-					</div>
+					<div class="contacts-widget__caption" data-caption-element>{# Данные из JS #}</div>
 
 					<div class="contacts-widget__flex">
 						<div class="contacts-widget__col _text" data-info-container>
-							<div class="contacts-widget__title">Офис Москва</div>
-							<div class="contacts-widget__address">
-								129110, Москва, Проспект Мира,
-								69, стр. 1, 3 подъезд
-							</div>
-							<div class="contacts-widget__times">
-								пн-пт: с 9:30 до 19:00
-							</div>
+							<div class="contacts-widget__title">{# Данные из JS #}</div>
+							<div class="contacts-widget__address">{# Данные из JS #}</div>
+							<div class="contacts-widget__times">{# Данные из JS #}</div>
 							<div class="contacts-widget__phones">
 								<div class="contacts-widget__phone-item">
-									<div class="contacts-widget__phone-title">Стать клиентом</div>
-									<a href="tel:8 800 500-55-45" class="phone">8 800 500-55-45</a>
+									<div class="contacts-widget__phone-title">{# Данные из JS #}</div>
+									<a href="tel:{# Данные из JS #}" class="phone">{# Данные из JS #}</a>
 								</div>
 								<div class="contacts-widget__phone-item">
-									<div class="contacts-widget__phone-title">Для трейдеров</div>
-									<a href="tel:8 800 100-55-02" class="phone">8 800 100-55-02</a>
+									<div class="contacts-widget__phone-title">{# Данные из JS #}</div>
+									<a href="tel:{# Данные из JS #}" class="phone">{# Данные из JS #}</a>
 								</div>
 							</div>
 						</div>
@@ -49,17 +41,8 @@
 							<div class="contacts-widget__map-container">
 								<div class="contacts-widget__map" data-widget-map></div>
 							</div>
-							{#
-							<div class="contacts-widget__footnote">
-								Дата раскрытия информации: 25.09.2018. Период актуальности: с 25.09.2018 по настоящее время.
-							</div>
-							#}
 						</div>
 					</div>
-
-					{#
-					<script src="https://api-maps.yandex.ru/2.1/?apikey=a2619744-4796-4321-85a9-b2a69e1cdc81&lang=ru_RU" type="text/javascript"></script>
-					#}
 				</div>
 
 				{{ contactsCities() }}

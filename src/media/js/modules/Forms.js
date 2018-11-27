@@ -1,11 +1,12 @@
 const dom = require('../utils/DOM');
-const env = require('../utils/ENV');
 const Connector = require('../helpers/Connector');
 const FormsValidation = require('./FormsValidation');
 
 const SENDING_CLASS = '_sending';
 const STATE_CLASS = '_state2';
-const IS_LOCAL = window.location.hostname && (window.location.hostname.indexOf('localhost') >= 0 || window.location.hostname.indexOf('192.168.') >= 0);
+const IS_LOCAL =
+	window.location.hostname &&
+	(window.location.hostname.indexOf('localhost') >= 0 || window.location.hostname.indexOf('192.168.') >= 0);
 
 function Forms() {
 	this.$forms = dom.$body.find('form:not(.calc)');
@@ -24,13 +25,8 @@ function Forms() {
 			let data = {};
 			$(formData).each(function(index, obj) {
 				let value = obj.value;
-				// if (obj.name === 'agreement') {
-				// 	value = value === 'on' ? 1 : 0;
-				// }
 				data[obj.name] = value;
 			});
-
-			console.log(data);
 
 			let timeout = setTimeout(() => {
 				$form.addClass(SENDING_CLASS);
@@ -41,13 +37,19 @@ function Forms() {
 				clearTimeout(timeout);
 				$form.removeClass(SENDING_CLASS).addClass(STATE_CLASS);
 				$form.find('[type="submit"]').removeAttr('disabled');
-				TweenMax.staggerFromTo($form.find('.form__state._state2 [data-stagger]'), 1.4, {
-					alpha: 0,
-					y: 20,
-				}, {
-					alpha: 1,
-					y: 0,
-				}, 0.6);
+				TweenMax.staggerFromTo(
+					$form.find('.form__state._state2 [data-stagger]'),
+					1.4,
+					{
+						alpha: 0,
+						y: 20,
+					},
+					{
+						alpha: 1,
+						y: 0,
+					},
+					0.6
+				);
 
 				let $closestPopup = $form.closest('.popup');
 				if ($closestPopup.length) {
@@ -65,12 +67,12 @@ function Forms() {
 				let successDate = data.date;
 				let successTime = data['datetime-select'];
 				let successTimeArr = successTime.split('-');
-				console.log(successName, successDate, successTime);
 				$form.find('[data-success-name]').text(`, ${successName}`);
-				$form.find('[data-success-datetime]').html(`${successDate}<br> с ${successTimeArr[0]} до ${successTimeArr[1]}`);
+				$form
+					.find('[data-success-datetime]')
+					.html(`${successDate}<br> с ${successTimeArr[0]} до ${successTimeArr[1]}`);
 			};
 
-			// TEMP: Чтобы хотя бы можно было посмотреть состояние отправки.
 			if (IS_LOCAL) {
 				setTimeout(done, 2000);
 			} else {
@@ -78,19 +80,17 @@ function Forms() {
 					formAction,
 					data,
 					response => {
-						console.log(response);
-						done();
+						done(response);
 					},
 					err => {
 						console.error(err);
-					},
+					}
 				);
 			}
 		});
 	});
 }
 
-Forms.prototype = {
-};
+Forms.prototype = {};
 
 module.exports = new Forms();

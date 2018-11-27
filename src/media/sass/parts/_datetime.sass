@@ -1,105 +1,104 @@
-// TODO: Этот файл нуждается в капитальном рефакторинге, так как собран
-// по кускам из разных источников.
+// NOTE: Этот файл нуждается в капитальном рефакторинге,
+// так как собран по кускам из разных источников.
 .flatpickr
 	&-calendar
-		overflow: hidden;
-		max-height: 0;
-		opacity: 0;
-		visibility: hidden;
-		text-align: center;
-		padding: 0;
-		animation: none;
-		direction: ltr;
-		border: 0;
-		font-size: 14px;
-		line-height: 24px;
-		border-radius: 5px;
-		position: absolute;
-		width: 260px;
-		box-sizing: border-box;
-		transition: top cubic-bezier(0,1,.5,1) .1s;
-		z-index: 999;
-		background: #fff;
-		box-shadow: 1px 0 0 #e6e6e6, -1px 0 0 #e6e6e6, 0 1px 0 #e6e6e6, 0 -1px 0 #e6e6e6, 0 3px 13px rgba(0,0,0,.08);
+		overflow: hidden
+		max-height: 0
+		opacity: 0
+		visibility: hidden
+		text-align: center
+		padding: 0
+		direction: ltr
+		border: 0
+		font-size: 14px
+		line-height: 24px
+		border-radius: 5px
+		position: absolute
+		width: 260px
+		box-sizing: border-box
+		transition: top cubic-bezier(0,1,.5,1) .1s
+		z-index: 999
+		background: #fff
+		box-shadow: 1px 0 0 #e6e6e6, -1px 0 0 #e6e6e6, 0 1px 0 #e6e6e6, 0 -1px 0 #e6e6e6, 0 3px 13px rgba(0,0,0,.08)
 		&.inline,
 		&.open
-			opacity: 1;
-			visibility: visible;
-			overflow: visible;
-			max-height: 640px;
-			padding: 5px 0;
+			opacity: 1
+			visibility: visible
+			overflow: visible
+			max-height: 640px
+			padding: 5px 0
 		&.inline
-			display: block;
-			position: relative;
-			top: 2px;
+			display: block
+			position: relative
+			top: 2px
 	&-next-month,
 	&-prev-month
-		text-decoration: none;
-		cursor: pointer;
-		position: absolute;
+		text-decoration: none
+		cursor: pointer
+		position: absolute
 		z-index: 1
-		top: 7px;
-		height: 16px;
-		line-height: 16px;
+		top: 7px
+		height: 16px
+		line-height: 16px
 	&-month
-		background: 0 0;
-		color: rgba(0,0,0,.9);
-		fill: rgba(0,0,0,.9);
-		height: 28px;
-		line-height: 24px;
-		text-align: center;
-		position: relative;
-		-webkit-user-select: none;
-		-moz-user-select: none;
-		-ms-user-select: none;
-		user-select: none;
+		background: 0 0
+		color: rgba(0,0,0,.9)
+		fill: rgba(0,0,0,.9)
+		height: 28px
+		line-height: 24px
+		text-align: center
+		position: relative
+		-webkit-user-select: none
+		-moz-user-select: none
+		-ms-user-select: none
+		user-select: none
 	&-innerContainer
-		display: block;
-		display: -ms-flexbox;
-		display: flex;
-		margin-top: 10px;
-		box-sizing: border-box;
-		overflow: hidden;
+		display: block
+		display: -ms-flexbox
+		display: flex
+		margin-top: 10px
+		box-sizing: border-box
+		overflow: hidden
 	&-rContainer
-		display: inline-block;
-		padding: 0;
-		box-sizing: border-box;
+		display: inline-block
+		padding: 0
+		box-sizing: border-box
 	&-days
-		padding: 0;
-		outline: 0;
-		text-align: left;
-		width: 260px;
-		box-sizing: border-box;
-		display: inline-block;
-		display: -ms-flexbox;
-		display: flex;
-		-ms-flex-wrap: wrap;
-		flex-wrap: wrap;
-		-ms-flex-pack: distribute;
-		justify-content: space-around;
+		padding: 0
+		outline: 0
+		text-align: left
+		width: 260px
+		box-sizing: border-box
+		display: inline-block
+		display: -ms-flexbox
+		display: flex
+		-ms-flex-wrap: wrap
+		flex-wrap: wrap
+		-ms-flex-pack: distribute
+		justify-content: space-around
 	&-day
-		background: 0 0;
-		border: 1px solid transparent;
-		border-radius: 150px;
-		box-sizing: border-box;
-		color: #393939;
-		cursor: pointer;
-		font-weight: 400;
-		width: 14.2857143%;
-		-ms-flex-preferred-size: 14.2857143%;
-		flex-basis: 14.2857143%;
-		max-width: 35px;
-		height: 35px;
-		line-height: 35px;
-		margin: 0;
-		display: inline-block;
-		position: relative;
-		-ms-flex-pack: center;
-		justify-content: center;
-		text-align: center;
+		background: 0 0
+		border: 1px solid transparent
+		border-radius: 150px
+		box-sizing: border-box
+		color: #393939
+		cursor: pointer
+		font-weight: 400
+		width: 14.2857143%
+		-ms-flex-preferred-size: 14.2857143%
+		flex-basis: 14.2857143%
+		max-width: 35px
+		height: 35px
+		line-height: 35px
+		margin: 0
+		display: inline-block
+		position: relative
+		-ms-flex-pack: center
+		justify-content: center
+		text-align: center
 		&.disabled,
 		&.disabled:hover
-			pointer-events: none;
+			pointer-events: none
 		&.disabled,
 		&.disabled:hover,
 		&.nextMonthDay,
@@ -107,10 +106,10 @@
 		&.notAllowed.nextMonthDay,
 		&.notAllowed.prevMonthDay,
 		&.prevMonthDay
-			color: rgba(57,57,57,.3);
-			background: 0 0;
-			border-color: transparent;
-			cursor: default;
+			color: rgba(57,57,57,.3)
+			background: 0 0
+			border-color: transparent
+			cursor: default
 		&.endRange,
 		&.endRange.nextMonthDay,
 		&.endRange.prevMonthDay,
@@ -126,56 +125,56 @@
 		&.startRange.prevMonthDay,
 		&.startRange:focus,
 		&.startRange:hover
-			background: #dde3ef;
-			color: #0073f1;
-			border-color: #dde3ef;
+			background: #dde3ef
+			color: #0073f1
+			border-color: #dde3ef
 	&-current-month
-		font-size: 16px;
-		line-height: inherit;
-		font-weight: 300;
-		color: inherit;
-		position: absolute;
-		width: 75%;
-		left: 12.5%;
-		top: 5px;
-		display: inline-block;
-		text-align: center;
+		font-size: 16px
+		line-height: inherit
+		font-weight: 300
+		color: inherit
+		position: absolute
+		width: 75%
+		left: 12.5%
+		top: 5px
+		display: inline-block
+		text-align: center
 		span.cur-month
-			font-family: inherit;
-			font-weight: 400;
-			color: #0073f1;
-			display: inline-block;
-			margin-left: 15px;
-			padding: 0;
+			font-family: inherit
+			font-weight: 400
+			color: #0073f1
+			display: inline-block
+			margin-left: 15px
+			padding: 0
 		input.cur-year
-			background: 0 0;
-			box-sizing: border-box;
-			color: inherit;
-			cursor: default;
-			padding: 0 0 0 .5ch;
-			margin: 0;
-			display: inline;
-			font-size: inherit;
-			font-family: inherit;
-			font-weight: 300;
-			line-height: inherit;
-			height: initial;
-			border: 0;
-			border-radius: 0;
-			vertical-align: initial;
+			background: 0 0
+			box-sizing: border-box
+			color: inherit
+			cursor: default
+			padding: 0 0 0 .5ch
+			margin: 0
+			display: inline
+			font-size: inherit
+			font-family: inherit
+			font-weight: 300
+			line-height: inherit
+			height: initial
+			border: 0
+			border-radius: 0
+			vertical-align: initial
 			&[disabled],
 			&[disabled]:hover
-				font-size: 100%;
-				color: rgba(0,0,0,.5);
-				background: 0 0;
-				pointer-events: none;
+				font-size: 100%
+				color: rgba(0,0,0,.5)
+				background: 0 0
+				pointer-events: none
 
 .numInputWrapper
-	position: relative;
-	height: auto;
-	width: 60px;
-	display: inline-block;
-	width: 45px;
+	position: relative
+	height: auto
+	width: 60px
+	display: inline-block
+	width: 45px
 
 .datetime
 	&__dropdown
@@ -185,13 +184,11 @@
 		overflow: hidden
 		position: absolute
 		top: calc(100% - 10px)
-		// left: 40px
 		left: 50%
 		margin-left: -110px
 		z-index: 2
 		box-sizing: border-box
 		margin-bottom: 20px
-		// transform: translate3d(-50%,0,0)
 		line-height: 1
 		background: #fff
 		box-shadow: 0 0 10px rgba(0,0,0,.25)
@@ -200,137 +197,134 @@
 			opacity: 1
 			visibility: visible
 			overflow: visible
-			animation: datetime-dropdown-animation .3s cubic-bezier(0,1,.5,1)
 		&:before,
 		&:after
-			content: '';
-			position: absolute;
-			bottom: 100%;
-			left: 62px;
-			display: block;
-			width: 0;
-			height: 0;
-			border: solid transparent;
+			content: ""
+			position: absolute
+			bottom: 100%
+			left: 62px
+			display: block
+			width: 0
+			height: 0
+			border: solid transparent
 		&:after
-			border-width: 0 6px 7px;
-			border-bottom-color: #fff;
+			border-width: 0 6px 7px
+			border-bottom-color: #fff
 		&:before
-			margin-left: -1px;
-			border-width: 0 7px 8px;
-			border-bottom-color: #e6e6e6;
+			margin-left: -1px
+			border-width: 0 7px 8px
+			border-bottom-color: #e6e6e6
 		.flatpickr
 			&-calendar
 				&.inline
-					top: 0;
-					height: 100%;
-					width: auto;
-					padding: 0;
-					border-radius: 0;
-					box-shadow: none;
+					top: 0
+					height: 100%
+					width: auto
+					padding: 0
+					border-radius: 0
+					box-shadow: none
 			&-innerContainer
-				margin-top: 0;
+				margin-top: 0
 			&-month
-				height: 30px;
-				background: #b7bfc9;
-				color: #fff;
-				line-height: 30px;
+				height: 30px
+				background: #b7bfc9
+				color: #fff
+				line-height: 30px
 			&-weekdays
 				display: none
 			&-days
-				width: 210px;
+				width: 210px
 			&-day
-				max-width: 30px;
-				height: 30px;
-				border: none;
-				border-radius: 0;
-				font-size: 12px;
-				line-height: 30px;
+				max-width: 30px
+				height: 30px
+				border: none
+				border-radius: 0
+				font-size: 12px
+				line-height: 30px
 				&:not(.disabled)
-					color: #7b7b7b;
+					color: #7b7b7b
 				&.selected:not(.disabled)
-					color: #fff;
-					background: #0073f1;
+					color: #fff
+					background: #0073f1
 				&.selected:not(.disabled):hover
-					background: #005bbe;
+					background: #005bbe
 				&:not(.selected):hover
-					color: #0073f1;
-					background: rgba(0,0,0,0);
+					color: #0073f1
+					background: rgba(0,0,0,0)
 			&-prev-month
-				left: calc(3.57% + 4.5px);
+				left: calc(3.57% + 4.5px)
 			&-next-month
-				right: calc(3.57% + 4.5px);
+				right: calc(3.57% + 4.5px)
 			&-prev-month,
 			&-next-month
 				svg
-					width: 9px;
-					fill: #fff;
-					stroke-width: 1px;
-					stroke: #fff;
+					width: 9px
+					fill: #fff
+					stroke-width: 1px
+					stroke: #fff
 			&-current-month
-				top: 0;
-				font-size: 13px;
-				font-weight: 500;
+				top: 0
+				font-size: 13px
+				font-weight: 500
 				span.cur-month
-					color: inherit;
-					font-weight: inherit;
+					color: inherit
+					font-weight: inherit
 				input.cur-year
-					color: inherit;
-					font-weight: inherit;
-					height: 30px;
-					width: 45px;
+					color: inherit
+					font-weight: inherit
+					height: 30px
+					width: 45px
 	&__dropdown-col
 		display: block
 		width: 100%
-		padding: 5px;
+		padding: 5px
 		box-sizing: border-box
 	&__schedule
 		display: none
-		flex-wrap: wrap;
-		width: 308px;
-		border: solid rgba(183,191,201,.4);
-		border-width: 1px 0 0 1px;
+		flex-wrap: wrap
+		width: 308px
+		border: solid rgba(183,191,201,.4)
+		border-width: 1px 0 0 1px
 	&__schedule-cell
-		-ms-flex: 0 0 auto;
-		flex: 0 0 auto;
-		width: 101px;
-		white-space: nowrap;
-		font-size: 12px;
-		line-height: 29px;
-		text-align: center;
-		cursor: pointer;
-		border: solid rgba(183,191,201,.4);
-		border-width: 0 1px 1px 0;
+		-ms-flex: 0 0 auto
+		flex: 0 0 auto
+		width: 101px
+		white-space: nowrap
+		font-size: 12px
+		line-height: 29px
+		text-align: center
+		cursor: pointer
+		border: solid rgba(183,191,201,.4)
+		border-width: 0 1px 1px 0
 		&:hover
-			color: #0073f1;
+			color: #0073f1
 		&._selected
-			color: #fff;
-			background-color: #0073f1;
-			background-clip: padding-box;
+			color: #fff
+			background-color: #0073f1
+			background-clip: padding-box
 		&._selected:hover
-			background-color: #005bbe;
+			background-color: #005bbe
 	&__mobile-schedule
 		select
-			width: 100%;
-			height: 40px;
-			padding: 10px 5px;
-			border: 1px solid #e1e1e1;
-			background: #fff;
-			font-family: inherit;
-			font-size: inherit;
-			line-height: inherit;
-			color: inherit;
-			font: inherit;
-			margin: 0;
+			width: 100%
+			height: 40px
+			padding: 10px 5px
+			border: 1px solid #e1e1e1
+			background: #fff
+			font-family: inherit
+			font-size: inherit
+			line-height: inherit
+			color: inherit
+			font: inherit
+			margin: 0
 			font-size: 14px
 	+screen-desktop
 		&__dropdown
 			margin-left: -270px
-			// &._opened
-			// 	display: table
 		&__dropdown-col
-			display: table-cell;
-			vertical-align: top;
+			display: table-cell
+			vertical-align: top
 		&__schedule
-			display: flex;
+			display: flex
 		&__mobile-schedule
 			display: none

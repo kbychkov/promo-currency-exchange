@@ -1,7 +1,6 @@
 .header
 	$parent-selector: &
 	$trs-time: 0.4s
-	// $button-close-top: 3vh
 	$menu-container-paddings: 87px 0 0
 	transition: transform .6s cubic-bezier(.19,1,.22,1)
 	pointer-events: none
@@ -30,19 +29,15 @@
 			&[href]
 				path
 					transition: fill $default-transition-duration
-				// .chunk-2
 				&:hover
 					.chunk-2
 						path
-							// fill: $c-accent-2
 							fill: $c-accent-main
 							transition-duration: 0s
-			// &:link
 	&__row
 		position: relative
 		z-index: 6
 		padding: 14px 0
-		// box-shadow: $header-box-shadow
 		transition: box-shadow $default-transition-duration
 	&__flex
 		display: flex
@@ -54,31 +49,19 @@
 				display: none
 				margin-right: 40px
 	.burger
-		// position: absolute
-		// z-index: 6
-		// right: $site-paddings
-		// top: $pt--mobile + 7px
 		pointer-events: auto
 	&__menu-block
 		@extend %full-sized
 		min-height: 100vh
 		z-index: 5
-		// pointer-events: none
 		overflow: hidden
 		transform: translate(100%, 0)
 		will-change: transform
 		pointer-events: auto
-		// .button-close
-		// 	top: $button-close-top
-	// &__menu-back
-	// 	@extend %overlay-default
-	// 	opacity: 1
-	// 	transition: opacity ($trs-time + 0.2s)
 	&__menu-front
 		@extend %full-sized
 		background-color: $c-white
 		transition: transform $trs-time, opacity $trs-time
-		//pointer-events: auto
 		&:before
 			content: ""
 			position: absolute
@@ -86,7 +69,6 @@
 			left: 0
 			top: 0
 			width: 100%
-			// width: calc(100% - 50px)
 			height: 17vh
 			background: linear-gradient(to bottom, rgba($c-white, 1) 0, rgba($c-white, 1) 45%, rgba($c-white, 0) 100%)
 			pointer-events: none
@@ -172,23 +154,14 @@
 				&__row
 					box-shadow: none
 
-	// +screen-tablet
-	// 	&__logo
-	// 		width: 97px
-	// 		height: 36px
-
 	+screen-desktop
-		// background: none
 		padding: 10px 0
-		// background: $c-white
-		// box-shadow: $header-box-shadow
 		> .container
 			display: flex
 			justify-content: space-between
 			align-items: flex-start
 		&__row
 			padding: 0
-			// box-shadow: none
 			.container
 				padding: 0
 				margin: 0
@@ -243,7 +216,6 @@
 			align-items: center
 			pointer-events: auto
 		&__contacts
-			// display: none // TEMP
 			margin: 0 0 0 63px
 		&__contacts-row
 			margin: 0
@@ -252,8 +224,6 @@
 		&__row
 			max-height: 70px
 			transition: max-height 0.4s
-		// &._fixed
-		// 	background: none
 		&._state2
 			background: $c-white
 			box-shadow: $header-box-shadow

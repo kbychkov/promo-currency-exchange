@@ -1,9 +1,9 @@
+// NOTE: Взято из компонентов SP и доработано.
 $border-radius: $border-radius-default
 .tab-openers
 	display: flex
 	flex-direction: column
 	&__item
-		// @extend .animated
 		@extend %button-hover
 		display: block
 		box-sizing: border-box
@@ -17,7 +17,6 @@ $border-radius: $border-radius-default
 		color: $c-text-default
 		border: 1px solid $c-lines
 		+unselectable
-		// TODO
 		&._active
 			background-color: $c-accent-main
 			color: $c-white
@@ -30,8 +29,6 @@ $border-radius: $border-radius-default
 			border-radius: 0 0 $border-radius $border-radius
 		&:not(:first-child)
 			border-top: none
-		// &:hover
-		// 	outline: 1px solid red;
 
 	+screen-tablet
 		flex-direction: row
@@ -48,7 +45,6 @@ $border-radius: $border-radius-default
 			flex: 0 1 auto
 			border: none
 
-// TODO
 .tab
 	display: none
 	&:first-of-type

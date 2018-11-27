@@ -25,8 +25,6 @@
 		&._map
 			margin: 20px 0
 	&__map-container
-		// +aspect-ratio(320, 400)
-		// @extend %full-sized
 		position: relative
 		background-color: $c-form-bg
 		box-sizing: border-box
@@ -64,14 +62,6 @@
 		font-weight: 500
 		font-size: 11px
 		letter-spacing: 0.02em
-	// &__footnote
-	// 	position: absolute
-	// 	left: 0
-	// 	top: 100%
-	// 	width: 100%
-	// 	margin-top: 13px
-	// 	font-size: 12px
-	// 	color: #A9A9A9
 	+screen-tablet
 		&__caption
 			display: block
@@ -79,11 +69,7 @@
 			&._text
 				padding-top: 61px
 		&__map-container
-			// +aspect-ratio(768, 400)
 			margin: 0
-	// +screen-tablet-only
-	// 	&__footnote
-	// 		text-align: center
 	+screen-desktop
 		&__flex
 			display: flex
@@ -103,4 +89,3 @@
 		&__map-container
 			+full-sized
 			border: 1px solid $c-lines
-			// height: auto

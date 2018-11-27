@@ -48,11 +48,6 @@
 		font-weight: 300
 		text-transform: uppercase
 		color: $c-accent-2
-	// TEMP: Убрали эту надпись.
-	// &__tip
-	// 	margin-bottom: 20px
-	// 	font-weight: 500
-	// 	font-size: 14px
 	&__input-section
 		margin-bottom: 22px
 	&__options
@@ -111,13 +106,8 @@
 			background-image: inline("../img/inline/flag-eur.svg")
 	&__selector
 		position: relative
-		// border-left: 1px solid $c-lines
 		border: 1px solid $c-lines
-		// border-left: none
 		background-color: $c-form-bg
-		// border-radius: 0 $border-radius-default $border-radius-default 0
-		// #{$parent-selector}
-		// 	&__option
 		&._opened
 			border-radius: 0 $border-radius-default 0 0
 			#{$parent-selector}
@@ -157,8 +147,6 @@
 	&__input
 		display: flex
 		justify-content: space-between
-		// border-radius: $border-radius-default
-		// border: 1px solid $c-lines
 		height: $inputs-height
 		box-sizing: border-box
 		.form__input
@@ -167,8 +155,6 @@
 		.form__input,
 		.form__input-block
 			flex: 1
-			// border-radius: 0
-			// border: none
 		.form__input-block._error
 			margin-bottom: 0
 			&._no-status
@@ -196,7 +182,6 @@
 		width: $arrow-width
 		height: $arrow-height
 		margin-top: -$arrow-height / 2
-		// outline: 1px solid red;
 		transition: transform 0.3s
 		&:before,
 		&:after
@@ -223,15 +208,11 @@
 			#{$parent-selector}
 				&__inner-centered
 					position: static
-					// transform: translate(0, 0)
 	&__inner-centered
 		position: absolute
 		left: 0
-		// top: 40.5%
 		top: 0
 		width: 100%
-		// transform: translate(0, -50%)
-		// transition: transform 0.2s
 		.form
 			max-width: none
 			&__title

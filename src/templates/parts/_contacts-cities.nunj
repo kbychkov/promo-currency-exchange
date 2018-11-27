@@ -1,4 +1,8 @@
-{# NOTE: Данная разметка взята отсюда: https://broker.ru/contacts #}
+{#
+	NOTE: Данная разметка взята отсюда:
+	https://broker.ru/contacts
+	Исключение — это data-атрибуты и блоки hidden.
+#}
 {% macro contactsCities() %}
 	<section class="contacts-cities">
 		<div class="layout__wrapper">
@@ -8,7 +12,7 @@
 					<div class="contacts-cities__item _agent" data-widget-caption="Ваш офис Армавир">
 						<a href="/contacts/armavir" class="contacts-cities__link">Армавир</a>
 
-						{# TEMP: Это для примера. На бэке будут заполнены реальные данные. #}
+						<!-- Это для примера. На бэке будут заполнены реальные данные. -->
 						<div class="hidden" data-widget-markup data-widget-map-coordinates="40.155410, 44.038730" data-widget-map-zoom="10">
 							<div class="contacts-widget__title">Офис Армавир</div>
 							<div class="contacts-widget__address">
@@ -35,7 +39,7 @@
 					<div class="contacts-cities__item _agent" data-widget-caption="Ваш офис Архангельск">
 						<a href="/contacts/arkhangelsk" class="contacts-cities__link">Архангельск</a>
 
-						{# TEMP: Это для примера. Может быть два офиса в одном городе. #}
+						<!-- Это для примера. Может быть два офиса в одном городе. -->
 						<div class="hidden" data-widget-markup data-widget-map-coordinates="64.539393, 40.516939" data-widget-map-zoom="10">
 							<div class="contacts-widget__title">Офис Архангельск 1</div>
 							<div class="contacts-widget__address">
@@ -81,7 +85,7 @@
 					<div class="contacts-cities__item _office" data-widget-caption="Ваш офис Астрахань">
 						<a href="/contacts/astrakhan" class="contacts-cities__link">Астрахань</a>
 
-						{# TEMP: Это для примера. Может быть три и более офисов в одном городе. #}
+						<!-- Это для примера. Может быть три и более офисов в одном городе. -->
 						<div class="hidden" data-widget-markup data-widget-map-coordinates="46.347869, 48.033574" data-widget-map-zoom="10">
 							<div class="contacts-widget__title">Офис Астрахань 1</div>
 							<div class="contacts-widget__address">

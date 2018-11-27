@@ -1,8 +1,4 @@
-const dom = require('../utils/DOM');
-
-function Connector() {
-	console.log("Connector");
-}
+function Connector() {}
 
 Connector.prototype = {
 	send(address, data, completeHandler, errorHandler) {

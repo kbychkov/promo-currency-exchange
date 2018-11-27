@@ -33,9 +33,6 @@
 
 		{% block stylesheets %}
 			<link rel="stylesheet" href="media/css/screen.css?<%= hash %>" />
-			{#
-			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.5.2/flatpickr.min.css" />
-			#}
 		{% endblock stylesheets %}
 	</head>
 	<body>
@@ -88,9 +85,6 @@
 							<span class="close-button"><i></i><i></i></span>
 						</a>
 
-						{#
-						TEMP
-						#}
 						{{ feedbackForm() }}
 					</div>
 				</div>

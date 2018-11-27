@@ -1,6 +1,7 @@
 {% from "./_forms-inputs.nunj" import inputBlock %}
 
 {% macro feedbackForm() %}
+	<!-- На боевом сервере подставить необходимый адрес, куда будут отсылаться данные. -->
 	<form action="http://www.mocky.io/v2/5bfb674a3200005100bee491" class="form _feedback" data-error-message-required="Обязательное поле">
 		<div class="form__states">
 			<div class="form__state _state1">
@@ -33,6 +34,9 @@
 						<div class="form__input-section _last">
 							{{ inputBlock("text", "time", "Время", required = false, additionalClass = "_icon _time", additionalAttributes = "data-disable-status") }}
 						</div>
+
+						<!-- Здесь необходимо вывести актуальные праздничные дни. -->
+						<input type="hidden" name="holidays" value="1543006800000,1543093200000,1543611600000,1543698000000,1544216400000,1544302800000,1544821200000,1544907600000,1545426000000,1545512400000">
 					</div>
 					<div class="form__input-section _checkbox">
 						{{ inputBlock("checkbox", "agreement", "", required = true) }}
@@ -43,7 +47,6 @@
 				</div>
 			</div>
 
-			{# TODO: Прислали ответ на заявку.... Там нужно будет подставить данные из полей ввода. #}
 			<div class="form__state _state2">
 				<div class="form__response-message">
 					<div class="form__response-text _v2">

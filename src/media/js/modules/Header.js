@@ -1,11 +1,9 @@
 const dom = require('../utils/DOM');
 const Utils = require('../utils/Utils');
-// const DetectSizeVersionHelper = require('../helpers/DetectSizeVersionHelper');
 const Callback = require('../classes/Callback');
 
 const FIXED_STATE_CLASS = '_fixed';
 const STATE_2_CLASS = '_state2';
-// TODO: Уточнить данный момент. Возможно, что шапка должна быть фикс, но не должна скрываться.
 const AWAY_STATE_CLASS = '_away';
 const DOWN = 'down';
 const UP = 'up';
@@ -21,58 +19,17 @@ function Header() {
 	this.lastY = this.currentY;
 	this.activeState = true;
 
-	// DetectSizeVersionHelper.onChange.add(() => this._versionsController());
-
-	// Binds
-	let f = () => this._scrollController();
-	let d = () => this._directionController();
-	let r = Utils.debounce(() => this._resizeController());
-	this._addListeners = () => {
-		if (this.listenersAdded) {
-			return;
-		}
-		this.listenersAdded = true;
-
-		this.setFixedState();
-		dom.$window.on('scroll', f);
-		dom.$window.on('scroll', d);
-		dom.$window.on('resize', r);
-		f();
-	};
-
-	this._removeListeners = () => {
-		if (!this.listenersAdded) {
-			return;
-		}
-		this.listenersAdded = false;
-
-		dom.$window.off('scroll', f);
-		dom.$window.off('scroll', d);
-		dom.$window.off('resize', r);
-		this.unsetFixedState();
-		this.unsetState2();
-	};
-
-	// TODO: Отрефакторить.
-	this._addListeners();
+	this.setFixedState();
+	dom.$window.on('scroll', () => this._scrollController());
+	dom.$window.on('scroll', () => this._directionController());
+	dom.$window.on('resize', Utils.debounce(() => this._resizeController()));
+	this._scrollController();
 
 	this.onScrollDirectionChange = new Callback();
 	this.onScrollDirectionChange.add(direction => this._directionChangeController(direction));
 }
 
 Header.prototype = {
-	_versionsController() {
-		// TODO: Изначально, шапка-прилипалка была только для десктопа. Потом обсудили, и решили
-		// сделать для всех устройст. Поэтому, по сути, сейчас этот контроллер не нужен вовсе.
-		// На всякий случай, оставляю. Перед сдачей можно будет отрефакторить тут слегка.
-		// let isDesktop = DetectSizeVersionHelper.isCurrentVersion(DetectSizeVersionHelper.DESKTOP);
-		// if (isDesktop) {
-		// 	this._addListeners();
-		// } else {
-		// 	this._removeListeners();
-		// }
-		this._addListeners();
-	},
 	_scrollController() {
 		if (!this.activeState) {
 			return;
@@ -123,7 +80,9 @@ Header.prototype = {
 		if (!SET_PADDINGS) {
 			return;
 		}
-		this.headerHeight = Math.round(this.$header.outerHeight() + (parseInt(this.$header.css('margin-bottom'), 10) || 0));
+		this.headerHeight = Math.round(
+			this.$header.outerHeight() + (parseInt(this.$header.css('margin-bottom'), 10) || 0)
+		);
 		this.$wrapper.css('padding-top', `${this.headerHeight}px`);
 	},
 

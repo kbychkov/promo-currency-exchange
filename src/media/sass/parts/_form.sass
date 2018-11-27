@@ -29,12 +29,7 @@
 		// чтобы не прыгали мелкие иконки (баг).
 		height: $inputs-height
 		&:focus
-			// NOTE: На сером фоне попросили заменить на обводку
-			// border-color: $c-accent-main
 			box-shadow: 0 0 20px rgba($c-accent-main, 0.25)
-			// #{$parent-selector}._feedback &
-			// 	box-shadow: none
-			// 	border-color: $c-accent-main
 		&:disabled
 			cursor: default
 			~ #{$parent-selector}
@@ -92,9 +87,6 @@
 					border-color: $c-error-border
 					&:focus
 						box-shadow: 0 0 20px rgba($c-error-border, 0.25)
-						// NOTE: На сером фоне, сказали, тень плохо смотрится, оставить только обводку.
-						// #{$parent-selector}._feedback &
-						// 	box-shadow: none
 			.checkbox
 				&__input
 					border-color: $c-error-border
@@ -124,17 +116,8 @@
 				&__input
 					border-color: $c-lines
 					&:focus
-						// border-color: $c-accent-main
 						box-shadow: 0 0 20px rgba($c-accent-main, 0.25)
-			// &,
-			// &._success,
-			// &._error
-			// 	#{$parent-selector}
-			// 		&__input
-			// 			&:focus
-			// 				// NOTE: На сером фоне, сказали, тень плохо смотрится, оставить только обводку.
-			// 				#{$parent-selector}._feedback &
-			// 					box-shadow: none
+	// NOTE: На сером фоне, сказали, тень плохо смотрится, оставить только обводку.
 	&._feedback
 		#{$parent-selector}
 			&__input-block
@@ -147,8 +130,6 @@
 				&,
 				&:focus
 					box-shadow: none
-				// &:focus
-				// 	border-color: $c-accent-main
 	&__label
 		display: block
 		position: relative
@@ -163,11 +144,8 @@
 	&__label-text
 		position: absolute
 		left: $input-padding-x
-		// top: $input-padding-x + 2px
 		top: 50%
 		margin-top: -0.5em
-		// width: 100%
-		// height: 100%
 		transition: opacity 0.3s, transform 0.3s
 		font-size: 14px
 		color: $c-placeholder
@@ -218,12 +196,6 @@
 		#{$parent-selector}
 			&__response-text
 				max-width: none
-	// &__response-title
-	// 	+font-size(26px)
-	// 	margin-bottom: rel-size(40px)
-	// &__response-text
-	// 	max-width: rel-size(400px)
-	// 	margin: auto
 	&._state2
 		#{$parent-selector}
 			&__state
@@ -301,33 +273,6 @@
 				margin-bottom: 0.4em
 				font-size: 49px
 				line-height: 1.1
-	// +screen-desktop
-	// 	display: flex
-	// 	justify-content: space-between
-	// 	align-items: center
-	// 	max-width: none
-	// 	padding: 0
-	// 	&__heading-part
-	// 		flex: 1
-	// 		max-width: 380px
-	// 		margin-bottom: 25px
-	// 	&__title,
-	// 	&__subtitle
-	// 		text-align: left
-	// 		max-width: none
-	// 	&__subtitle
-	// 		&._v2
-	// 			text-align: center
-	// 	&__sections-part
-	// 		width: 512px
-	// 		background-color: #C3C9D2
-	// 		box-sizing: border-box
-	// 		padding: 81px 41px 69px
-	// +screen-desktop-lg
-	// 	&__sections-part
-	// 		width: 600px
-	// 		padding-left: 75px
-	// 		padding-right: 75px
 
 .checkbox
 	$parent-selector: &

@@ -12,11 +12,6 @@
 		{% set additionalAttributes = 'data-error-message-checkbox="Необходимо согласие"' %}
 	{% endif %}
 
-	{% if (type == "number" or name == "count_people") and additionalAttributes == "" %}
-		{# NOTE: Если необходимо отключить маску, можно указать атрибут data-use-mask="false" #}
-		{#% set additionalAttributes = 'step="1" max="99999" pattern="^[0-9]{1,5}$" data-error-message-pattern="Цифры (не более 5 знаков)"' %#}
-	{% endif %}
-
 	{% if type == "email" and additionalAttributes == "" %}
 		{% set additionalAttributes = 'data-error-message-email="Неверный формат"' %}
 	{% endif %}
@@ -32,7 +27,7 @@
 					<div class="checkbox__col _text">
 						{% if name == "agreement" %}
 							Я согласен на передачу
-							и обработку своих <a href="https://broker.ru/agreement" target="_blank" class="checkbox__link">персональных данных</a>
+							и обработку своих <a href="//broker.ru/agreement" target="_blank" class="checkbox__link">персональных данных</a>
 						{% else %}
 							{{ placeholder }}
 						{% endif %}

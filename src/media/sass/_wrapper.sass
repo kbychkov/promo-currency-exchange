@@ -12,13 +12,6 @@
 	&__content
 		display: block
 		flex: 1 0 auto
-		// TODO: Убрать overflow понадобилось, потому что
-		// календарь выбора даты и времени на мобилке залезал на футер и обрезался.
-		// Проверить, не появился ли из-за этого горизонтальный скролл где-либо.
-		// overflow: hidden
-		// ._menu-opened &
-		// 	height: 100%
-		// 	overflow: hidden
 	._menu-opened &
 		height: 100vh
 		overflow: hidden
@@ -28,7 +21,6 @@
 
 ._menu-opened
 	.wrapper__content
-		// pointer-events: none
 		opacity: 0.35
 
 .wrapper__content
