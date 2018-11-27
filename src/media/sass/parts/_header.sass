@@ -26,6 +26,18 @@
 			overflow: visible
 		.chunk-2
 			display: none
+		+desktop
+			&[href]
+				path
+					transition: fill $default-transition-duration
+				// .chunk-2
+				&:hover
+					.chunk-2
+						path
+							// fill: $c-accent-2
+							fill: $c-accent-main
+							transition-duration: 0s
+			// &:link
 	&__row
 		position: relative
 		z-index: 6
