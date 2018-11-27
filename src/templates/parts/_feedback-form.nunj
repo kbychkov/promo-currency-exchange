@@ -9,8 +9,8 @@
 					<h2 class="form__title like-h2">Остались вопросы?</h2>
 					<p class="form__subtitle">
 						Заполните форму,
-						и мы перезвоним вам
-						в ближайшее время
+						и&nbsp;мы перезвоним вам
+						в&nbsp;ближайшее время
 					</p>
 				</div>
 				<div class="form__sections-part">
@@ -24,7 +24,7 @@
 						{{ inputBlock("email", "email", "E-mail", required = true) }}
 					</div>
 					<p class="form__subtitle _v2">
-						Выберите удобное для вас
+						Выберите удобное для&nbsp;вас
 						время звонка
 					</p>
 					<div class="form__multiple-inputs">
