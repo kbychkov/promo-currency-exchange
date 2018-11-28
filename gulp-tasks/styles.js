@@ -4,7 +4,6 @@ import notifier from 'node-notifier';
 import postcss from 'postcss';
 import gulpPostcss from 'gulp-postcss';
 import autoprefixer from 'autoprefixer';
-import sprites from 'postcss-sprites';
 import assets from 'postcss-assets';
 import gutil from 'gulp-util';
 import sass from 'gulp-sass';
@@ -48,16 +47,6 @@ const PROCESSORS = [
 		loadPaths: [PATHS.src.imagesInline],
 		cache: true,
 	}),
-	// TODO: Конфликт версий postcss и postcss-sprites.
-	// Попытаться разобраться с этим делом...
-	// sprites({
-	// 	stylesheetPath: './build/media/css/',
-	// 	spritePath: './build/media/img/sprite.png',
-	// 	retina: true,
-	// 	outputDimensions: true,
-	// 	padding: 4,
-	// 	filterBy: image => /sprites\/.*\.png$/gi.test(image.url),
-	// }),
 ];
 
 export default function styles() {

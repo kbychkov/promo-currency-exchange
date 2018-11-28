@@ -42,7 +42,6 @@ const App = new function App() { // eslint-disable-line
 	};
 
 	this.helpers = {
-		SVGSprites: require('./helpers/SVGSprites'),
 		Connector: require('./helpers/Connector'),
 	};
 
