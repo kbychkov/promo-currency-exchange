@@ -1,9 +1,15 @@
-const Flatpickr = require('flatpickr');
+require('flatpickr');
 import { Russian } from 'flatpickr/dist/l10n/ru.js';
 
 const dom = require('../utils/DOM');
+const Utils = require('../utils/Utils');
 const WIN_WIDTH_MOBILES = 780;
 
+const OPENED_CLASS = '_opened';
+const SELECTED_CLASS = '_selected';
+
+// NOTE: Код взят с сайта broker.ru,
+// и дополнен для адекватной работоспособности на данном проекте.
 function DateTime() {
 	dom.$body.find('.form__multiple-inputs').each((index, elem) => {
 		this.initDateTimePicker(elem);
@@ -11,9 +17,6 @@ function DateTime() {
 }
 
 DateTime.prototype = {
-	fnDatePickerDefaults() {
-		Flatpickr.localize(Flatpickr.l10ns.ru);
-	},
 	initDateTimePicker(el, options) {
 		var winWidth = window.innerWidth;
 		var $dateTime = $(el);
@@ -32,8 +35,12 @@ DateTime.prototype = {
 		$dateTime
 			.find('[name="date"]')
 			.addClass('_date-input js-call-date')
-			.attr('data-input', '');
-		$dateTime.find('[name="time"]').addClass('_time-input js-call-time');
+			.attr('data-input', '')
+			.attr('readonly', 'readonly');
+		$dateTime
+			.find('[name="time"]')
+			.addClass('_time-input js-call-time')
+			.attr('readonly', 'readonly');
 
 		let $newMarkupElem = $('<div></div>');
 		$newMarkupElem.html(`
@@ -73,9 +80,9 @@ DateTime.prototype = {
 			if ($dateTime.find('._selected').length > 1) {
 				$dateTime
 					.find('._selected')
-					.removeClass('_selected')
+					.removeClass(SELECTED_CLASS)
 					.last()
-					.addClass('_selected');
+					.addClass(SELECTED_CLASS);
 			}
 			$activeSchedule = $dateTime.find('._selected').text();
 			$scheduleIntervalInput.val($activeSchedule);
@@ -122,13 +129,13 @@ DateTime.prototype = {
 
 		var checkInterval = function() {
 			var setFirstInterval = function() {
-				$scheduleCell.eq(0).addClass('_selected');
+				$scheduleCell.eq(0).addClass(SELECTED_CLASS);
 				$select.val($options.eq(0).val());
 			};
 
 			if (scheduleStart <= now && now <= scheduleEnd) {
 				$scheduleCell.slice(0, disableInterval).addClass('_disabled');
-				$scheduleCell.eq(disableInterval).addClass('_selected');
+				$scheduleCell.eq(disableInterval).addClass(SELECTED_CLASS);
 
 				$options
 					.slice(0, disableInterval)
@@ -201,7 +208,7 @@ DateTime.prototype = {
 			onChange: function(selectedDates) {
 				activeDate = selectedDates[0];
 				if (activeDate.toDateString() === defaultDate.toDateString()) {
-					$scheduleCell.removeClass('_selected');
+					$scheduleCell.removeClass(SELECTED_CLASS);
 					checkInterval();
 				} else {
 					$scheduleCell.removeClass('_disabled');
@@ -212,53 +219,55 @@ DateTime.prototype = {
 		});
 
 		// развешивание _selected по клику
-		$scheduleCell.click(function() {
+		$scheduleCell.on('click', function() {
 			var $this = $(this);
 
-			$scheduleCell.removeClass('_selected');
-			$this.addClass('_selected');
+			$scheduleCell.removeClass(SELECTED_CLASS);
+			$this.addClass(SELECTED_CLASS);
 			$select.val($options.eq($scheduleCell.index($this)).val());
 			saveInterval(activeDate);
 		});
 
 		$select.change(function() {
 			$scheduleCell
-				.removeClass('_selected')
+				.removeClass(SELECTED_CLASS)
 				.eq($options.index($select.find('option:selected')))
-				.addClass('_selected');
+				.addClass(SELECTED_CLASS);
 			saveInterval(activeDate);
-			$dropdown.removeClass('_opened');
+			$dropdown.removeClass(OPENED_CLASS);
 		});
 
 		saveInterval(defaultDate);
 
 		$timeZoneOffset.val(date.getTimezoneOffset());
 
-		$(window).on('resize', function() {
-			winWidth = window.innerWidth;
-			fp.setDate(activeDate);
-		});
+		dom.$window.on(
+			'resize',
+			Utils.debounce(function() {
+				winWidth = window.innerWidth;
+				fp.setDate(activeDate);
+			})
+		);
 
 		// появление/скрытие выпадашки
-		$('body').click(function() {
-			$dropdown.removeClass('_opened');
+		dom.$body.on('click', function() {
+			$dropdown.removeClass(OPENED_CLASS);
 		});
 
-		$dateTime.click(function(e) {
-			var target = $(e.target);
-
+		$dateTime.on('click', function(e) {
+			var $target = $(e.target);
 			e.stopPropagation();
 
 			if (winWidth <= WIN_WIDTH_MOBILES) {
-				if (target.is($dateTimeInput) && $dropdown.hasClass('_opened')) {
-					$dropdown.removeClass('_opened');
-				} else if (!target.is($select)) {
-					$dropdown.addClass('_opened');
+				if ($target.is($dateTimeInput) && $dropdown.hasClass(OPENED_CLASS)) {
+					$dropdown.removeClass(OPENED_CLASS);
+				} else if (!$target.is($select)) {
+					$dropdown.addClass(OPENED_CLASS);
 				}
-			} else if (target.is($scheduleCell)) {
-				$dropdown.removeClass('_opened');
-			} else if (!target.is($select)) {
-				$dropdown.addClass('_opened');
+			} else if ($target.is($scheduleCell)) {
+				$dropdown.removeClass(OPENED_CLASS);
+			} else if (!$target.is($select)) {
+				$dropdown.addClass(OPENED_CLASS);
 			}
 		});
 	},

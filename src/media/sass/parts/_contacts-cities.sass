@@ -1,5 +1,5 @@
-// NOTE: Разметка и стиля взяты отсюда: https://broker.ru/contacts
-// При наличии времени - отрефакторить.
+// NOTE: Разметка и стиля взяты отсюда:
+// https://broker.ru/contacts
 .contacts-cities
 	&__list
 		display: block
@@ -15,7 +15,7 @@
 	&__letter
 		margin-bottom: 8px
 		padding-left: 25px
-		color: #2b2b51
+		color: $c-accent-2
 		font-size: 16px
 		font-weight: 500
 		letter-spacing: 1px
@@ -32,15 +32,17 @@
 			position: absolute
 			top: 0
 			left: 0
+			background: transparent center center no-repeat
+			background-size: contain
 		&:not(:first-child)
 			margin-top: 14px
-		&._agent::before
-			background: inline("../img/inline/i_contacts-agent.png") no-repeat
-		&._office::before
-			background: inline("../img/inline/i_contacts-office.png") no-repeat
+		&._agent:before
+			background-image: inline("../img/inline/contacts-agent.svg")
+		&._office:before
+			background-image: inline("../img/inline/contacts-office.svg")
 	&__link
 		@extend %link-hover
-		color: #666
+		color: $c-gray-text
 		font-size: 12px
 		letter-spacing: .5px
 		transition: color .24s
