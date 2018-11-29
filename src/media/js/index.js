@@ -61,6 +61,9 @@ const App = new function App() { // eslint-disable-line
 	$(() => {
 		// Remove _loading modificator
 		this.dom.$html.removeClass('_loading');
+		this.dom.$body.find('.header__logo:not([href])').on('click', () => {
+			TweenMax.to(this.dom.$document2, 0.4, { scrollTop: 0 });
+		});
 	});
 }();
 

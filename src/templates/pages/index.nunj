@@ -15,8 +15,8 @@
 					Выгодный обмен валюты
 				</div>
 				<h1 class="like-h1 _v2">
-					Покупайте валюту
-					<div class="like-h1__accent">по курсу биржи</div>
+					<span class="shift-x">Покупайте валюту</span>
+					<div class="like-h1__accent"><span class="shift-x">по курсу биржи</span></div>
 				</h1>
 			</div>
 
