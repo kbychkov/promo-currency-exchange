@@ -37,7 +37,7 @@
 	</head>
 	<body>
 		<div class="wrapper">
-			<header class="wrapper__header header {% if headerAlwaysFixed == true %}_fixed{% endif %} {% if headerNoMargin == true %}_no-margin{% endif %}">
+			<header class="wrapper__header header {% if headerAlwaysFixed == true %}_fixed{% endif %} {% if headerNoMargin == true %}_no-margin{% endif %}" data-fixed-element>
 				<div class="container">
 					<div class="header__row">
 						<div class="container">
@@ -47,7 +47,7 @@
 								</a>
 
 								<div class="header__flex _v2">
-									<span class="button visible-tablet-only">Заказать звонок</span>
+									<span class="button visible-tablet-only" data-popup-opener="feedback">Заказать звонок</span>
 									<div class="burger" data-menu-toggler><i></i><i></i><i></i><i></i><i></i></div>
 								</div>
 							</div>
@@ -63,7 +63,7 @@
 
 										<div class="header__contacts">
 											<div class="header__contacts-row">
-												<span class="button js-open-popup" data-popup-selector="#feedback">Заказать звонок</span>
+												<span class="button" data-popup-opener="feedback">Заказать звонок</span>
 											</div>
 											<div class="header__contacts-row _phone">
 												<a href="tel:{{ common.phone }}" class="phone">{{ common.phone }}</a>
@@ -76,16 +76,6 @@
 								</div>
 							</div>
 						</div>
-					</div>
-				</div>
-
-				<div class="popup hidden" id="feedback">
-					<div class="popup__content feedback-popup">
-						<a role="button" class="popup__close js-close-popup" title="Закрыть">
-							<span class="close-button"><i></i><i></i></span>
-						</a>
-
-						{{ feedbackForm() }}
 					</div>
 				</div>
 			</header>
@@ -145,6 +135,28 @@
 				</div>
 				{% endif %}
 			</footer>
+		</div>
+
+		<div class="popups-wrapper">
+			<div class="popups-wrapper__content">
+				<div class="popup feedback-popup" data-popup="feedback">
+					<a role="button" class="popup__close" title="Закрыть" data-popup-closer>
+						<span class="close-button"><i></i><i></i></span>
+					</a>
+
+					{{ feedbackForm() }}
+				</div>
+
+				<div class="popup video-popup" data-popup="video">
+					<div class="video-popup__inner">
+						<a role="button" class="popup__close" title="Закрыть" data-popup-closer>
+							<span class="close-button"><i></i><i></i></span>
+						</a>
+
+						<iframe data-src="https://www.youtube.com/embed/WZnkM0uRM8o" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+					</div>
+				</div>
+			</div>
 		</div>
 
 		{% block scripts %}

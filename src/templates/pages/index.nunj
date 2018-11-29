@@ -51,21 +51,9 @@
 					<p class="like-p">Получите прямой доступ к&nbsp;Московской Бирже и&nbsp;покупайте валюту по&nbsp;реальной цене.</p>
 				</div>
 
-				<div class="video-preview js-open-popup" data-popup-selector="#video">
+				<div class="video-preview" data-popup-opener="video">
 					<div class="video-preview__bg-image"></div>
 					<span class="play-button"></span>
-				</div>
-
-				<div class="popup hidden" id="video">
-					<div class="popup__content video-popup">
-						<div class="video-popup__inner">
-							<a role="button" class="popup__close js-close-popup" title="Закрыть">
-								<span class="close-button"><i></i><i></i></span>
-							</a>
-
-							<iframe data-src="https://www.youtube.com/embed/WZnkM0uRM8o" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-						</div>
-					</div>
 				</div>
 			</div>
 		</div>

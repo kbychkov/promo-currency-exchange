@@ -1,18 +1,26 @@
+const Popups = require('./Popups');
+
 function VideoPopup() {
-	let $videoPopup = $('#video');
-	$videoPopup.on('popups:open', () => {
-		setTimeout(() => {
-			let $iframe = $videoPopup.find('iframe');
-			$iframe.attr('src', $iframe.attr('data-src'));
-			$iframe.removeAttr('data-src');
-		}, 500);
+	let $videoPopup = $('[data-popup="video"]');
+
+	Popups.onOpen.add(name => {
+		if (name !== 'video') {
+			return;
+		}
+
+		let $iframe = $videoPopup.find('iframe');
+		$iframe.attr('src', $iframe.attr('data-src'));
+		$iframe.removeAttr('data-src');
 	});
-	$videoPopup.on('popups:close', () => {
-		setTimeout(() => {
-			let $iframe = $videoPopup.find('iframe');
-			$iframe.attr('data-src', $iframe.attr('src'));
-			$iframe.removeAttr('src');
-		}, 500);
+
+	Popups.onClose.add(name => {
+		if (name !== 'video') {
+			return;
+		}
+
+		let $iframe = $videoPopup.find('iframe');
+		$iframe.attr('data-src', $iframe.attr('src'));
+		$iframe.removeAttr('src');
 	});
 }
 
