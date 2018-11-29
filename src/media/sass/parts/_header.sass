@@ -53,6 +53,7 @@
 	&__menu-block
 		@extend %full-sized
 		min-height: 100vh
+		height: 100%
 		z-index: 5
 		overflow: hidden
 		transform: translate(100%, 0)
@@ -180,8 +181,9 @@
 			display: none
 		&__menu-block
 			position: static
+			height: auto
 			pointer-events: unset
-			min-height: unset
+			min-height: unset !important
 			overflow: unset
 			transform: translate(0, 0)
 			._ie &

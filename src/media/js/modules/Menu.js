@@ -1,5 +1,6 @@
 const dom = require('../utils/DOM');
 const env = require('../utils/ENV');
+const Utils = require('../utils/Utils');
 const Header = require('./Header');
 
 const OPENED_CLASS = '_menu-opened';
@@ -33,23 +34,30 @@ function Menu() {
 				this.close();
 			}
 		})
-		.on('resize', () => {
-			let newState = window.innerWidth >= 1000 ? 1 : 0;
-			if (appliedState != newState) {
-				appliedState = newState;
+		.on(
+			'resize',
+			Utils.debounce(() => {
+				let newState = window.innerWidth >= 1000 ? 1 : 0;
+				if (appliedState != newState) {
+					appliedState = newState;
 
-				if (window.innerWidth >= 1000) {
-					if (this.opened) {
-						this.close(true);
-					}
-					TweenMax.set(this.$container, { x: '0%' });
-				} else {
-					if (!this.opened) {
-						TweenMax.set(this.$container, { x: '100%' });
+					if (window.innerWidth >= 1000) {
+						if (this.opened) {
+							this.close(true);
+						}
+						TweenMax.set(this.$container, { x: '0%' });
+					} else {
+						if (!this.opened) {
+							TweenMax.set(this.$container, { x: '100%' });
+						}
 					}
 				}
-			}
-		});
+
+				this.$container.css({
+					height: window.innerWidth < 1000 ? `${window.innerHeight}px` : '',
+				});
+			})
+		);
 
 	SwipeCatchHelper.watch(
 		dom.$body,
@@ -102,6 +110,9 @@ Menu.prototype = {
 		dom.$wrapper.scrollTop(scrTop + newWrapperY);
 
 		this.$container.find('.header__menu-container').scrollTop(0);
+		this.$container.css({
+			height: `${window.innerHeight}px`,
+		});
 		TweenMax.fromTo(
 			this.$container,
 			0.65,

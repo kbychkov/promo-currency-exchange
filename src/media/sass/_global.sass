@@ -83,11 +83,14 @@ html
 	&._menu-opened
 		height: 100%
 		overflow: hidden
+	&._menu-opened
+		body
+			height: 100%
 
 html, body
+	@extend %overflow-y
 	width: 100%
 	box-sizing: border-box
-	@extend %overflow-y
 
 =img-cover
 	position: absolute
