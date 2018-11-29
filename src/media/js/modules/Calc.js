@@ -115,18 +115,21 @@ Calc.prototype = {
 			}
 
 			let directionSign = slideIndex < currentSlideIndex ? 1 : -1;
-			let duration = 1.2;
+			let duration = 0.6;
 
-			TweenMax.to($slides.eq(currentSlideIndex), duration / 2, {
+			$slides.nope(true);
+			TweenMax.to($slides.eq(currentSlideIndex), duration / 1.5, {
 				x: `${120 * directionSign}%`,
 				autoAlpha: 0,
-				ease: Back.easeIn,
 			});
 
 			TweenMax.to($slides.eq(slideIndex), duration, {
 				x: '0%',
 				autoAlpha: 1,
-				ease: Back.easeInOut.config(1),
+				ease: Power1.easeOut,
+				onComplete: () => {
+					$slides.nope(false);
+				},
 			});
 
 			currentSlideIndex = slideIndex;
