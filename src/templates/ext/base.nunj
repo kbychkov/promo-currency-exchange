@@ -137,7 +137,7 @@
 			</footer>
 		</div>
 
-		<div class="popups-wrapper">
+		<div class="popups-wrapper" data-fixed-element>
 			<div class="popups-wrapper__content">
 				<div class="popup feedback-popup" data-popup="feedback">
 					<a role="button" class="popup__close" title="Закрыть" data-popup-closer>
