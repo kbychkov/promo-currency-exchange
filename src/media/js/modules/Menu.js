@@ -122,22 +122,20 @@ Menu.prototype = {
 				ease: Circ.easeInOut,
 				onComplete: () => {
 					this.animating = false;
-
-					// NOTE: Баг с проматыванием основного контента
-					// на айфонах при открытом меню.
-					if (env.isIOS) {
-						setTimeout(() => {
-							dom.$body.add(dom.$html).css({
-								overflow: 'hidden',
-								height: '100%',
-								'min-height': '0',
-							});
-							this.$wrapper.scrollTop(this.savedScrollTop);
-						}, 200);
-					}
 				},
 			}
 		);
+
+		// NOTE: Баг с проматыванием основного контента
+		// на айфонах при открытом меню.
+		if (env.isIOS) {
+			dom.$body.add(dom.$html).css({
+				overflow: 'hidden',
+				height: '100%',
+				'min-height': '0',
+			});
+			dom.$body.scrollTop(this.savedScrollTop);
+		}
 
 		TweenMax.staggerFromTo(
 			this.$menuItems,
