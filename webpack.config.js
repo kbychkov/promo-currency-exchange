@@ -57,6 +57,9 @@ export const config = {
 		minimize: PRODUCTION,
 	},
 	watch: !PRODUCTION && !hmrEnabled,
+	performance: {
+		hints: false,
+	},
 };
 
 export default config;

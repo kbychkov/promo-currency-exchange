@@ -80,9 +80,7 @@ Header.prototype = {
 		if (!SET_PADDINGS) {
 			return;
 		}
-		this.headerHeight = Math.round(
-			this.$header.outerHeight() + (parseInt(this.$header.css('margin-bottom'), 10) || 0)
-		);
+		this.headerHeight = Math.round(this.$header.outerHeight() + (parseInt(this.$header.css('margin-bottom'), 10) || 0));
 		this.$wrapper.css('padding-top', `${this.headerHeight}px`);
 	},
 

@@ -68,9 +68,7 @@ function Forms() {
 				let successTime = data['datetime-select'];
 				let successTimeArr = successTime.split('-');
 				$form.find('[data-success-name]').text(`, ${successName}`);
-				$form
-					.find('[data-success-datetime]')
-					.html(`${successDate}<br> с ${successTimeArr[0]} до ${successTimeArr[1]}`);
+				$form.find('[data-success-datetime]').html(`${successDate}<br> с ${successTimeArr[0]} до ${successTimeArr[1]}`);
 			};
 
 			if (IS_LOCAL) {

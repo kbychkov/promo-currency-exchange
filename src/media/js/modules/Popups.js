@@ -136,9 +136,7 @@ function Popups() {
 				self.css('zIndex', maxZI + 1);
 				DEBUG &&
 					console.log(
-						'%c--[module popups] added z-index ' +
-							(maxZI + 1) +
-							', because there was another opened popups',
+						'%c--[module popups] added z-index ' + (maxZI + 1) + ', because there was another opened popups',
 						'font-style: italic; color: #999'
 					);
 			}
@@ -194,9 +192,7 @@ function Popups() {
 		var autohidePopupsOpened = autohidePopups.filter('.' + openedClass);
 		if (autohidePopupsOpened.length > 0) {
 			DEBUG &&
-				console.log(
-					'[module popups] hided ' + autohidePopupsOpened.length + ' popups with ' + dAttrAutohide + '=true'
-				);
+				console.log('[module popups] hided ' + autohidePopupsOpened.length + ' popups with ' + dAttrAutohide + '=true');
 			autohidePopups.removeClass(openedClass);
 		}
 

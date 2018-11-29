@@ -84,13 +84,8 @@ DateTime.prototype = {
 				first = parts[0],
 				second = parts[1];
 
-			$scheduleIntervalStart.val(
-				(d.getTime() + (+first.split(':')[0] * 60 + +first.split(':')[1]) * 60000) / 1000
-			);
-
-			$scheduleIntervalEnd.val(
-				(d.getTime() + (+second.split(':')[0] * 60 + +second.split(':')[1]) * 60000) / 1000
-			);
+			$scheduleIntervalStart.val((d.getTime() + (+first.split(':')[0] * 60 + +first.split(':')[1]) * 60000) / 1000);
+			$scheduleIntervalEnd.val((d.getTime() + (+second.split(':')[0] * 60 + +second.split(':')[1]) * 60000) / 1000);
 		};
 
 		var now = date.getHours() * 60 + date.getMinutes();
@@ -196,15 +191,9 @@ DateTime.prototype = {
 					}
 				},
 			],
-			formatDate: function(d, f) {
+			formatDate: function(d) {
 				if (winWidth <= WIN_WIDTH_MOBILES) {
-					return (
-						('0' + d.getDate()).slice(-2) +
-						'.' +
-						('0' + (d.getMonth() + 1)).slice(-2) +
-						'.' +
-						d.getFullYear()
-					);
+					return ('0' + d.getDate()).slice(-2) + '.' + ('0' + (d.getMonth() + 1)).slice(-2) + '.' + d.getFullYear();
 				} else {
 					return d.getDate() + '\xA0' + MONTHES[d.getMonth()] + '\xA0' + d.getFullYear();
 				}
