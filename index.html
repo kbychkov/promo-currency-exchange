@@ -1,0 +1,1204 @@
+<!DOCTYPE html>
+<html class="_header-fixed">
+
+<head>
+    <!-- Client-side programming by sborkaproject.com -->
+    <meta charset="utf-8" />
+    <title>Главная | БКС брокер</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <script>
+        if (localStorage && localStorage.getItem('fix100vhValue')) {
+				document.documentElement.classList.add('_fix100vh');
+				typeof document.documentElement.style.setProperty === 'function' && document.documentElement.style.setProperty('--fix100vhValue', `${localStorage.getItem('fix100vhValue')}px`);
+			}
+		</script>
+
+    <link rel="stylesheet" href="media/css/screen.css?467012201788" />
+</head>
+
+<body>
+    <div class="wrapper">
+        <header class="wrapper__header header _fixed _no-margin">
+            <div class="container">
+                <div class="header__row">
+                    <div class="container">
+                        <div class="header__flex">
+                            <a class="header__logo">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 149.53">
+                                    <g class="chunk-1">
+                                        <path fill="#262e45" opacity=".4" d="m115.27 14.63c0.61 0.26 5.81 2.62 4.58 1.15a17.48 17.48 0 0 0 -4.52 -3.78c-86.92-49.78-155 68.54-88.7 122.26 2.52 2.05 4.27 3.52 4.86 3.56 0.8 0.05 15.59 10.66 4.74-6.45-41.13-64.85 7.77-151.43 79.04-116.74m30.73 51.46a74.46 74.46 0 0 0 -7.81 -27.3c-28.1-33.82-136.21 1-99.24 88.37 1.14 2.67 2.67 4.2 3.39 3.69s4.13-0.81 3.75-3.42c-9.86-68.43 75.82-84.73 99.91-61.34m-87.19 70.71c0.58 1.92 0.55 2.68 1.12 3 0.29 0.13 8.05 2.45 8.28 0.49 2.46-21.07 59.91-42.89 63.81-24.81 5.12-7.68 10.44-15.33 12.49-24.8a2.77 2.77 0 0 1 0.49 -1.76c-5.08-16.47-100.69 0-86.19 47.92" />
+                                        <path fill="#262e45" d="m38.86 8.16c2.14-1.95 4.21-3.79 3.43-3.9-0.59-0.09-2.68 0.9-5.54 2.52-53.58 30.47-40.95 125.22 28.83 142.38v0.08c2 0.19 4.08 0.29 6.13 0.29a73.5 73.5 0 0 0 24 -4 85.12 85.12 0 0 0 17.06 -8.45c0.7-0.48 1.4-1 2.09-1.46-60.86 18.9-131-75.09-76-127.46m9.08 7.93c0.49-2.61 0.81-3.69 0.15-4.3s-2.1 1-3.85 3.32c-34.4 47.33 40.76 119.2 89.7 100.59a76.76 76.76 0 0 0 11 -26.54c-26.86 20.67-105.42-27.78-97-73m90.06 22.47c-5.95 17.72-61.47-12.77-69.89-29.63-0.86-1.81-1.62-2.24-1.92-2.13-0.61 0.2-1.06 0.86-1.46 2.83-5.18 24.89 50.1 69.94 81.5 58.36a8.09 8.09 0 0 0 -0.15 -2.12 76.29 76.29 0 0 0 -8 -27.35" />
+                                    </g>
+                                    <g class="chunk-2">
+                                        <path fill="#262e45" d="m479.4 39.68c-6.54 1.106-12.07 2.213-16.59 3.32a65.59 65.59 0 0 0 -12.84 4.77 28 28 0 0 0 -9.64 7.23c-4.73 5.52-7.64 13.961-7.64 25.301 0 9.94 2.28 17.779 7 23.699 4.73 5.81 11.36 8.69 19.91 8.62a24.7 24.7 0 0 0 18 -7c4.93-4.72 7.34-10.85 7.34-18.38 0-6.726-2.11-12.149-6.33-16.269a22 22 0 0 0 -16 -6.221c-8.55 0-15.88 3.74-20 9.74a24.75 24.75 0 0 1 1.81 -8.34c2.31-5.52 7.23-9.441 14.67-11.951 2.91-1 9.75-2.519 20.31-4.519v-10zm-108.25 0.131c-10.65 0-19.49 3.519-26.53 10.349s-10.56 15.56-10.56 26.11c0 10.546 3.52 19.281 10.56 26.2 7.14 6.83 15.98 10.25 26.53 10.25a37.44 37.44 0 0 0 20.61 -5.63v-11.141c-5.43 4.311-12.16 6.421-20.1 6.421-7.54 0-13.88-2.411-18.8-7.331s-7.44-11.229-7.44-18.769 2.42-13.76 7.34-18.68a25.24 25.24 0 0 1 18.49 -7.43 34.19 34.19 0 0 1 19 5.52v-11.151a38.22 38.22 0 0 0 -19.1 -4.718zm-171.36 1.308v70.291h29.75c8.04 0 14.28-2.1 18.9-6.22s6.94-9.64 6.94-16.37-2.32-12.151-6.94-16.371-10.96-6.33-18.9-6.33h-18.69v-14.859h38.6v-10.141h-49.66zm72.06 0v70.291h11.06v-33.74l33.17 33.74h15.08l-37.8-38.16 32.57-32.131h-14.17l-28.85 28.721v-28.721h-11.06zm317.99 19.682c-7.94 0-14.37 2.529-19.5 7.529a24.73 24.73 0 0 0 -7.64 18.381 24.81 24.81 0 0 0 7.64 18.479c5.13 5.02 11.66 7.53 19.5 7.53s14.28-2.53 19.4-7.53a25.09 25.09 0 0 0 7.64 -18.479 24.69 24.69 0 0 0 -7.64 -18.381c-5.12-5.02-11.46-7.529-19.4-7.529zm119.6 0c-7.54 0-13.57 2.509-18.29 7.429s-7.04 11.149-7.04 18.459c0 7.78 2.62 13.951 7.84 18.781a27.88 27.88 0 0 0 19.4 7.23c7.64 0 13.67-1.61 18.19-4.82v-9.14a30.55 30.55 0 0 1 -15.88 4.42c-10.05 0-17.29-4.92-18.59-13.26h37.82v-2.81c0-8.94-3.11-17.069-10.45-22.289a21 21 0 0 0 -13 -4zm-181.61 0.039c-7.59 0-13.46 2.67-17.59 8v-6.731h-10.85v69.421h10.83v-26.81c4.13 5.28 9.96 8 17.59 8a22.12 22.12 0 0 0 17.19 -7.53 26.47 26.47 0 0 0 6.74 -18.379c0-7.33-2.22-13.481-6.74-18.481a22.12 22.12 0 0 0 -17.17 -7.49zm248.25 0c-7.59 0-13.47 2.67-17.59 8v-6.731h-10.86v69.421h10.86v-26.81c4.12 5.28 9.95 8 17.59 8a22.12 22.12 0 0 0 17.18 -7.53 26.43 26.43 0 0 0 6.74 -18.379c0-7.33-2.21-13.481-6.74-18.481a22.12 22.12 0 0 0 -17.18 -7.49zm-144.73 1.269v49.301h10.87v-22.291l22 22.291h14.87l-26.93-27.211 23.41-22.09h-13.87l-19.5 18.67v-18.67h-10.85zm77.59 7.83c4.02 0 7.13 1.202 9.45 3.612a12 12 0 0 1 3.52 8.138h-26.74c0.7-6.43 5.83-11.75 13.77-11.75zm-119.25 0.127a16.24 16.24 0 0 1 16.31 16.645 15.89 15.89 0 0 1 -4.6 11.75 15.69 15.69 0 0 1 -11.59 4.719 16 16 0 0 1 -16.28 -16.469 16.24 16.24 0 0 1 16.16 -16.645zm-64.77 0.274a15 15 0 0 1 11.36 4.82 16.15 16.15 0 0 1 4.52 11.651 16.5 16.5 0 0 1 -4.52 11.65 15.28 15.28 0 0 1 -11.36 4.719 17 17 0 0 1 -14.68 -8.741v-15.259a16.69 16.69 0 0 1 14.68 -8.84zm248.2 0a15 15 0 0 1 11.36 4.82 16.11 16.11 0 0 1 4.52 11.651 16.46 16.46 0 0 1 -4.48 11.65 15.26 15.26 0 0 1 -11.36 4.719 17 17 0 0 1 -14.67 -8.741v-15.259a16.66 16.66 0 0 1 14.63 -8.84zm-313.07 3.81c8.14 0 14.07 5.57 14.07 14a15 15 0 0 1 -4.12 10.85 13.91 13.91 0 0 1 -10.36 4.17c-9.95 0-15.78-7.03-16.28-19.08 3.22-5.52 9.75-9.94 16.69-9.94zm-249.2 2.12h17.69c9.75 0 15.58 4.62 15.58 12.55s-5.58 12.45-15.58 12.45h-17.69v-25z" />
+                                    </g>
+                                </svg>
+
+                            </a>
+
+                            <div class="header__flex _v2">
+                                <span class="button visible-tablet-only">Заказать звонок</span>
+                                <div class="burger" data-menu-toggler><i></i><i></i><i></i><i></i><i></i></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="header__menu-block">
+                    <div class="header__menu-front">
+                        <div class="header__menu-container">
+                            <div class="container">
+                                <div class="header__menu-overflow">
+
+                                    <nav class="main-menu _has-active-item">
+                                        <div class="main-menu__items">
+                                            <div class="main-menu__item _active">
+                                                <a class="main-menu__link">Обменять валюту</a>
+                                            </div>
+                                            <div class="main-menu__item ">
+                                                <a href="./how-to-start.html" class="main-menu__link">Торговать валютой</a>
+                                            </div>
+                                        </div>
+                                    </nav>
+
+                                    <div class="header__contacts">
+                                        <div class="header__contacts-row">
+                                            <span class="button js-open-popup" data-popup-selector="#feedback">Заказать звонок</span>
+                                        </div>
+                                        <div class="header__contacts-row _phone">
+                                            <a href="tel:8 800 500 55 45" class="phone">8 800 500 55 45</a>
+                                            <div class="description">
+                                                Бесплатный звонок по&nbsp;России
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="popup hidden" id="feedback">
+                <div class="popup__content feedback-popup">
+                    <a role="button" class="popup__close js-close-popup" title="Закрыть">
+                        <span class="close-button"><i></i><i></i></span>
+                    </a>
+
+                    <!-- На боевом сервере подставить необходимый адрес, куда будут отсылаться данные. -->
+                    <form action="http://www.mocky.io/v2/5bfb674a3200005100bee491" class="form _feedback" data-error-message-required="Обязательное поле">
+                        <div class="form__states">
+                            <div class="form__state _state1">
+                                <div class="form__heading-part">
+                                    <h2 class="form__title like-h2">Остались вопросы?</h2>
+                                    <p class="form__subtitle">
+                                        Заполните форму,
+                                        и&nbsp;мы перезвоним вам
+                                        в&nbsp;ближайшее время
+                                    </p>
+                                </div>
+                                <div class="form__sections-part">
+                                    <div class="form__input-section">
+
+                                        <div class="form__input-block " data-stagger>
+                                            <label class="form__label">
+                                                <input type="text" placeholder="Имя" class="form__input" name="name" pattern="^[\sа-яА-ЯёЁa-zA-Z0-9-—]+$" data-error-message-pattern="Латиница, кириллица, тире, цифры" required />
+                                                <span class="form__label-text">Имя</span>
+                                            </label>
+                                        </div>
+
+                                    </div>
+                                    <div class="form__input-section">
+
+                                        <div class="form__input-block " data-stagger>
+                                            <label class="form__label">
+                                                <input type="tel" placeholder="Телефон" class="form__input" name="phone" required />
+                                                <span class="form__label-text">Телефон</span>
+                                            </label>
+                                        </div>
+
+                                    </div>
+                                    <div class="form__input-section">
+
+                                        <div class="form__input-block " data-stagger>
+                                            <label class="form__label">
+                                                <input type="email" placeholder="E-mail" class="form__input" name="email" data-error-message-email="Неверный формат" required />
+                                                <span class="form__label-text">E-mail</span>
+                                            </label>
+                                        </div>
+
+                                    </div>
+                                    <p class="form__subtitle _v2">
+                                        Выберите удобное для&nbsp;вас
+                                        время звонка
+                                    </p>
+                                    <div class="form__multiple-inputs">
+                                        <div class="form__input-section">
+
+                                            <div class="form__input-block _icon _date" data-stagger>
+                                                <label class="form__label">
+                                                    <input type="text" placeholder="Дата" class="form__input" name="date" data-disable-status />
+                                                    <span class="form__label-text">Дата</span>
+                                                </label>
+                                            </div>
+
+                                        </div>
+                                        <div class="form__input-section _last">
+
+                                            <div class="form__input-block _icon _time" data-stagger>
+                                                <label class="form__label">
+                                                    <input type="text" placeholder="Время" class="form__input" name="time" data-disable-status />
+                                                    <span class="form__label-text">Время</span>
+                                                </label>
+                                            </div>
+
+                                        </div>
+
+                                        <!-- Здесь необходимо вывести актуальные праздничные дни. -->
+                                        <input type="hidden" name="holidays" value="1543006800000,1543093200000,1543611600000,1543698000000,1544216400000,1544302800000,1544821200000,1544907600000,1545426000000,1545512400000">
+                                    </div>
+                                    <div class="form__input-section _checkbox">
+
+                                        <div class="form__input-block " data-stagger>
+                                            <label class="checkbox">
+                                                <div class="checkbox__flex">
+                                                    <div class="checkbox__col _input">
+                                                        <input type="checkbox" name="agreement" data-error-message-checkbox="Необходимо согласие" required>
+                                                        <div class="checkbox__input"></div>
+                                                    </div>
+                                                    <div class="checkbox__col _text">
+                                                        Я согласен на&nbsp;передачу
+                                                        и обработку своих <a href="//broker.ru/agreement" target="_blank" class="checkbox__link">персональных данных</a>
+                                                    </div>
+                                                </div>
+                                            </label>
+                                        </div>
+
+                                    </div>
+                                    <div class="form__input-section _submit">
+                                        <button type="submit" class="button button--accent">Отправить</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form__state _state2">
+                                <div class="form__response-message">
+                                    <div class="form__response-text _v2">
+                                        <div data-stagger class="form__response-title _v2">Спасибо<span data-success-name></span>!</div>
+
+                                        <div data-stagger>
+                                            Мы перезвоним вам
+                                            <span data-success-datetime></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </header>
+
+        <div class="wrapper__content">
+
+            <div class="gradient-block _v1 _v3">
+                <div class="container">
+                    <div class="text-container">
+                        <div class="pre-title">
+                            Выгодный обмен валюты
+                        </div>
+                        <h1 class="like-h1 _v2">
+                            Покупайте валюту
+                            <div class="like-h1__accent">по курсу биржи</div>
+                        </h1>
+                    </div>
+
+                    <div class="calc-section" data-switcher data-switcher-mode="fade--soft">
+                        <div class="tab-openers">
+                            <span class="tab-openers__item _active" data-switcher-tab-opener="1">Купить</span>
+                            <span class="tab-openers__item" data-switcher-tab-opener="2">Продать</span>
+                        </div>
+
+                        <div class="tabs">
+                            <div class="tabs__item tab _active" data-switcher-tab="1">
+                                <!-- На боевом сервере подставить необходимый адрес, куда будут отсылаться данные. -->
+                                <form action="http://www.mocky.io/v2/5bfb674a3200005100bee491" class="calc" data-type="buy" data-error-message-required="Обязательное поле">
+                                    <input type="hidden" name="form-type" value="buy">
+
+                                    <div class="calc__steps">
+                                        Шаг <span data-step-number>1</span> из&nbsp;<span data-steps-count>3</span>
+                                    </div>
+
+                                    <div class="calc__slide _relative">
+                                        <div class="calc__paddings">
+                                            <div class="calc__rate-title">Курс валют</div>
+                                            <div class="calc__rates">
+                                                <div class="calc__rate-item"><span class="calc__currency-sign">$</span> <span data-rate="usd">67,83</span></div>
+                                                <div class="calc__rate-item"><span class="calc__currency-sign">€</span> <span data-rate="eur">78,51</span></div>
+                                                <div class="calc__rate-item"><span class="calc__currency-sign">£</span> <span data-rate="gbp">87,13</span></div>
+                                            </div>
+
+                                            <div class="calc__input-sections">
+                                                <div class="calc__input-section">
+                                                    <div class="calc__input">
+
+                                                        <div class="form__input-block " data-stagger>
+                                                            <label class="form__label">
+                                                                <input type="number" placeholder="Введите сумму" class="form__input" name="num-input" min="1" data-error-message-min="Больше нуля, пожалуйста" data-disable-status required />
+                                                                <span class="form__label-text">Введите сумму</span>
+                                                            </label>
+                                                        </div>
+
+                                                        <div class="calc__selector _selectable">
+                                                            <span class="calc__selector-arrow"></span>
+                                                            <div class="calc__option" data-rate="usd">
+                                                                <div class="calc__option-flag _usd"></div>usd
+                                                            </div>
+                                                            <div class="calc__options">
+                                                                <div class="calc__option" data-rate="gbp">
+                                                                    <div class="calc__option-flag _gbp"></div>gbp
+                                                                </div>
+                                                                <div class="calc__option" data-rate="eur">
+                                                                    <div class="calc__option-flag _eur"></div>eur
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="calc__input-section">
+                                                    <div class="calc__input">
+
+                                                        <div class="form__input-block " data-stagger>
+                                                            <label class="form__label">
+                                                                <input type="text" disabled placeholder="Всего к оплате" class="form__input" name="num-output" />
+                                                                <span class="form__label-text">Всего к оплате</span>
+                                                            </label>
+                                                        </div>
+
+                                                        <div class="calc__selector _unselectable">
+                                                            <div class="calc__option">
+                                                                <div class="calc__option-flag _rub"></div>rub
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="calc__bottom-block">
+                                                <div class="calc__summary">
+                                                    <div class="calc__summary-title">Итого</div>
+                                                    <div class="calc__summary-text">
+                                                        <span data-summary-value>0</span>
+                                                        <span data-summary-currency class="calc__currency-sign">rub</span>
+                                                    </div>
+                                                </div>
+
+                                                <div class="form__input-section _submit">
+                                                    <button class="button button--accent" type="submit">Обменять валюту</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="calc__slide">
+                                        <div class="calc__inner-centered">
+                                            <div class="calc__paddings _v2">
+                                                <div class="form">
+                                                    <div class="form__heading-part">
+                                                        <h3 class="like-h3">Для получения валюты оставьте ваши контактные данные:</h2>
+                                                    </div>
+                                                    <div class="form__sections-part">
+                                                        <div class="form__input-section">
+
+                                                            <div class="form__input-block " data-stagger>
+                                                                <label class="form__label">
+                                                                    <input type="text" placeholder="Имя" class="form__input" name="name" pattern="^[\sа-яА-ЯёЁa-zA-Z0-9-—]+$" data-error-message-pattern="Латиница, кириллица, тире, цифры" required />
+                                                                    <span class="form__label-text">Имя</span>
+                                                                </label>
+                                                            </div>
+
+                                                        </div>
+                                                        <div class="form__input-section">
+
+                                                            <div class="form__input-block " data-stagger>
+                                                                <label class="form__label">
+                                                                    <input type="tel" placeholder="Телефон" class="form__input" name="phone" required />
+                                                                    <span class="form__label-text">Телефон</span>
+                                                                </label>
+                                                            </div>
+
+                                                        </div>
+                                                        <div class="form__input-section">
+
+                                                            <div class="form__input-block " data-stagger>
+                                                                <label class="form__label">
+                                                                    <input type="email" placeholder="E-mail" class="form__input" name="email" data-error-message-email="Неверный формат" required />
+                                                                    <span class="form__label-text">E-mail</span>
+                                                                </label>
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="calc__next-prev">
+                                                        <button type="submit" class="button button--accent">Отправить</button>
+                                                        <span class="button button--accent button--border" data-step-prev>Назад</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="calc__slide">
+                                        <div class="calc__inner-centered">
+                                            <div class="calc__paddings">
+                                                <div class="form__response">
+                                                    <div class="form__response-title" data-stagger>Готово!</div>
+                                                    <div class="form__response-text" data-stagger>
+                                                        Финансовый советник перезвонит
+                                                        вам и&nbsp;расскажет, как получить валюту.
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="calc__next-prev _abs" data-stagger>
+                                            <span class="button button--accent" data-reset>Обновить</span>
+                                        </div>
+                                    </div>
+                                </form>
+
+                            </div>
+                            <div class="tabs__item tab" data-switcher-tab="2">
+                                <!-- На боевом сервере подставить необходимый адрес, куда будут отсылаться данные. -->
+                                <form action="http://www.mocky.io/v2/5bfb674a3200005100bee491" class="calc" data-type="sell" data-error-message-required="Обязательное поле">
+                                    <input type="hidden" name="form-type" value="sell">
+
+                                    <div class="calc__steps">
+                                        Шаг <span data-step-number>1</span> из&nbsp;<span data-steps-count>3</span>
+                                    </div>
+
+                                    <div class="calc__slide _relative">
+                                        <div class="calc__paddings">
+                                            <div class="calc__rate-title">Курс валют</div>
+                                            <div class="calc__rates">
+                                                <div class="calc__rate-item"><span class="calc__currency-sign">$</span> <span data-rate="usd">67,83</span></div>
+                                                <div class="calc__rate-item"><span class="calc__currency-sign">€</span> <span data-rate="eur">78,51</span></div>
+                                                <div class="calc__rate-item"><span class="calc__currency-sign">£</span> <span data-rate="gbp">87,13</span></div>
+                                            </div>
+
+                                            <div class="calc__input-sections">
+                                                <div class="calc__input-section">
+                                                    <div class="calc__input">
+
+                                                        <div class="form__input-block " data-stagger>
+                                                            <label class="form__label">
+                                                                <input type="number" placeholder="Введите сумму" class="form__input" name="num-input" min="1" data-error-message-min="Больше нуля, пожалуйста" data-disable-status required />
+                                                                <span class="form__label-text">Введите сумму</span>
+                                                            </label>
+                                                        </div>
+
+                                                        <div class="calc__selector _unselectable">
+                                                            <div class="calc__option">
+                                                                <div class="calc__option-flag _rub"></div>rub
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="calc__input-section">
+                                                    <div class="calc__input">
+
+                                                        <div class="form__input-block " data-stagger>
+                                                            <label class="form__label">
+                                                                <input type="text" disabled placeholder="Всего к оплате" class="form__input" name="num-output" />
+                                                                <span class="form__label-text">Всего к оплате</span>
+                                                            </label>
+                                                        </div>
+
+                                                        <div class="calc__selector _selectable">
+                                                            <span class="calc__selector-arrow"></span>
+                                                            <div class="calc__option" data-rate="usd">
+                                                                <div class="calc__option-flag _usd"></div>usd
+                                                            </div>
+                                                            <div class="calc__options">
+                                                                <div class="calc__option" data-rate="gbp">
+                                                                    <div class="calc__option-flag _gbp"></div>gbp
+                                                                </div>
+                                                                <div class="calc__option" data-rate="eur">
+                                                                    <div class="calc__option-flag _eur"></div>eur
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="calc__bottom-block">
+                                                <div class="calc__summary">
+                                                    <div class="calc__summary-title">Итого</div>
+                                                    <div class="calc__summary-text">
+                                                        <span data-summary-value>0</span>
+                                                        <span data-summary-currency class="calc__currency-sign">rub</span>
+                                                    </div>
+                                                </div>
+
+                                                <div class="form__input-section _submit">
+                                                    <button class="button button--accent" type="submit">Обменять валюту</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="calc__slide">
+                                        <div class="calc__inner-centered">
+                                            <div class="calc__paddings _v2">
+                                                <div class="form">
+                                                    <div class="form__heading-part">
+                                                        <h3 class="like-h3">Для получения валюты оставьте ваши контактные данные:</h2>
+                                                    </div>
+                                                    <div class="form__sections-part">
+                                                        <div class="form__input-section">
+
+                                                            <div class="form__input-block " data-stagger>
+                                                                <label class="form__label">
+                                                                    <input type="text" placeholder="Имя" class="form__input" name="name" pattern="^[\sа-яА-ЯёЁa-zA-Z0-9-—]+$" data-error-message-pattern="Латиница, кириллица, тире, цифры" required />
+                                                                    <span class="form__label-text">Имя</span>
+                                                                </label>
+                                                            </div>
+
+                                                        </div>
+                                                        <div class="form__input-section">
+
+                                                            <div class="form__input-block " data-stagger>
+                                                                <label class="form__label">
+                                                                    <input type="tel" placeholder="Телефон" class="form__input" name="phone" required />
+                                                                    <span class="form__label-text">Телефон</span>
+                                                                </label>
+                                                            </div>
+
+                                                        </div>
+                                                        <div class="form__input-section">
+
+                                                            <div class="form__input-block " data-stagger>
+                                                                <label class="form__label">
+                                                                    <input type="email" placeholder="E-mail" class="form__input" name="email" data-error-message-email="Неверный формат" required />
+                                                                    <span class="form__label-text">E-mail</span>
+                                                                </label>
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="calc__next-prev">
+                                                        <button type="submit" class="button button--accent">Отправить</button>
+                                                        <span class="button button--accent button--border" data-step-prev>Назад</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="calc__slide">
+                                        <div class="calc__inner-centered">
+                                            <div class="calc__paddings">
+                                                <div class="form__response">
+                                                    <div class="form__response-title" data-stagger>Готово!</div>
+                                                    <div class="form__response-text" data-stagger>
+                                                        Финансовый советник перезвонит
+                                                        вам и&nbsp;расскажет, как получить валюту.
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="calc__next-prev _abs" data-stagger>
+                                            <span class="button button--accent" data-reset>Обновить</span>
+                                        </div>
+                                    </div>
+                                </form>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <section class="text-section">
+                <div class="container">
+                    <div class="text-section__columns">
+                        <div class="text-container">
+                            <h2 class="like-h2">
+                                Как покупать
+                                валюту
+                                без наценки?
+                            </h2>
+                            <p class="like-p">Курс мировых валют устанавливается на&nbsp;торгах Московской Биржи. Именно там банки закупают валюту, а&nbsp;затем продают её вам со&nbsp;своей наценкой. Банкам выгоднее устанавливать цену покупки валюты ниже курса ЦБ РФ, а&nbsp;цену продажи&nbsp;— выше. Так банки получают прибыль.</p>
+                            <p class="like-p">Получите прямой доступ к&nbsp;Московской Бирже и&nbsp;покупайте валюту по&nbsp;реальной цене.</p>
+                        </div>
+
+                        <div class="video-preview js-open-popup" data-popup-selector="#video">
+                            <div class="video-preview__bg-image"></div>
+                            <span class="play-button"></span>
+                        </div>
+
+                        <div class="popup hidden" id="video">
+                            <div class="popup__content video-popup">
+                                <div class="video-popup__inner">
+                                    <a role="button" class="popup__close js-close-popup" title="Закрыть">
+                                        <span class="close-button"><i></i><i></i></span>
+                                    </a>
+
+                                    <iframe data-src="https://www.youtube.com/embed/WZnkM0uRM8o" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <div class="gradient-block _v2">
+                <div class="container">
+                    <!-- На боевом сервере подставить необходимый адрес, куда будут отсылаться данные. -->
+                    <form action="http://www.mocky.io/v2/5bfb674a3200005100bee491" class="form _feedback" data-error-message-required="Обязательное поле">
+                        <div class="form__states">
+                            <div class="form__state _state1">
+                                <div class="form__heading-part">
+                                    <h2 class="form__title like-h2">Остались вопросы?</h2>
+                                    <p class="form__subtitle">
+                                        Заполните форму,
+                                        и&nbsp;мы перезвоним вам
+                                        в&nbsp;ближайшее время
+                                    </p>
+                                </div>
+                                <div class="form__sections-part">
+                                    <div class="form__input-section">
+
+                                        <div class="form__input-block " data-stagger>
+                                            <label class="form__label">
+                                                <input type="text" placeholder="Имя" class="form__input" name="name" pattern="^[\sа-яА-ЯёЁa-zA-Z0-9-—]+$" data-error-message-pattern="Латиница, кириллица, тире, цифры" required />
+                                                <span class="form__label-text">Имя</span>
+                                            </label>
+                                        </div>
+
+                                    </div>
+                                    <div class="form__input-section">
+
+                                        <div class="form__input-block " data-stagger>
+                                            <label class="form__label">
+                                                <input type="tel" placeholder="Телефон" class="form__input" name="phone" required />
+                                                <span class="form__label-text">Телефон</span>
+                                            </label>
+                                        </div>
+
+                                    </div>
+                                    <div class="form__input-section">
+
+                                        <div class="form__input-block " data-stagger>
+                                            <label class="form__label">
+                                                <input type="email" placeholder="E-mail" class="form__input" name="email" data-error-message-email="Неверный формат" required />
+                                                <span class="form__label-text">E-mail</span>
+                                            </label>
+                                        </div>
+
+                                    </div>
+                                    <p class="form__subtitle _v2">
+                                        Выберите удобное для&nbsp;вас
+                                        время звонка
+                                    </p>
+                                    <div class="form__multiple-inputs">
+                                        <div class="form__input-section">
+
+                                            <div class="form__input-block _icon _date" data-stagger>
+                                                <label class="form__label">
+                                                    <input type="text" placeholder="Дата" class="form__input" name="date" data-disable-status />
+                                                    <span class="form__label-text">Дата</span>
+                                                </label>
+                                            </div>
+
+                                        </div>
+                                        <div class="form__input-section _last">
+
+                                            <div class="form__input-block _icon _time" data-stagger>
+                                                <label class="form__label">
+                                                    <input type="text" placeholder="Время" class="form__input" name="time" data-disable-status />
+                                                    <span class="form__label-text">Время</span>
+                                                </label>
+                                            </div>
+
+                                        </div>
+
+                                        <!-- Здесь необходимо вывести актуальные праздничные дни. -->
+                                        <input type="hidden" name="holidays" value="1543006800000,1543093200000,1543611600000,1543698000000,1544216400000,1544302800000,1544821200000,1544907600000,1545426000000,1545512400000">
+                                    </div>
+                                    <div class="form__input-section _checkbox">
+
+                                        <div class="form__input-block " data-stagger>
+                                            <label class="checkbox">
+                                                <div class="checkbox__flex">
+                                                    <div class="checkbox__col _input">
+                                                        <input type="checkbox" name="agreement" data-error-message-checkbox="Необходимо согласие" required>
+                                                        <div class="checkbox__input"></div>
+                                                    </div>
+                                                    <div class="checkbox__col _text">
+                                                        Я согласен на&nbsp;передачу
+                                                        и обработку своих <a href="//broker.ru/agreement" target="_blank" class="checkbox__link">персональных данных</a>
+                                                    </div>
+                                                </div>
+                                            </label>
+                                        </div>
+
+                                    </div>
+                                    <div class="form__input-section _submit">
+                                        <button type="submit" class="button button--accent">Отправить</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form__state _state2">
+                                <div class="form__response-message">
+                                    <div class="form__response-text _v2">
+                                        <div data-stagger class="form__response-title _v2">Спасибо<span data-success-name></span>!</div>
+
+                                        <div data-stagger>
+                                            Мы перезвоним вам
+                                            <span data-success-datetime></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+
+            <div class="text-section">
+                <div class="container">
+                    <div class="contacts">
+                        <div class="contacts__heading-part">
+                            <h2 class="like-h2 contacts__title">Контакты</h2>
+
+                            <div class="header__contacts-row _phone">
+                                <a href="tel:8 800 500 55 45" class="phone">8 800 500 55 45</a>
+                                <div class="description">
+                                    Бесплатный звонок по&nbsp;России
+                                </div>
+                            </div>
+
+                            <div class="contacts__map"></div>
+                        </div>
+
+                        <div class="contacts-widget">
+                            <div class="contacts-widget__caption" data-caption-element></div>
+
+                            <div class="contacts-widget__flex">
+                                <div class="contacts-widget__col _text" data-info-container>
+                                    <div class="contacts-widget__title"></div>
+                                    <div class="contacts-widget__address"></div>
+                                    <div class="contacts-widget__times"></div>
+                                    <div class="contacts-widget__phones">
+                                        <div class="contacts-widget__phone-item">
+                                            <div class="contacts-widget__phone-title"></div>
+                                            <a href="tel:" class="phone"></a>
+                                        </div>
+                                        <div class="contacts-widget__phone-item">
+                                            <div class="contacts-widget__phone-title"></div>
+                                            <a href="tel:" class="phone"></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="contacts-widget__col _map">
+                                    <div class="contacts-widget__map-container">
+                                        <div class="contacts-widget__map" data-widget-map></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <section class="contacts-cities">
+                            <div class="layout__wrapper">
+                                <div class="contacts-cities__list">
+                                    <div class="contacts-cities__first">
+                                        <div class="contacts-cities__letter">А</div>
+                                        <div class="contacts-cities__item _agent" data-widget-caption="Ваш офис Армавир">
+                                            <a href="/contacts/armavir" class="contacts-cities__link">Армавир</a>
+
+                                            <!-- Это для примера. На бэке будут заполнены реальные данные. -->
+                                            <div class="hidden" data-widget-markup data-widget-map-coordinates="40.155410, 44.038730" data-widget-map-zoom="10">
+                                                <div class="contacts-widget__title">Офис Армавир</div>
+                                                <div class="contacts-widget__address">
+                                                    129110, Армавир, Проспект Мира,
+                                                    69, стр. 1, 3 подъезд
+                                                </div>
+                                                <div class="contacts-widget__times">
+                                                    пн-пт: с 9:30 до 19:00
+                                                </div>
+                                                <div class="contacts-widget__phones">
+                                                    <div class="contacts-widget__phone-item">
+                                                        <div class="contacts-widget__phone-title">Стать клиентом</div>
+                                                        <a href="tel:8 800 500-55-45" class="phone">8 800 500-55-45</a>
+                                                    </div>
+                                                    <div class="contacts-widget__phone-item">
+                                                        <div class="contacts-widget__phone-title">Для трейдеров</div>
+                                                        <a href="tel:8 800 100-55-02" class="phone">8 800 100-55-02</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="contacts-cities__others">
+                                        <div class="contacts-cities__item _agent" data-widget-caption="Ваш офис Архангельск">
+                                            <a href="/contacts/arkhangelsk" class="contacts-cities__link">Архангельск</a>
+
+                                            <!-- Это для примера. Может быть два офиса в одном городе. -->
+                                            <div class="hidden" data-widget-markup data-widget-map-coordinates="64.539393, 40.516939" data-widget-map-zoom="10">
+                                                <div class="contacts-widget__title">Офис Архангельск 1</div>
+                                                <div class="contacts-widget__address">
+                                                    129110, Архангельск 1, Проспект Мира,
+                                                    69, стр. 1, 3 подъезд
+                                                </div>
+                                                <div class="contacts-widget__times">
+                                                    пн-пт: с 9:30 до 19:00
+                                                </div>
+                                                <div class="contacts-widget__phones">
+                                                    <div class="contacts-widget__phone-item">
+                                                        <div class="contacts-widget__phone-title">Стать клиентом</div>
+                                                        <a href="tel:8 800 500-55-45" class="phone">8 800 500-55-45</a>
+                                                    </div>
+                                                    <div class="contacts-widget__phone-item">
+                                                        <div class="contacts-widget__phone-title">Для трейдеров</div>
+                                                        <a href="tel:8 800 100-55-02" class="phone">8 800 100-55-02</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="hidden" data-widget-markup data-widget-map-coordinates="64.539393, 40.516939" data-widget-map-zoom="16">
+                                                <div class="contacts-widget__title">Офис Архангельск 2</div>
+                                                <div class="contacts-widget__address">
+                                                    129110, Архангельск 2, Проспект Мира,
+                                                    69, стр. 1, 3 подъезд
+                                                </div>
+                                                <div class="contacts-widget__times">
+                                                    пн-пт: с 9:30 до 19:00
+                                                </div>
+                                                <div class="contacts-widget__phones">
+                                                    <div class="contacts-widget__phone-item">
+                                                        <div class="contacts-widget__phone-title">Стать клиентом</div>
+                                                        <a href="tel:8 800 500-55-45" class="phone">8 800 500-55-45</a>
+                                                    </div>
+                                                    <div class="contacts-widget__phone-item">
+                                                        <div class="contacts-widget__phone-title">Для трейдеров</div>
+                                                        <a href="tel:8 800 100-55-02" class="phone">8 800 100-55-02</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="contacts-cities__item _office" data-widget-caption="Ваш офис Астрахань">
+                                            <a href="/contacts/astrakhan" class="contacts-cities__link">Астрахань</a>
+
+                                            <!-- Это для примера. Может быть три и более офисов в одном городе. -->
+                                            <div class="hidden" data-widget-markup data-widget-map-coordinates="46.347869, 48.033574" data-widget-map-zoom="10">
+                                                <div class="contacts-widget__title">Офис Астрахань 1</div>
+                                                <div class="contacts-widget__address">
+                                                    129110, Архангельск 1, Проспект Мира,
+                                                    69, стр. 1, 3 подъезд
+                                                </div>
+                                                <div class="contacts-widget__times">
+                                                    пн-пт: с 9:30 до 19:00
+                                                </div>
+                                                <div class="contacts-widget__phones">
+                                                    <div class="contacts-widget__phone-item">
+                                                        <div class="contacts-widget__phone-title">Стать клиентом</div>
+                                                        <a href="tel:8 800 500-55-45" class="phone">8 800 500-55-45</a>
+                                                    </div>
+                                                    <div class="contacts-widget__phone-item">
+                                                        <div class="contacts-widget__phone-title">Для трейдеров</div>
+                                                        <a href="tel:8 800 100-55-02" class="phone">8 800 100-55-02</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="hidden" data-widget-markup data-widget-map-coordinates="46.347869, 48.033574" data-widget-map-zoom="16">
+                                                <div class="contacts-widget__title">Офис Астрахань 2</div>
+                                                <div class="contacts-widget__address">
+                                                    129110, Астрахань 2, Проспект Мира,
+                                                    69, стр. 1, 3 подъезд
+                                                </div>
+                                                <div class="contacts-widget__times">
+                                                    пн-пт: с 9:30 до 19:00
+                                                </div>
+                                                <div class="contacts-widget__phones">
+                                                    <div class="contacts-widget__phone-item">
+                                                        <div class="contacts-widget__phone-title">Стать клиентом</div>
+                                                        <a href="tel:8 800 500-55-45" class="phone">8 800 500-55-45</a>
+                                                    </div>
+                                                    <div class="contacts-widget__phone-item">
+                                                        <div class="contacts-widget__phone-title">Для трейдеров</div>
+                                                        <a href="tel:8 800 100-55-02" class="phone">8 800 100-55-02</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="hidden" data-widget-markup data-widget-map-coordinates="46.347869, 48.033574" data-widget-map-zoom="19">
+                                                <div class="contacts-widget__title">Офис Астрахань 3</div>
+                                                <div class="contacts-widget__address">
+                                                    129110, Астрахань 3, Проспект Мира,
+                                                    69, стр. 1, 3 подъезд
+                                                </div>
+                                                <div class="contacts-widget__times">
+                                                    пн-пт: с 9:30 до 19:00
+                                                </div>
+                                                <div class="contacts-widget__phones">
+                                                    <div class="contacts-widget__phone-item">
+                                                        <div class="contacts-widget__phone-title">Стать клиентом</div>
+                                                        <a href="tel:8 800 500-55-45" class="phone">8 800 500-55-45</a>
+                                                    </div>
+                                                    <div class="contacts-widget__phone-item">
+                                                        <div class="contacts-widget__phone-title">Для трейдеров</div>
+                                                        <a href="tel:8 800 100-55-02" class="phone">8 800 100-55-02</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="contacts-cities__first">
+                                        <div class="contacts-cities__letter">Б</div>
+                                        <div class="contacts-cities__item _office">
+                                            <a href="/contacts/barnaul" class="contacts-cities__link">Барнаул</a>
+                                        </div>
+                                    </div>
+                                    <div class="contacts-cities__others">
+                                        <div class="contacts-cities__item _agent">
+                                            <a href="/contacts/birobidzhan" class="contacts-cities__link">Биробиджан</a>
+                                        </div>
+                                        <div class="contacts-cities__item _agent">
+                                            <a href="/contacts/bratsk" class="contacts-cities__link">Братск</a>
+                                        </div>
+                                        <div class="contacts-cities__item _agent">
+                                            <a href="/contacts/bryansk" class="contacts-cities__link">Брянск</a>
+                                        </div>
+                                    </div>
+                                    <div class="contacts-cities__first">
+                                        <div class="contacts-cities__letter">В</div>
+                                        <div class="contacts-cities__item _agent">
+                                            <a href="/contacts/veliky-novgorod" class="contacts-cities__link">Великий Новгород</a>
+                                        </div>
+                                    </div>
+                                    <div class="contacts-cities__others">
+                                        <div class="contacts-cities__item _office">
+                                            <a href="/contacts/vladivostok" class="contacts-cities__link">Владивосток</a>
+                                        </div>
+                                        <div class="contacts-cities__item _agent">
+                                            <a href="/contacts/vladimir" class="contacts-cities__link">Владимир</a>
+                                        </div>
+                                        <div class="contacts-cities__item _office">
+                                            <a href="/contacts/volgograd" class="contacts-cities__link">Волгоград</a>
+                                        </div>
+                                        <div class="contacts-cities__item _agent">
+                                            <a href="/contacts/vologda" class="contacts-cities__link">Вологда</a>
+                                        </div>
+                                        <div class="contacts-cities__item _agent">
+                                            <a href="/contacts/vorkuta" class="contacts-cities__link">Воркута</a>
+                                        </div>
+                                        <div class="contacts-cities__item _office">
+                                            <a href="/contacts/voronezh" class="contacts-cities__link">Воронеж</a>
+                                        </div>
+                                    </div>
+                                    <div class="contacts-cities__first">
+                                        <div class="contacts-cities__letter">Е</div>
+                                        <div class="contacts-cities__item _office">
+                                            <a href="/contacts/ekaterinburg" class="contacts-cities__link">Екатеринбург</a>
+                                        </div>
+                                    </div>
+                                    <div class="contacts-cities__first">
+                                        <div class="contacts-cities__letter">И</div>
+                                        <div class="contacts-cities__item _agent">
+                                            <a href="/contacts/ivanovo" class="contacts-cities__link">Иваново</a>
+                                        </div>
+                                    </div>
+                                    <div class="contacts-cities__others">
+                                        <div class="contacts-cities__item _office">
+                                            <a href="/contacts/izhevsk" class="contacts-cities__link">Ижевск</a>
+                                        </div>
+                                        <div class="contacts-cities__item _office">
+                                            <a href="/contacts/irkutsk" class="contacts-cities__link">Иркутск</a>
+                                        </div>
+                                    </div>
+                                    <div class="contacts-cities__first">
+                                        <div class="contacts-cities__letter">К</div>
+                                        <div class="contacts-cities__item _office">
+                                            <a href="/contacts/kazan" class="contacts-cities__link">Казань</a>
+                                        </div>
+                                    </div>
+                                    <div class="contacts-cities__others">
+                                        <div class="contacts-cities__item _office">
+                                            <a href="/contacts/kaliningrad" class="contacts-cities__link">Калининград</a>
+                                        </div>
+                                        <div class="contacts-cities__item _agent">
+                                            <a href="/contacts/kaluga" class="contacts-cities__link">Калуга</a>
+                                        </div>
+                                        <div class="contacts-cities__item _office">
+                                            <a href="/contacts/kemerovo" class="contacts-cities__link">Кемерово</a>
+                                        </div>
+                                        <div class="contacts-cities__item _agent">
+                                            <a href="/contacts/kirov" class="contacts-cities__link">Киров</a>
+                                        </div>
+                                        <div class="contacts-cities__item _agent">
+                                            <a href="/contacts/kostroma" class="contacts-cities__link">Кострома</a>
+                                        </div>
+                                        <div class="contacts-cities__item _office">
+                                            <a href="/contacts/krasnodar" class="contacts-cities__link">Краснодар</a>
+                                        </div>
+                                        <div class="contacts-cities__item _office">
+                                            <a href="/contacts/krasnoyarsk" class="contacts-cities__link">Красноярск</a>
+                                        </div>
+                                        <div class="contacts-cities__item _agent">
+                                            <a href="/contacts/kurgan" class="contacts-cities__link">Курган</a>
+                                        </div>
+                                        <div class="contacts-cities__item _agent">
+                                            <a href="/contacts/kursk" class="contacts-cities__link">Курск</a>
+                                        </div>
+                                    </div>
+                                    <div class="contacts-cities__first">
+                                        <div class="contacts-cities__letter">Л</div>
+                                        <div class="contacts-cities__item _office">
+                                            <a href="/contacts/lipetsk" class="contacts-cities__link">Липецк</a>
+                                        </div>
+                                    </div>
+                                    <div class="contacts-cities__first">
+                                        <div class="contacts-cities__letter">М</div>
+                                        <div class="contacts-cities__item _agent">
+                                            <a href="/contacts/magnitogorsk" class="contacts-cities__link">Магнитогорск</a>
+                                        </div>
+                                    </div>
+                                    <div class="contacts-cities__others">
+                                        <div class="contacts-cities__item _agent">
+                                            <a href="/contacts/miass" class="contacts-cities__link">Миасс</a>
+                                        </div>
+                                        <div class="contacts-cities__item _office">
+                                            <a href="/contacts/moscow" class="contacts-cities__link">Москва</a>
+                                        </div>
+                                    </div>
+                                    <div class="contacts-cities__first">
+                                        <div class="contacts-cities__letter">Н</div>
+                                        <div class="contacts-cities__item _agent">
+                                            <a href="/contacts/naberezhnye-chelny" class="contacts-cities__link">Набережные Челны</a>
+                                        </div>
+                                    </div>
+                                    <div class="contacts-cities__others">
+                                        <div class="contacts-cities__item _agent">
+                                            <a href="/contacts/nizhnevartovsk" class="contacts-cities__link">Нижневартовск</a>
+                                        </div>
+                                        <div class="contacts-cities__item _office">
+                                            <a href="/contacts/nizhni-novgorod" class="contacts-cities__link">Нижний Новгород</a>
+                                        </div>
+                                        <div class="contacts-cities__item _agent">
+                                            <a href="/contacts/nizhni-tagil" class="contacts-cities__link">Нижний Тагил</a>
+                                        </div>
+                                        <div class="contacts-cities__item _office">
+                                            <a href="/contacts/novokuznetsk" class="contacts-cities__link">Новокузнецк</a>
+                                        </div>
+                                        <div class="contacts-cities__item _agent">
+                                            <a href="/contacts/novorossiysk" class="contacts-cities__link">Новороссийск</a>
+                                        </div>
+                                        <div class="contacts-cities__item _office">
+                                            <a href="/contacts/novosibirsk" class="contacts-cities__link">Новосибирск</a>
+                                        </div>
+                                        <div class="contacts-cities__item _agent">
+                                            <a href="/contacts/novy-urengoy" class="contacts-cities__link">Новый Уренгой</a>
+                                        </div>
+                                        <div class="contacts-cities__item _agent">
+                                            <a href="/contacts/noyabrsk" class="contacts-cities__link">Ноябрьск</a>
+                                        </div>
+                                    </div>
+                                    <div class="contacts-cities__first">
+                                        <div class="contacts-cities__letter">О</div>
+                                        <div class="contacts-cities__item _office">
+                                            <a href="/contacts/omsk" class="contacts-cities__link">Омск</a>
+                                        </div>
+                                    </div>
+                                    <div class="contacts-cities__others">
+                                        <div class="contacts-cities__item _office">
+                                            <a href="/contacts/orenburg" class="contacts-cities__link">Оренбург</a>
+                                        </div>
+                                        <div class="contacts-cities__item _agent">
+                                            <a href="/contacts/orsk" class="contacts-cities__link">Орск</a>
+                                        </div>
+                                    </div>
+                                    <div class="contacts-cities__first">
+                                        <div class="contacts-cities__letter">П</div>
+                                        <div class="contacts-cities__item _office">
+                                            <a href="/contacts/penza" class="contacts-cities__link">Пенза</a>
+                                        </div>
+                                    </div>
+                                    <div class="contacts-cities__others">
+                                        <div class="contacts-cities__item _office">
+                                            <a href="/contacts/perm" class="contacts-cities__link">Пермь</a>
+                                        </div>
+                                        <div class="contacts-cities__item _agent">
+                                            <a href="/contacts/petrozavodsk" class="contacts-cities__link">Петрозаводск</a>
+                                        </div>
+                                        <div class="contacts-cities__item _agent">
+                                            <a href="/contacts/pskov" class="contacts-cities__link">Псков</a>
+                                        </div>
+                                    </div>
+                                    <div class="contacts-cities__first">
+                                        <div class="contacts-cities__letter">Р</div>
+                                        <div class="contacts-cities__item _office">
+                                            <a href="/contacts/rostov-on-don" class="contacts-cities__link">Ростов-на-Дону</a>
+                                        </div>
+                                    </div>
+                                    <div class="contacts-cities__others">
+                                        <div class="contacts-cities__item _agent">
+                                            <a href="/contacts/ryazan" class="contacts-cities__link">Рязань</a>
+                                        </div>
+                                    </div>
+                                    <div class="contacts-cities__first">
+                                        <div class="contacts-cities__letter">С</div>
+                                        <div class="contacts-cities__item _office">
+                                            <a href="/contacts/samara" class="contacts-cities__link">Самара</a>
+                                        </div>
+                                    </div>
+                                    <div class="contacts-cities__others">
+                                        <div class="contacts-cities__item _office">
+                                            <a href="/contacts/saint-petersburg" class="contacts-cities__link">Санкт-Петербург</a>
+                                        </div>
+                                        <div class="contacts-cities__item _agent">
+                                            <a href="/contacts/saransk" class="contacts-cities__link">Саранск</a>
+                                        </div>
+                                        <div class="contacts-cities__item _agent">
+                                            <a href="/contacts/sarapul" class="contacts-cities__link">Сарапул</a>
+                                        </div>
+                                        <div class="contacts-cities__item _office">
+                                            <a href="/contacts/saratov" class="contacts-cities__link">Саратов</a>
+                                        </div>
+                                        <div class="contacts-cities__item _office">
+                                            <a href="/contacts/sochi" class="contacts-cities__link">Сочи</a>
+                                        </div>
+                                        <div class="contacts-cities__item _office">
+                                            <a href="/contacts/stavropol" class="contacts-cities__link">Ставрополь</a>
+                                        </div>
+                                        <div class="contacts-cities__item _office">
+                                            <a href="/contacts/surgut" class="contacts-cities__link">Сургут</a>
+                                        </div>
+                                    </div>
+                                    <div class="contacts-cities__first">
+                                        <div class="contacts-cities__letter">Т</div>
+                                        <div class="contacts-cities__item _agent">
+                                            <a href="/contacts/tver" class="contacts-cities__link">Тверь</a>
+                                        </div>
+                                    </div>
+                                    <div class="contacts-cities__others">
+                                        <div class="contacts-cities__item _office">
+                                            <a href="/contacts/tolyatti" class="contacts-cities__link">Тольятти</a>
+                                        </div>
+                                        <div class="contacts-cities__item _office">
+                                            <a href="/contacts/tomsk" class="contacts-cities__link">Томск</a>
+                                        </div>
+                                        <div class="contacts-cities__item _office">
+                                            <a href="/contacts/tula" class="contacts-cities__link">Тула</a>
+                                        </div>
+                                        <div class="contacts-cities__item _office">
+                                            <a href="/contacts/tyumen" class="contacts-cities__link">Тюмень</a>
+                                        </div>
+                                    </div>
+                                    <div class="contacts-cities__first">
+                                        <div class="contacts-cities__letter">У</div>
+                                        <div class="contacts-cities__item _agent">
+                                            <a href="/contacts/ulan-ude" class="contacts-cities__link">Улан-Удэ</a>
+                                        </div>
+                                    </div>
+                                    <div class="contacts-cities__others">
+                                        <div class="contacts-cities__item _agent">
+                                            <a href="/contacts/ulyanovsk" class="contacts-cities__link">Ульяновск</a>
+                                        </div>
+                                        <div class="contacts-cities__item _office">
+                                            <a href="/contacts/ufa" class="contacts-cities__link">Уфа</a>
+                                        </div>
+                                        <div class="contacts-cities__item _agent">
+                                            <a href="/contacts/ukhta" class="contacts-cities__link">Ухта</a>
+                                        </div>
+                                    </div>
+                                    <div class="contacts-cities__first">
+                                        <div class="contacts-cities__letter">Х</div>
+                                        <div class="contacts-cities__item _agent">
+                                            <a href="/contacts/khimki" class="contacts-cities__link">Химки</a>
+                                        </div>
+                                    </div>
+                                    <div class="contacts-cities__first">
+                                        <div class="contacts-cities__letter">Ч</div>
+                                        <div class="contacts-cities__item _agent">
+                                            <a href="/contacts/cheboksary" class="contacts-cities__link">Чебоксары</a>
+                                        </div>
+                                    </div>
+                                    <div class="contacts-cities__others">
+                                        <div class="contacts-cities__item _office">
+                                            <a href="/contacts/chelyabinsk" class="contacts-cities__link">Челябинск</a>
+                                        </div>
+                                        <div class="contacts-cities__item _office">
+                                            <a href="/contacts/cherepovets" class="contacts-cities__link">Череповец</a>
+                                        </div>
+                                    </div>
+                                    <div class="contacts-cities__first">
+                                        <div class="contacts-cities__letter">Э</div>
+                                        <div class="contacts-cities__item _agent">
+                                            <a href="/contacts/engels" class="contacts-cities__link">Энгельс</a>
+                                        </div>
+                                    </div>
+                                    <div class="contacts-cities__first">
+                                        <div class="contacts-cities__letter">Ю</div>
+                                        <div class="contacts-cities__item _agent">
+                                            <a href="/contacts/yuzhno-sakhalinsk" class="contacts-cities__link">Южно-Сахалинск</a>
+                                        </div>
+                                    </div>
+                                    <div class="contacts-cities__first">
+                                        <div class="contacts-cities__letter">Я</div>
+                                        <div class="contacts-cities__item _office">
+                                            <a href="/contacts/yaroslavl" class="contacts-cities__link">Ярославль</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <footer class="wrapper__footer footer _no-margin ">
+            <div class="container">
+                <div class="footer__logo-block">
+                    <div class="footer__logo"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 149.53">
+                            <g class="chunk-1">
+                                <path fill="#262e45" opacity=".4" d="m115.27 14.63c0.61 0.26 5.81 2.62 4.58 1.15a17.48 17.48 0 0 0 -4.52 -3.78c-86.92-49.78-155 68.54-88.7 122.26 2.52 2.05 4.27 3.52 4.86 3.56 0.8 0.05 15.59 10.66 4.74-6.45-41.13-64.85 7.77-151.43 79.04-116.74m30.73 51.46a74.46 74.46 0 0 0 -7.81 -27.3c-28.1-33.82-136.21 1-99.24 88.37 1.14 2.67 2.67 4.2 3.39 3.69s4.13-0.81 3.75-3.42c-9.86-68.43 75.82-84.73 99.91-61.34m-87.19 70.71c0.58 1.92 0.55 2.68 1.12 3 0.29 0.13 8.05 2.45 8.28 0.49 2.46-21.07 59.91-42.89 63.81-24.81 5.12-7.68 10.44-15.33 12.49-24.8a2.77 2.77 0 0 1 0.49 -1.76c-5.08-16.47-100.69 0-86.19 47.92" />
+                                <path fill="#262e45" d="m38.86 8.16c2.14-1.95 4.21-3.79 3.43-3.9-0.59-0.09-2.68 0.9-5.54 2.52-53.58 30.47-40.95 125.22 28.83 142.38v0.08c2 0.19 4.08 0.29 6.13 0.29a73.5 73.5 0 0 0 24 -4 85.12 85.12 0 0 0 17.06 -8.45c0.7-0.48 1.4-1 2.09-1.46-60.86 18.9-131-75.09-76-127.46m9.08 7.93c0.49-2.61 0.81-3.69 0.15-4.3s-2.1 1-3.85 3.32c-34.4 47.33 40.76 119.2 89.7 100.59a76.76 76.76 0 0 0 11 -26.54c-26.86 20.67-105.42-27.78-97-73m90.06 22.47c-5.95 17.72-61.47-12.77-69.89-29.63-0.86-1.81-1.62-2.24-1.92-2.13-0.61 0.2-1.06 0.86-1.46 2.83-5.18 24.89 50.1 69.94 81.5 58.36a8.09 8.09 0 0 0 -0.15 -2.12 76.29 76.29 0 0 0 -8 -27.35" />
+                            </g>
+                            <g class="chunk-2">
+                                <path fill="#262e45" d="m479.4 39.68c-6.54 1.106-12.07 2.213-16.59 3.32a65.59 65.59 0 0 0 -12.84 4.77 28 28 0 0 0 -9.64 7.23c-4.73 5.52-7.64 13.961-7.64 25.301 0 9.94 2.28 17.779 7 23.699 4.73 5.81 11.36 8.69 19.91 8.62a24.7 24.7 0 0 0 18 -7c4.93-4.72 7.34-10.85 7.34-18.38 0-6.726-2.11-12.149-6.33-16.269a22 22 0 0 0 -16 -6.221c-8.55 0-15.88 3.74-20 9.74a24.75 24.75 0 0 1 1.81 -8.34c2.31-5.52 7.23-9.441 14.67-11.951 2.91-1 9.75-2.519 20.31-4.519v-10zm-108.25 0.131c-10.65 0-19.49 3.519-26.53 10.349s-10.56 15.56-10.56 26.11c0 10.546 3.52 19.281 10.56 26.2 7.14 6.83 15.98 10.25 26.53 10.25a37.44 37.44 0 0 0 20.61 -5.63v-11.141c-5.43 4.311-12.16 6.421-20.1 6.421-7.54 0-13.88-2.411-18.8-7.331s-7.44-11.229-7.44-18.769 2.42-13.76 7.34-18.68a25.24 25.24 0 0 1 18.49 -7.43 34.19 34.19 0 0 1 19 5.52v-11.151a38.22 38.22 0 0 0 -19.1 -4.718zm-171.36 1.308v70.291h29.75c8.04 0 14.28-2.1 18.9-6.22s6.94-9.64 6.94-16.37-2.32-12.151-6.94-16.371-10.96-6.33-18.9-6.33h-18.69v-14.859h38.6v-10.141h-49.66zm72.06 0v70.291h11.06v-33.74l33.17 33.74h15.08l-37.8-38.16 32.57-32.131h-14.17l-28.85 28.721v-28.721h-11.06zm317.99 19.682c-7.94 0-14.37 2.529-19.5 7.529a24.73 24.73 0 0 0 -7.64 18.381 24.81 24.81 0 0 0 7.64 18.479c5.13 5.02 11.66 7.53 19.5 7.53s14.28-2.53 19.4-7.53a25.09 25.09 0 0 0 7.64 -18.479 24.69 24.69 0 0 0 -7.64 -18.381c-5.12-5.02-11.46-7.529-19.4-7.529zm119.6 0c-7.54 0-13.57 2.509-18.29 7.429s-7.04 11.149-7.04 18.459c0 7.78 2.62 13.951 7.84 18.781a27.88 27.88 0 0 0 19.4 7.23c7.64 0 13.67-1.61 18.19-4.82v-9.14a30.55 30.55 0 0 1 -15.88 4.42c-10.05 0-17.29-4.92-18.59-13.26h37.82v-2.81c0-8.94-3.11-17.069-10.45-22.289a21 21 0 0 0 -13 -4zm-181.61 0.039c-7.59 0-13.46 2.67-17.59 8v-6.731h-10.85v69.421h10.83v-26.81c4.13 5.28 9.96 8 17.59 8a22.12 22.12 0 0 0 17.19 -7.53 26.47 26.47 0 0 0 6.74 -18.379c0-7.33-2.22-13.481-6.74-18.481a22.12 22.12 0 0 0 -17.17 -7.49zm248.25 0c-7.59 0-13.47 2.67-17.59 8v-6.731h-10.86v69.421h10.86v-26.81c4.12 5.28 9.95 8 17.59 8a22.12 22.12 0 0 0 17.18 -7.53 26.43 26.43 0 0 0 6.74 -18.379c0-7.33-2.21-13.481-6.74-18.481a22.12 22.12 0 0 0 -17.18 -7.49zm-144.73 1.269v49.301h10.87v-22.291l22 22.291h14.87l-26.93-27.211 23.41-22.09h-13.87l-19.5 18.67v-18.67h-10.85zm77.59 7.83c4.02 0 7.13 1.202 9.45 3.612a12 12 0 0 1 3.52 8.138h-26.74c0.7-6.43 5.83-11.75 13.77-11.75zm-119.25 0.127a16.24 16.24 0 0 1 16.31 16.645 15.89 15.89 0 0 1 -4.6 11.75 15.69 15.69 0 0 1 -11.59 4.719 16 16 0 0 1 -16.28 -16.469 16.24 16.24 0 0 1 16.16 -16.645zm-64.77 0.274a15 15 0 0 1 11.36 4.82 16.15 16.15 0 0 1 4.52 11.651 16.5 16.5 0 0 1 -4.52 11.65 15.28 15.28 0 0 1 -11.36 4.719 17 17 0 0 1 -14.68 -8.741v-15.259a16.69 16.69 0 0 1 14.68 -8.84zm248.2 0a15 15 0 0 1 11.36 4.82 16.11 16.11 0 0 1 4.52 11.651 16.46 16.46 0 0 1 -4.48 11.65 15.26 15.26 0 0 1 -11.36 4.719 17 17 0 0 1 -14.67 -8.741v-15.259a16.66 16.66 0 0 1 14.63 -8.84zm-313.07 3.81c8.14 0 14.07 5.57 14.07 14a15 15 0 0 1 -4.12 10.85 13.91 13.91 0 0 1 -10.36 4.17c-9.95 0-15.78-7.03-16.28-19.08 3.22-5.52 9.75-9.94 16.69-9.94zm-249.2 2.12h17.69c9.75 0 15.58 4.62 15.58 12.55s-5.58 12.45-15.58 12.45h-17.69v-25z" />
+                            </g>
+                        </svg>
+                    </div>
+                </div>
+
+                <div class="footer__text-block">
+                    <p class="footer__paragraph">
+                        &copy; 1995–2018. ООО&nbsp;«Компания БКС»
+                        <br />
+                        Данные являются биржевой информацией, обладателем (собственником) которой является ПАО&nbsp;Московская Биржа. Распространение, трансляция или иное предоставление биржевой информации третьим лицам возможно исключительно в&nbsp;порядке и&nbsp;на условиях, предусмотренных порядком использования биржевой информации, предоставляемой ОАО&nbsp;Московская Биржа. ООО&nbsp;«Компания БКС», лицензия №&nbsp;154-04434-100000 от&nbsp;10.01.2001 на&nbsp;осуществление брокерской деятельности. Выдана ФСФР. Без ограничения срока действия.
+                    </p>
+                    <p class="footer__paragraph">
+                        Доходность инвестиционных портфелей, «Биржевой Гуру» смоделированная экспертами ООО&nbsp;«Компания БКС» с&nbsp;учетом комиссионных расходов за&nbsp;сделку в&nbsp;размере 0,03% от&nbsp;объема сделки по&nbsp;данным торгов на&nbsp;ОАО Московская биржа, не&nbsp;учитывает расходы на&nbsp;оплату депозитарных услуг, подачи поручений по&nbsp;телефону и&nbsp;иных расходов, подлежащих оплате клиентом. Полный список тарифов ООО&nbsp;«Компания БКС» приведен в&nbsp;приложении №&nbsp;11 к&nbsp;Регламенту оказания услуг на&nbsp;рынке ценных бумаг ООО&nbsp;«Компания БКС». Результат инвестирования в&nbsp;прошлом не&nbsp;определяет дохода в&nbsp;будущем. ООО&nbsp;«Компания БКС» не&nbsp;несет ответственности за&nbsp;результаты деятельности по&nbsp;данным рекомендациям. Торговые рекомендации «Биржевой Гуру» предоставляются исключительно в&nbsp;информационных целях и&nbsp;не могут рассматриваться как, или быть использованы в&nbsp;качестве, предложения или побуждения сделать заявку на&nbsp;покупку или продажу, или вложение в&nbsp;ценные бумаги, или другие финансовые инструменты. ООО&nbsp;«Компания БКС» может не&nbsp;предпринимать каких-либо шагов к&nbsp;тому, чтобы убедить кого-либо в&nbsp;том, что ценные бумаги, указанные в&nbsp;торговых рекомендациях, являются подходящими для того или иного инвестора.
+                    </p>
+                    <p class="footer__paragraph">
+                        ООО «Компания БКС» номер 1 в&nbsp;рейтинге ПАО&nbsp;Московская Биржа «Ведущие операторы Акции и&nbsp;паи: режим основных торгов Т+, режим переговорных сделок и&nbsp;режим РПС с&nbsp;ЦК по&nbsp;торговому обороту на&nbsp;сентябрь 2018 года
+                    </p>
+                </div>
+        </footer>
+    </div>
+
+    <script src="media/js/bundle.js?715920906320"></script>
+</body>
+
+</html>
