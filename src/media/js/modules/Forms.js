@@ -1,6 +1,7 @@
 const dom = require('../utils/DOM');
 const Connector = require('../helpers/Connector');
 const FormsValidation = require('./FormsValidation');
+const EventCreator = require('../helpers/event-creator');
 
 const SENDING_CLASS = '_sending';
 const STATE_CLASS = '_state2';
@@ -33,7 +34,7 @@ function Forms() {
 				$form.find('[type="submit"]').attr('disabled', 'disabled');
 			}, 200);
 
-			let done = () => {
+			let done = response => {
 				clearTimeout(timeout);
 				$form.removeClass(SENDING_CLASS).addClass(STATE_CLASS);
 				$form.find('[type="submit"]').removeAttr('disabled');
@@ -69,6 +70,12 @@ function Forms() {
 				let successTimeArr = successTime.split('-');
 				$form.find('[data-success-name]').text(`, ${successName}`);
 				$form.find('[data-success-datetime]').html(`${successDate}<br> с ${successTimeArr[0]} до ${successTimeArr[1]}`);
+
+				if (typeof response !== 'undefined') {
+					if (response.success) {
+						new EventCreator(document, 'promo:conversion', { requestId: response.request_id }).dispatch();
+					}
+				}
 			};
 
 			if (IS_LOCAL) {

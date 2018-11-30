@@ -2,6 +2,7 @@ const dom = require('../utils/DOM');
 const Utils = require('../utils/Utils');
 const Connector = require('../helpers/Connector');
 const FormsValidation = require('./FormsValidation');
+const EventCreator = require('../helpers/event-creator');
 
 const OPENED_CLASS = '_opened';
 const ACTIVE_CLASS = '_active';
@@ -246,7 +247,7 @@ Calc.prototype = {
 				$form.find('[type="submit"]').attr('disabled', 'disabled');
 			}, 200);
 
-			let done = () => {
+			let done = response => {
 				clearTimeout(timeout);
 				$form
 					.find('.form')
@@ -254,6 +255,12 @@ Calc.prototype = {
 					.addClass(STATE_CLASS);
 				$form.find('[type="submit"]').removeAttr('disabled');
 				switchSlide(slidesCount - 1);
+
+				if (typeof response !== 'undefined') {
+					if (response.success) {
+						new EventCreator(document, 'promo:conversion', { requestId: response.request_id }).dispatch();
+					}
+				}
 			};
 
 			if (IS_LOCAL) {
