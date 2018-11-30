@@ -112,7 +112,7 @@ function Forms() {
 					if (hasError) {
 						errorHandler();
 					} else {
-						done();
+						done(responseObject || response);
 					}
 				},
 				err => {

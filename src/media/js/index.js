@@ -1,3 +1,5 @@
+/* globals dataLayer */
+
 import { TweenMax } from 'gsap';
 global.TweenMax = TweenMax;
 global.$ = global.jQuery = require('jquery');
@@ -63,6 +65,10 @@ const App = new function App() { // eslint-disable-line
 		this.dom.$html.removeClass('_loading');
 		this.dom.$body.find('.header__logo:not([href])').on('click', () => {
 			TweenMax.to(this.dom.$document2, 0.4, { scrollTop: 0 });
+		});
+
+		document.addEventListener('promo:conversion', function(e) {
+			typeof dataLayer !== 'undefined' && dataLayer.push({ 'request_id': e.detail.requestId, 'event': 'conversion' });
 		});
 	});
 }();

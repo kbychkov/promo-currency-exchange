@@ -294,7 +294,7 @@ Calc.prototype = {
 					if (hasError) {
 						errorHandler();
 					} else {
-						done();
+						done(responseObject || response);
 					}
 				},
 				err => {
