@@ -14,12 +14,12 @@
 			}
 		</script>
 
-    <link rel="stylesheet" href="media/css/screen.css?80416553995" />
+    <link rel="stylesheet" href="media/css/screen.css?259556013218" />
 </head>
 
 <body>
     <div class="wrapper">
-        <header class="wrapper__header header _fixed _no-margin">
+        <header class="wrapper__header header _fixed _no-margin" data-fixed-element>
             <div class="container">
                 <div class="header__row">
                     <div class="container">
@@ -38,7 +38,7 @@
                             </a>
 
                             <div class="header__flex _v2">
-                                <span class="button visible-tablet-only">Заказать звонок</span>
+                                <span class="button visible-tablet-only" data-popup-opener="feedback">Заказать звонок</span>
                                 <div class="burger" data-menu-toggler><i></i><i></i><i></i><i></i><i></i></div>
                             </div>
                         </div>
@@ -64,7 +64,7 @@
 
                                     <div class="header__contacts">
                                         <div class="header__contacts-row">
-                                            <span class="button js-open-popup" data-popup-selector="#feedback">Заказать звонок</span>
+                                            <span class="button" data-popup-opener="feedback">Заказать звонок</span>
                                         </div>
                                         <div class="header__contacts-row _phone">
                                             <a href="tel:8 800 500 55 45" class="phone">8 800 500 55 45</a>
@@ -79,126 +79,6 @@
                     </div>
                 </div>
             </div>
-
-            <div class="popup hidden" id="feedback">
-                <div class="popup__content feedback-popup">
-                    <a role="button" class="popup__close js-close-popup" title="Закрыть">
-                        <span class="close-button"><i></i><i></i></span>
-                    </a>
-
-                    <!-- На боевом сервере подставить необходимый адрес, куда будут отсылаться данные. -->
-                    <form action="http://www.mocky.io/v2/5bfb674a3200005100bee491" class="form _feedback" data-error-message-required="Обязательное поле">
-                        <div class="form__states">
-                            <div class="form__state _state1">
-                                <div class="form__heading-part">
-                                    <h2 class="form__title like-h2">Остались вопросы?</h2>
-                                    <p class="form__subtitle">
-                                        Заполните форму,
-                                        и&nbsp;мы перезвоним вам
-                                        в&nbsp;ближайшее время
-                                    </p>
-                                </div>
-                                <div class="form__sections-part">
-                                    <div class="form__input-section">
-
-                                        <div class="form__input-block " data-stagger>
-                                            <label class="form__label">
-                                                <input type="text" placeholder="Имя" class="form__input" name="name" pattern="^[\sа-яА-ЯёЁa-zA-Z0-9-—]+$" data-error-message-pattern="Латиница, кириллица, тире, цифры" required />
-                                                <span class="form__label-text">Имя</span>
-                                            </label>
-                                        </div>
-
-                                    </div>
-                                    <div class="form__input-section">
-
-                                        <div class="form__input-block " data-stagger>
-                                            <label class="form__label">
-                                                <input type="tel" placeholder="Телефон" class="form__input" name="phone" required />
-                                                <span class="form__label-text">Телефон</span>
-                                            </label>
-                                        </div>
-
-                                    </div>
-                                    <div class="form__input-section">
-
-                                        <div class="form__input-block " data-stagger>
-                                            <label class="form__label">
-                                                <input type="email" placeholder="E-mail" class="form__input" name="email" data-error-message-email="Неверный формат" required />
-                                                <span class="form__label-text">E-mail</span>
-                                            </label>
-                                        </div>
-
-                                    </div>
-                                    <p class="form__subtitle _v2">
-                                        Выберите удобное для&nbsp;вас
-                                        время звонка
-                                    </p>
-                                    <div class="form__multiple-inputs">
-                                        <div class="form__input-section">
-
-                                            <div class="form__input-block _icon _date" data-stagger>
-                                                <label class="form__label">
-                                                    <input type="text" placeholder="Дата" class="form__input" name="date" data-disable-status />
-                                                    <span class="form__label-text">Дата</span>
-                                                </label>
-                                            </div>
-
-                                        </div>
-                                        <div class="form__input-section _last">
-
-                                            <div class="form__input-block _icon _time" data-stagger>
-                                                <label class="form__label">
-                                                    <input type="text" placeholder="Время" class="form__input" name="time" data-disable-status />
-                                                    <span class="form__label-text">Время</span>
-                                                </label>
-                                            </div>
-
-                                        </div>
-
-                                        <!-- Здесь необходимо вывести актуальные праздничные дни. -->
-                                        <input type="hidden" name="holidays" value="1543006800000,1543093200000,1543611600000,1543698000000,1544216400000,1544302800000,1544821200000,1544907600000,1545426000000,1545512400000">
-                                    </div>
-                                    <div class="form__input-section _checkbox">
-
-                                        <div class="form__input-block " data-stagger>
-                                            <label class="checkbox">
-                                                <div class="checkbox__flex">
-                                                    <div class="checkbox__col _input">
-                                                        <input type="checkbox" name="agreement" data-error-message-checkbox="Необходимо согласие" required>
-                                                        <div class="checkbox__input"></div>
-                                                    </div>
-                                                    <div class="checkbox__col _text">
-                                                        Я согласен на&nbsp;передачу
-                                                        и обработку своих <a href="//broker.ru/agreement" target="_blank" class="checkbox__link">персональных данных</a>
-                                                    </div>
-                                                </div>
-                                            </label>
-                                        </div>
-
-                                    </div>
-                                    <div class="form__input-section _submit">
-                                        <button type="submit" class="button button--accent">Отправить</button>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="form__state _state2">
-                                <div class="form__response-message">
-                                    <div class="form__response-text _v2">
-                                        <div data-stagger class="form__response-title _v2">Спасибо<span data-success-name></span>!</div>
-
-                                        <div data-stagger>
-                                            Мы перезвоним вам
-                                            <span data-success-datetime></span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </form>
-
-                </div>
-            </div>
         </header>
 
         <div class="wrapper__content">
@@ -208,7 +88,7 @@
                     <div class="gradient-block__bg"></div>
                     <div class="relative">
                         <div class="text-container">
-                            <h1 class="like-h1">Как начать торговать валютой?</h1>
+                            <h1 class="like-h1"><span class="shift-x">Как начать торговать валютой?</span></h1>
                             <p class="like-p">
                                 Курс мировых валют устанавливается
                                 на&nbsp;торгах Московской Биржи.
@@ -424,7 +304,139 @@
         </footer>
     </div>
 
-    <script src="media/js/bundle.js?66506399079"></script>
+    <div class="popups-wrapper" data-fixed-element>
+        <div class="popups-wrapper__content">
+            <div class="popup feedback-popup" data-popup="feedback">
+                <a role="button" class="popup__close" title="Закрыть" data-popup-closer>
+                    <span class="close-button"><i></i><i></i></span>
+                </a>
+
+                <!-- На боевом сервере подставить необходимый адрес, куда будут отсылаться данные. -->
+                <form action="http://www.mocky.io/v2/5bfb674a3200005100bee491" class="form _feedback" data-error-message-required="Обязательное поле">
+                    <div class="form__states">
+                        <div class="form__state _state1">
+                            <div class="form__heading-part">
+                                <h2 class="form__title like-h2">Остались вопросы?</h2>
+                                <p class="form__subtitle">
+                                    Заполните форму,
+                                    и&nbsp;мы перезвоним вам
+                                    в&nbsp;ближайшее время
+                                </p>
+                            </div>
+                            <div class="form__sections-part">
+                                <div class="form__input-section">
+
+                                    <div class="form__input-block " data-stagger>
+                                        <label class="form__label">
+                                            <input type="text" placeholder="Имя" class="form__input" name="name" pattern="^[\sа-яА-ЯёЁa-zA-Z0-9-—]+$" data-error-message-pattern="Латиница, кириллица, тире, цифры" required />
+                                            <span class="form__label-text">Имя</span>
+                                        </label>
+                                    </div>
+
+                                </div>
+                                <div class="form__input-section">
+
+                                    <div class="form__input-block " data-stagger>
+                                        <label class="form__label">
+                                            <input type="tel" placeholder="Телефон" class="form__input" name="phone" required />
+                                            <span class="form__label-text">Телефон</span>
+                                        </label>
+                                    </div>
+
+                                </div>
+                                <div class="form__input-section">
+
+                                    <div class="form__input-block " data-stagger>
+                                        <label class="form__label">
+                                            <input type="email" placeholder="E-mail" class="form__input" name="email" data-error-message-email="Неверный формат" required />
+                                            <span class="form__label-text">E-mail</span>
+                                        </label>
+                                    </div>
+
+                                </div>
+                                <p class="form__subtitle _v2">
+                                    Выберите удобное для&nbsp;вас
+                                    время звонка
+                                </p>
+                                <div class="form__multiple-inputs">
+                                    <div class="form__input-section">
+
+                                        <div class="form__input-block _icon _date" data-stagger>
+                                            <label class="form__label">
+                                                <input type="text" placeholder="Дата" class="form__input" name="date" data-disable-status />
+                                                <span class="form__label-text">Дата</span>
+                                            </label>
+                                        </div>
+
+                                    </div>
+                                    <div class="form__input-section _last">
+
+                                        <div class="form__input-block _icon _time" data-stagger>
+                                            <label class="form__label">
+                                                <input type="text" placeholder="Время" class="form__input" name="time" data-disable-status />
+                                                <span class="form__label-text">Время</span>
+                                            </label>
+                                        </div>
+
+                                    </div>
+
+                                    <!-- Здесь необходимо вывести актуальные праздничные дни. -->
+                                    <input type="hidden" name="holidays" value="1543006800000,1543093200000,1543611600000,1543698000000,1544216400000,1544302800000,1544821200000,1544907600000,1545426000000,1545512400000">
+                                </div>
+                                <div class="form__input-section _checkbox">
+
+                                    <div class="form__input-block " data-stagger>
+                                        <label class="checkbox">
+                                            <div class="checkbox__flex">
+                                                <div class="checkbox__col _input">
+                                                    <input type="checkbox" name="agreement" data-error-message-checkbox="Необходимо согласие" required>
+                                                    <div class="checkbox__input"></div>
+                                                </div>
+                                                <div class="checkbox__col _text">
+                                                    Я согласен на&nbsp;передачу
+                                                    и обработку своих <a href="//broker.ru/agreement" target="_blank" class="checkbox__link">персональных данных</a>
+                                                </div>
+                                            </div>
+                                        </label>
+                                    </div>
+
+                                </div>
+                                <div class="form__input-section _submit">
+                                    <button type="submit" class="button button--accent">Отправить</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form__state _state2">
+                            <div class="form__response-message">
+                                <div class="form__response-text _v2">
+                                    <div data-stagger class="form__response-title _v2">Спасибо<span data-success-name></span>!</div>
+
+                                    <div data-stagger>
+                                        Мы перезвоним вам
+                                        <span data-success-datetime></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+
+            <div class="popup video-popup" data-popup="video">
+                <div class="video-popup__inner">
+                    <a role="button" class="popup__close" title="Закрыть" data-popup-closer>
+                        <span class="close-button"><i></i><i></i></span>
+                    </a>
+
+                    <iframe data-src="https://www.youtube.com/embed/WZnkM0uRM8o" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="media/js/bundle.js?1461168349099"></script>
 </body>
 
 </html>
