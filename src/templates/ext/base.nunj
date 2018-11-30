@@ -27,7 +27,7 @@
 		<script>
 			if (localStorage && localStorage.getItem('fix100vhValue')) {
 				document.documentElement.classList.add('_fix100vh');
-				typeof document.documentElement.style.setProperty === 'function' && document.documentElement.style.setProperty('--fix100vhValue', `${localStorage.getItem('fix100vhValue')}px`);
+				typeof document.documentElement.style.setProperty === 'function' && document.documentElement.style.setProperty('--fix100vhValue', localStorage.getItem('fix100vhValue') + 'px');
 			}
 		</script>
 

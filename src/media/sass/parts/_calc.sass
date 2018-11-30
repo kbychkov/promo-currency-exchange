@@ -249,6 +249,9 @@
 				&._filled
 					padding-top: $paddings * (1 + $paddings-koef)
 					padding-bottom: $paddings * (1 - $paddings-koef)
+					._ie &
+						padding-top: $paddings
+						padding-bottom: $paddings
 			&__label-text
 				left: $paddings
 		&__input

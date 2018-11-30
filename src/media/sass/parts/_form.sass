@@ -28,6 +28,8 @@
 		// NOTE: Фиксируем высоту,
 		// чтобы не прыгали мелкие иконки (баг).
 		height: $inputs-height
+		._ie &
+			line-height: 0
 		&:focus
 			box-shadow: 0 0 20px rgba($c-accent-main, 0.25)
 		&:disabled
@@ -158,6 +160,9 @@
 	&__label input:focus,
 	&__input._filled
 		padding: 27px $input-padding-x 15px
+		._ie &
+			padding-top: ($input-padding-x + 1px)
+			padding-bottom: ($input-padding-x + 1px)
 	&__label input:focus,
 	&__label input:not(:placeholder-shown),
 	&__label input._filled,
