@@ -2,7 +2,7 @@
 
 {% macro feedbackForm() %}
 	<!-- На боевом сервере подставить необходимый адрес, куда будут отсылаться данные. -->
-	<form action="http://www.mocky.io/v2/5bfb674a3200005100bee491" class="form _feedback" data-error-message-required="Обязательное поле">
+	<form action="//www.mocky.io/v2/5bfb674a3200005100bee491" class="form _feedback" data-error-message-required="Обязательное поле">
 		<div class="form__states">
 			<div class="form__state _state1">
 				<div class="form__heading-part">

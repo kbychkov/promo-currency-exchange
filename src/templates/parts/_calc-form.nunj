@@ -2,7 +2,7 @@
 
 {% macro calcForm(type = "buy") %}
 	<!-- На боевом сервере подставить необходимый адрес, куда будут отсылаться данные. -->
-	<form action="http://www.mocky.io/v2/5bfb674a3200005100bee491" class="calc" data-type="{{ type }}" data-error-message-required="Обязательное поле">
+	<form action="//www.mocky.io/v2/5bfb674a3200005100bee491" class="calc" data-type="{{ type }}" data-error-message-required="Обязательное поле">
 		<input type="hidden" name="form-type" value="{{ type }}">
 
 		<div class="calc__steps">
