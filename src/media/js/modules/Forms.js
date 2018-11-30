@@ -2,12 +2,10 @@ const dom = require('../utils/DOM');
 const Connector = require('../helpers/Connector');
 const FormsValidation = require('./FormsValidation');
 const EventCreator = require('../helpers/event-creator');
+const Popups = require('./Popups');
 
 const SENDING_CLASS = '_sending';
 const STATE_CLASS = '_state2';
-const IS_LOCAL =
-	window.location.hostname &&
-	(window.location.hostname.indexOf('localhost') >= 0 || window.location.hostname.indexOf('192.168.') >= 0);
 
 function Forms() {
 	this.$forms = dom.$body.find('form:not(.calc)');
@@ -34,10 +32,15 @@ function Forms() {
 				$form.find('[type="submit"]').attr('disabled', 'disabled');
 			}, 200);
 
-			let done = response => {
+			const clearSendingState = () => {
 				clearTimeout(timeout);
-				$form.removeClass(SENDING_CLASS).addClass(STATE_CLASS);
+				$form.removeClass(SENDING_CLASS);
 				$form.find('[type="submit"]').removeAttr('disabled');
+			};
+
+			const done = response => {
+				clearSendingState();
+				$form.addClass(STATE_CLASS);
 				TweenMax.staggerFromTo(
 					$form.find('.form__state._state2 [data-stagger]'),
 					1.4,
@@ -78,20 +81,44 @@ function Forms() {
 				}
 			};
 
-			if (IS_LOCAL) {
-				setTimeout(done, 2000);
-			} else {
-				Connector.send(
-					formAction,
-					data,
-					response => {
-						done(response);
-					},
-					err => {
-						console.error(err);
+			const errorHandler = err => {
+				clearSendingState();
+				err && console.error(err);
+				Popups.open('form-error');
+			};
+
+			Connector.send(
+				formAction,
+				data,
+				response => {
+					let responseObject;
+					let hasError = false;
+					if (typeof response === 'string') {
+						try {
+							responseObject = JSON.parse(response);
+							hasError = responseObject.success !== true;
+						} catch (e) {
+							console.error(e);
+							hasError = true;
+							return;
+						}
+					} else if (typeof response === 'object') {
+						hasError = response.success !== true;
+					} else {
+						hasError = true;
 					}
-				);
-			}
+
+					// Done/Fail
+					if (hasError) {
+						errorHandler();
+					} else {
+						done();
+					}
+				},
+				err => {
+					errorHandler(err);
+				}
+			);
 		});
 	});
 }

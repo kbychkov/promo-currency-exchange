@@ -156,6 +156,16 @@
 						<iframe data-src="https://www.youtube.com/embed/WZnkM0uRM8o" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 					</div>
 				</div>
+
+				<div class="popup" data-popup="form-error">
+					<a role="button" class="popup__close" title="Закрыть" data-popup-closer>
+						<span class="close-button"><i></i><i></i></span>
+					</a>
+
+					Возникла ошибка при отправке данных.
+					<br>
+					Попробуйте повторить позднее.
+				</div>
 			</div>
 		</div>
 
