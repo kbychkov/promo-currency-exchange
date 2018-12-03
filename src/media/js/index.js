@@ -1,5 +1,3 @@
-/* globals dataLayer */
-
 import { TweenMax } from 'gsap';
 global.TweenMax = TweenMax;
 global.$ = global.jQuery = require('jquery');
