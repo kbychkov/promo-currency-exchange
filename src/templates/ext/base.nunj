@@ -170,6 +170,11 @@
 		</div>
 
 		{% block scripts %}
+			<script>
+				document.addEventListener('promo:conversion', function(e) {
+					dataLayer.push({ 'request_id': e.detail.requestId, 'event': 'conversion' });
+				});
+			</script>
 			<script src="media/js/bundle.js?<%= hash %>"></script>
 		{% endblock scripts %}
 	</body>
