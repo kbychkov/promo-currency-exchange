@@ -10,11 +10,11 @@
     <script>
         if (localStorage && localStorage.getItem('fix100vhValue')) {
 				document.documentElement.classList.add('_fix100vh');
-				typeof document.documentElement.style.setProperty === 'function' && document.documentElement.style.setProperty('--fix100vhValue', `${localStorage.getItem('fix100vhValue')}px`);
+				typeof document.documentElement.style.setProperty === 'function' && document.documentElement.style.setProperty('--fix100vhValue', localStorage.getItem('fix100vhValue') + 'px');
 			}
 		</script>
 
-    <link rel="stylesheet" href="media/css/screen.css?259556013218" />
+    <link rel="stylesheet" href="media/css/screen.css?1059379212338" />
 </head>
 
 <body>
@@ -158,7 +158,7 @@
             <div class="gradient-block _v2">
                 <div class="container">
                     <!-- На боевом сервере подставить необходимый адрес, куда будут отсылаться данные. -->
-                    <form action="http://www.mocky.io/v2/5bfb674a3200005100bee491" class="form _feedback" data-error-message-required="Обязательное поле">
+                    <form action="//www.mocky.io/v2/5bfb674a3200005100bee491" class="form _feedback" data-error-message-required="Обязательное поле">
                         <div class="form__states">
                             <div class="form__state _state1">
                                 <div class="form__heading-part">
@@ -312,7 +312,7 @@
                 </a>
 
                 <!-- На боевом сервере подставить необходимый адрес, куда будут отсылаться данные. -->
-                <form action="http://www.mocky.io/v2/5bfb674a3200005100bee491" class="form _feedback" data-error-message-required="Обязательное поле">
+                <form action="//www.mocky.io/v2/5bfb674a3200005100bee491" class="form _feedback" data-error-message-required="Обязательное поле">
                     <div class="form__states">
                         <div class="form__state _state1">
                             <div class="form__heading-part">
@@ -433,10 +433,28 @@
                     <iframe data-src="https://www.youtube.com/embed/WZnkM0uRM8o" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
             </div>
+
+            <div class="popup" data-popup="form-error">
+                <a role="button" class="popup__close" title="Закрыть" data-popup-closer>
+                    <span class="close-button"><i></i><i></i></span>
+                </a>
+
+                Возникла ошибка при отправке данных.
+                <br>
+                Попробуйте повторить позднее.
+            </div>
         </div>
     </div>
 
-    <script src="media/js/bundle.js?1461168349099"></script>
+    <script>
+        document.addEventListener('promo:conversion', function(e) {
+            dataLayer.push({
+                'request_id': e.detail.requestId,
+                'event': 'conversion'
+            });
+        });
+    </script>
+    <script src="media/js/bundle.js?157731919877"></script>
 </body>
 
 </html>
